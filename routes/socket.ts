@@ -2,8 +2,10 @@ import { Server } from "https://deno.land/x/socket_io@0.2.0/mod.ts"
 
 const io = new Server()
 
+const handler = io.handler()
+
 async function main(req: Request, ctx: Context){
-  return io.handler()
+  return handler(req)
   /*new Response(JSON.stringify({
     url: "s"
   }))*/
