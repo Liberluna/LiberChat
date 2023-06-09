@@ -5,6 +5,7 @@ const io = new Server()
 const handler = io.handler()
 
 async function main(req: Request, ctx: Context){
+  console.log(handler)
   return handler(req)
   /*new Response(JSON.stringify({
     url: "s"
