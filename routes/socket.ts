@@ -1,8 +1,12 @@
+import { Server } from "https://deno.land/x/socket_io@0.2.0/mod.ts"
+
+const io = new Server()
 
 async function main(req: Request, ctx: Context){
-  return new Response(JSON.stringify({
+  return io.handler()
+  /*new Response(JSON.stringify({
     url: "s"
-  }))
+  }))*/
 }
 
 export const GET = main
