@@ -1,8 +1,8 @@
 
 async function main(req: Request, ctx: Context){
-  return Response.json({
-    url: req.url.href
-  })
+  return new Response(JSON.stringify({
+    url: "s"
+  }))
 }
 
 export const GET = main
