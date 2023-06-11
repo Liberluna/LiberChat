@@ -1,6 +1,7 @@
 import { type Context } from "aleph/server"
 import { useData } from "aleph/react"
 import { useEffect } from "react"
+import ky from "ky"
 
 export function data(req: Request, ctx: Context) {
   const url = new URL(req.url)
