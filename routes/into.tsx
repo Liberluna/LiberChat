@@ -21,7 +21,10 @@ export default function() {
   const [name, setName] = useState("")
   const [roomId, setRoomId] = useState("")
   const intoRoom = () => {
-    const url = `/chat/room/${roomId !== "" ? roomId : "global"}?userName`
+    if(name.replace(/[ ]/g) === ""){
+      return alert("名前を空にすることはできません...")
+    }
+    const url = `/chat/room/${roomId !== "" ? roomId : "global"}?userName=${encodeURI(name)}`
     location.href = url
   }
   return <>
