@@ -61,7 +61,8 @@ export default function() {
       roomId: data.roomId,
     })){
       const { data } = messageData
-      alert(JSON.stringify(data))
+      const { message } = data
+      alert(JSON.stringify(message))
     }
   },[])
   return <>
@@ -75,7 +76,11 @@ export default function() {
       <button onClick={async()=>{
         alert(await ky.post("/socket/comet", {
           json: {
-            message: "Aaa",
+            message: {
+              user: "Baka",
+              room: "a",
+              body: "ja"
+            },
             room: "a",
           }
         }).text());
