@@ -1,4 +1,4 @@
-import { Link, Head } from "aleph/react"
+import { Head, Link } from "aleph/react"
 //import Heads from '../components/Heads.tsx';
 
 export default function () {
