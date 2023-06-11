@@ -15,6 +15,7 @@ export async function POST (req: Request, ctx: Context) {
   if("message" in data){
     // 送信 mode
     for(const resolve of resolves[room]){
+      console.log(room,"disconn")
       resolve(res.json({
         message: data.message
       }))
@@ -26,6 +27,7 @@ export async function POST (req: Request, ctx: Context) {
   
   //return res.json({"a":"a"})
   return await new Promise((resolve) => {
+    console.log(room,"conn")
     resolves[room].push(resolve)
   })
 }
