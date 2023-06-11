@@ -18,21 +18,6 @@ export default function() {
         </div>
       </div>
     </div>
-    <style>
-      .btn:hover {
-        animation-name: pop;
-        animation-duration: 0.1s;
-      }
-      @keyframes pop {
-        0% {
-          transform: scale(1.0);
-        }
-        40% {
-          transform: scale(1.02);
-        }
-        100% {
-          transform: scale(1);
-        }
-    </style>
+
   </>
 }
