@@ -14,7 +14,7 @@ const connect = async () => {
   const { data } = useData()
   alert(data.roomid)
   
-  const res = await fetch("/socket/commet, {
+  const res = await fetch("/socket/commet", {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
