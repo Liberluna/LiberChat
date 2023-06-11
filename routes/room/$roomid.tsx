@@ -69,7 +69,7 @@ export default function() {
         continue
       }
       alert("res")
-      setMessages([...message, message])
+      setMessages([...messages, message])
     }
   },[])
   return <>
