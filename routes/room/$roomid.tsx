@@ -30,7 +30,6 @@ const connect = async ({ roomId }) => {
 
 async function *getMessages(options){
   const { roomId } = options
-  alert(roomId)
   while(true){
     const result = await connect({
       roomId,
