@@ -4,6 +4,7 @@ import * as chat from "~/system/chat/index.ts"
 
 export function GET (req: Request, ctx: Context) {
   let timeoutId: number | undefined;
+  console.log("add conn")
   const stream = new ReadableStream({
     start(controller) {
       timeoutId = setInterval(() => {
@@ -15,6 +16,7 @@ export function GET (req: Request, ctx: Context) {
     },
     cancel() {
       // 接続切断時のクリーンアップ
+      console.log("cancel")
       clearInterval(timeoutId);
     },
   });
