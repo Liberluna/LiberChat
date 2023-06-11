@@ -68,8 +68,7 @@ export default function() {
       if(!message){
         continue
       }
-      alert(JSON.stringify([...messages, message]))
-      setMessages([...messages, message])
+      setMessages(messages.concat(message))
     }
   },[])
   return <>
