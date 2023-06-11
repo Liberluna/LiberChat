@@ -1,6 +1,6 @@
 import { Head } from 'aleph/react';
 
-export default function Head() {
+export default function Heads() {
   return (
     <Head>
       <meta charset="UTF-8">
