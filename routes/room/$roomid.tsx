@@ -6,9 +6,9 @@ export function data(req: Request, ctx: Context) {
 }
 export default function() {
   const { data } = useData()
-  const { req, ctx } = data
+  const { req } = data
   
-  console.log(data)
+  const roomId = new URL(req.url).pathname.split('/').at(-1)
   
   return <>
     <div>
