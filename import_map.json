@@ -3,17 +3,18 @@
     "~/": "./",
     "std/": "https://deno.land/std@0.180.0/",
     "aleph/": "https://deno.land/x/aleph@1.0.0-beta.43/",
-    "aleph/server": "https://deno.land/x/aleph@1.0.0-beta.43/server/mod.ts",
-    "aleph/dev": "https://deno.land/x/aleph@1.0.0-beta.43/server/dev.ts",
-    "aleph/plugins/deploy": "https://deno.land/x/aleph@1.0.0-beta.43/plugins/deploy.ts",
-    "aleph/plugins/unocss": "https://deno.land/x/aleph@1.0.0-beta.43/plugins/unocss.ts",
-    "@unocss/core": "https://esm.sh/v125/@unocss/core@0.50.6",
-    "@unocss/preset-uno": "https://esm.sh/v125/@unocss/preset-uno@0.50.6",
     "aleph/react": "https://deno.land/x/aleph@1.0.0-beta.43/framework/react/mod.ts",
     "aleph/plugins/react": "https://deno.land/x/aleph@1.0.0-beta.43/framework/react/plugin.ts",
-    "react": "https://esm.sh/v125/react@18.2.0",
+    "aleph/plugins/deploy": "https://deno.land/x/aleph@1.0.0-beta.43/plugins/deploy.ts",
+    "aleph/plugins/unocss": "https://deno.land/x/aleph@1.0.0-beta.43/plugins/unocss.ts",
+    "aleph/dev": "https://deno.land/x/aleph@1.0.0-beta.43/server/dev.ts",
+    "aleph/server": "https://deno.land/x/aleph@1.0.0-beta.43/server/mod.ts",
+    "@unocss/core": "https://esm.sh/v125/@unocss/core@0.50.6",
+    "@unocss/preset-uno": "https://esm.sh/v125/@unocss/preset-uno@0.50.6",
+    "ky": "https://esm.sh/v125/ky@0.33.3",
     "react-dom": "https://esm.sh/v125/react-dom@18.2.0",
-    "react-dom/": "https://esm.sh/v125/react-dom@18.2.0/"
+    "react-dom/": "https://esm.sh/v125/react-dom@18.2.0/",
+    "react": "https://esm.sh/v125/react@18.2.0"
   },
   "scopes": {}
 }
