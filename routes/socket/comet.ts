@@ -3,26 +3,28 @@ import * as res from "~/utils/res/index.ts"
 
 const resolves = []
 
-export function GET (req: Request, ctx: Context) {
-  const params = new URL(req.url).searchParams
+export async function POST (req: Request, ctx: Context) {
+  const data = await req.json()
   
-  const room = params.get("room")
+  const room: string = data.room
   
   if(!resolves[room]){
     resolves[room] = []
   }
-  if(params.has("msg")){
+  
+  if("message" in data){
+    // 送信 mode
     for(const resolve of resolves[room]){
       resolve(res.json({
-        msg: params.get("msg")
+        message: data.message
       }))
     }
     return res.json({
-      msg: params.get("msg")
+      status: "ok!"
     })
   }
   
-  return new Promise((resolve) => {
+  return await new Promise((resolve) => {
     resolves[room].push(resolve)
   })
 }
