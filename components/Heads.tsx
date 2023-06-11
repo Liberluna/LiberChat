@@ -1,4 +1,4 @@
-import { Head } from 'aleph/react';
+import { Head } from 'aleph/react'; 
 
 export default function Heads() {
   return (
