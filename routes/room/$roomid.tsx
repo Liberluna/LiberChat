@@ -11,6 +11,7 @@ export function data(req: Request, ctx: Context) {
 }
 
 const connect = async ({ roomId }) => {
+  alert(roomId)
   const res = await fetch("/socket/commet", {
     method: "POST",
     headers: {
