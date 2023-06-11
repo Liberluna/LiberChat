@@ -11,7 +11,6 @@ export function data(req: Request, ctx: Context) {
 }
 
 const connect = async ({ roomId }) => {
-  throw new Error("a")
   const res = await fetch("/socket/commet", {
     method: "POST",
     headers: {
@@ -31,7 +30,7 @@ const connect = async ({ roomId }) => {
 
 async function *getMessages(options){
   const { roomId } = options
-  
+  alert(roomId)
   while(true){
     const result = await connect({
       roomId,
