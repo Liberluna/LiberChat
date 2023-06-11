@@ -1,21 +1,5 @@
 import { Head } from "aleph/react"
-//import { useState } from "react"
 
-
-const click = () => {
-  alert(0)
-}
-async function comet() {
-  const res = await fetch("/socket/comet")
-
-  if(res.status !== 200){
-    comet()
-    return
-  }
-
-  const json = await res.json()
-  console.log(json)
-}
 export default function () {
 
   
@@ -23,7 +7,10 @@ export default function () {
     <Head>
       <title>LiberChat</title>
     </Head>
-    <div>Liberchat</div>
-    <button onClick={click}>a</button>
+    <div class="mx-10">
+      <div class="text-center text-2xl">LibeChat</div>
+      <div>LiberChatへようこそ！</div>
+      <div>LiberChatは、オープンソースのチャットサイトです。</div>
+    </div>
   </>
 }
