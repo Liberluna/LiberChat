@@ -60,7 +60,7 @@ export default function() {
     </div>
     <div>
       <button onClick={async()=>{
-        alert(await ky.post("https://localhost:8000/socket/comet", {
+        alert(await ky.post("/socket/comet", {
           json: {
             message: "Aaa",
             room: "a",
