@@ -12,6 +12,7 @@ export function data(req: Request, ctx: Context) {
 }
 
 const connect = async ({ roomId }) => {
+  alert("connect")
   const res = await fetch("/socket/comet", {
     method: "POST",
     headers: {
@@ -21,7 +22,7 @@ const connect = async ({ roomId }) => {
       room: roomId,
     }),
   })
-  alert(await res.text())
+  alert("resp")
   if(res.status !== 200){
     // Error
     return { error: "error" }
