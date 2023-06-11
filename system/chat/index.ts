@@ -8,6 +8,6 @@ export interface Message {
 }
 export function waitRes () {
   return new Promise(resolve => {
-    setTimeout(e=>resolve({hello:"world"},100)
+    setTimeout(e=>resolve({hello:"world"}),100)
   })
 }
