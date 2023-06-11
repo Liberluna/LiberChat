@@ -68,11 +68,12 @@ export default function() {
       if(!message){
         continue
       }
-      
-      setMessageHistory([...messageHistory, 0])
-      alert(messageHistory.join(" "))
     }
   },[])
+  useEffect(()=>{
+    setMessageHistory([...messageHistory, 0])
+    alert(messageHistory.join(" "))
+  })
   return <>
     <Head>
       <title>{`#${data.roomId} | LiberChat`}</title>
