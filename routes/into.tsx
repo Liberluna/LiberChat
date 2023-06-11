@@ -4,14 +4,14 @@ export default function() {
       <div className="text-center text-2xl">
         ルームに入室しましょう！
       </div>
-      <div>
-        <div>
+      <div class="mx-auto">
+        <div className="my-5">
           <label>Name: </label>
-          <input placeholder="name" />
+          <input placeholder="name" className="boader" />
         </div>
-        <div>
+        <div className="my-5">
           <label>Room id: </label>
-          <input placeholder="Room ID" />
+          <input placeholder="Room ID" className="boader" />
         </div>
       </div>
     </div>
