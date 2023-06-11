@@ -2,28 +2,7 @@ import { Context } from "aleph/server"
 import * as res from "~/utils/res/index.ts"
 import * as chat from "~/system/chat/index.ts"
 
-export function GET () {
-  return new Response(`<!doctype HTML>
-  <html>
-    <head>
-    </head>
-    <body>
-      <h1>SSE TEST</h1>
-      <script>
-      alert("loaded")
-      const sse = new EventSource()
-      sse.addEventListener("message", (e) => {
-        alert(e.data)
-      });
-      </script>
-    </body>
-  </html>`,{
-    headers: {
-      "content-type": "text/html"
-    }
-  })
-}
-export function POST (req: Request, ctx: Context) {
+export function GET (req: Request, ctx: Context) {
   let timeoutId: number | undefined;
   const stream = new ReadableStream({
     start(controller) {
