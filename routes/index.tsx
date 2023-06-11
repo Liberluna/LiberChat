@@ -1,10 +1,9 @@
-import { Head, Link } from "aleph/react"
+import { Link } from "aleph/react"
+import Heads from '../components/Heads.tsx';
 
 export default function () {
   return <>
-    <Head>
-      <title>LiberChat</title>
-    </Head>
+    <Heads />
     <div className="mx-10">
       <div className="text-center text-2xl">LiberChat</div>
       <div>LiberChatへようこそ！</div>
