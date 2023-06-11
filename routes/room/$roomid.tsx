@@ -80,7 +80,7 @@ export default function() {
       {data.roomId}
     </div>
     <div>
-      <Messages messages={messages}/>
+
     </div>
     <div>
       <button onClick={async()=>{
