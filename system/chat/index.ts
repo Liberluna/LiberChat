@@ -6,9 +6,29 @@ export interface Message {
   user: string
   room: string
 }
+
+export type Callback = (Message) => void
+
+const callbacks: Record<string, Callback[]>
 /**
- * 受信処理をする関数。
+ * サーバーがメッセージを受け取る
  */
 export function from (msg: Message) {
+  if(!callbacks[msg.room]){
+    return
+  }
   
+  for(const callback of callbacks[msg.room]) {
+    callback(msg)
+  }
+  callbacks[msg.room] = []
+}
+/**
+ * メッセージの受け取りをCallback
+ */
+export function setCallback(room: string, callback: Callback) {
+  if(!callbacks[room]){
+    callbacks[room] = []
+  }
+  callbacks[room].push(callback)
 }
