@@ -13,6 +13,9 @@ export default function() {
           <label>Room id: </label>
           <input placeholder="Room ID" className="border" />
         </div>
+        <div>
+          <button className="btn">入室</button>
+        </div>
       </div>
     </div>
     <style>
