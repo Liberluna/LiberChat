@@ -46,7 +46,7 @@ async function *getMessages(options){
 export default function() {
   const { data } = useData()
   
-  useEffect(()=>{
+  useEffect(async ()=>{
     for await (const message of getMessages()){
       alert(0)
     }
