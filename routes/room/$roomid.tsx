@@ -22,6 +22,7 @@ const connect = async ({ roomId }) => {
       room: roomId,
     }),
   })
+  alert("resp")
   if(res.status !== 200){
     // Error
     return { error: "error" }
