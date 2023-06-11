@@ -11,6 +11,7 @@ export function data(req: Request, ctx: Context) {
 }
 
 const connect = async ({ roomId }) => {
+  throw new Error("a")
   const res = await fetch("/socket/commet", {
     method: "POST",
     headers: {
@@ -20,10 +21,8 @@ const connect = async ({ roomId }) => {
       room: roomId,
     })
   })
-  alert("res")
   if(res.status !== 200){
     // Error
-    alert("error")
     return { error: "error" }
   }
   // OK
