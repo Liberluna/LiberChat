@@ -58,23 +58,28 @@ export default function() {
   const { data } = useData()
   
   const [messageHistory, setMessageHistory] = useState([0])
-  
-  useEffect(async ()=>{
-    for await (const messageData of getMessages({
-      roomId: data.roomId,
-    })){
-      const { data } = messageData
-      const { message } = data
-      if(!message){
-        continue
+  let msgs = []
+  const start = ()=>{
+    (async()=>{
+      for await (const messageData of getMessages({
+        roomId: data.roomId,
+      })){
+        const { data } = messageData
+        const { message } = data
+        if(!message){
+          continue
+        }
+        msgs = [...msgs, 1]
+        setMessageHistory(msgs)
+        console.log(messageHistory)
       }
-    }
-  },[])
-  useEffect(()=>{
-    setMessageHistory([...messageHistory, 1])
-    setMessageHistory([...messageHistory, 2])
-    alert(messageHistory.join(" "))
-  }, [])
+    })()
+  }
+
+  //setMessageHistory([...messageHistory, 1])
+  //setMessageHistory([...messageHistory, 2])
+  //console.log(messageHistory)
+
   return <>
     <Head>
       <title>{`#${data.roomId} | LiberChat`}</title>
@@ -83,7 +88,7 @@ export default function() {
       {data.roomId}
     </div>
     <div>
-
+      <button onClick={start}>Start</button>
     </div>
     <div>
       <button onClick={async()=>{

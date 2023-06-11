@@ -1,7 +1,13 @@
 import { Context } from "aleph/server"
 import * as res from "~/utils/res/index.ts"
 
-const resolves = []
+const resolves: Record<string,resolve[]> = {}
+
+type resolve = {
+  (): Promise<void>;
+  <T>(value: T): Promise<Awaited<T>>;
+  <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>;
+}
 
 export async function POST (req: Request, ctx: Context) {
   const data = await req.json()
