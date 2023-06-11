@@ -40,7 +40,7 @@ export default function() {
         <div className="my-5">
           <label>Room id: </label>
           <input placeholder="Room ID" className="border" value={roomId} onInput={(e)=>{
-            setRoomId(e.target.value.replaceAll(/[^a-zA-Z0-9]/,"").toLowerCase())
+            setRoomId(e.target.value.replace(/[^a-zA-Z0-9]/g,"").toLowerCase())
           }} />
         </div>
         <div>
