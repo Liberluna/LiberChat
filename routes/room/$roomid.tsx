@@ -1,8 +1,9 @@
 import { type Context } from "aleph/server"
 import { useData, Head } from "aleph/react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import ky from "ky"
 import { type Message } from "~/system/chat/index.ts"
+import Messages from "~/components/chat/messages.ts"
 
 export function data(req: Request, ctx: Context) {
   const url = new URL(req.url)
@@ -56,13 +57,19 @@ async function *getMessages(options){
 export default function() {
   const { data } = useData()
   
+  const [messages, setMessages] = useState([])
+  
   useEffect(async ()=>{
     for await (const messageData of getMessages({
       roomId: data.roomId,
     })){
       const { data } = messageData
       const { message } = data
-      alert(JSON.stringify(message))
+      if(!message){
+        continue
+      }
+      alert("res")
+      setMessages([...message, message])
     }
   },[])
   return <>
@@ -71,6 +78,9 @@ export default function() {
     </Head>
     <div>
       {data.roomId}
+    </div>
+    <div>
+      <Messages messages={messages}/>
     </div>
     <div>
       <button onClick={async()=>{
