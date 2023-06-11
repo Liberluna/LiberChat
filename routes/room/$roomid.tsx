@@ -17,13 +17,10 @@ const connect = async ({ roomId }) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    data: JSON.stringify({
+    body: JSON.stringify({
       room: roomId,
-    })
+    }),
   })
-  alert(JSON.stringify({
-      room: roomId,
-    }))
   alert(await res.text())
   if(res.status !== 200){
     // Error
