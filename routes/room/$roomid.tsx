@@ -68,7 +68,8 @@ export default function() {
       if(!message){
         continue
       }
-      setMessages(messages.concat(message))
+      setMessages([...messages, "aa"])
+      alert(messages)
     }
   },[])
   return <>
