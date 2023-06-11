@@ -47,7 +47,9 @@ export default function() {
   const { data } = useData()
   
   useEffect(async ()=>{
-    for await (const message of getMessages()){
+    for await (const message of getMessages({
+      roomId: data.roomId,
+    })){
       alert(0)
     }
   },[])
