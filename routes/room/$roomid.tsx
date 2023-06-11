@@ -2,6 +2,7 @@ import { type Context } from "aleph/server"
 import { useData, Head } from "aleph/react"
 import { useEffect } from "react"
 import ky from "ky"
+import { type Message } from "~/system/chat/index.ts"
 
 export function data(req: Request, ctx: Context) {
   const url = new URL(req.url)
@@ -26,15 +27,23 @@ const connect = async ({ roomId }) => {
     return { error: "error" }
   }
   // OK
-  return { data: await res.json() }
+  return {
+    data: await res.json()
+  }
 }
 
+interface GetMessagesResult {
+  error: string
+  data: {
+    message: Message
+  }
+}
 async function *getMessages(options){
   const { roomId } = options
   while(true){
-    const result = await connect({
+    const result: GetMessagesResult = await connect({
       roomId,
-    })
+    }) as GetMessagesResult
     if(result.error){
       // エラーだった
       continue // リトライ
@@ -43,14 +52,16 @@ async function *getMessages(options){
     yield result
   }
 }
+
 export default function() {
   const { data } = useData()
   
   useEffect(async ()=>{
-    for await (const message of getMessages({
+    for await (const messageData of getMessages({
       roomId: data.roomId,
     })){
-      alert(0)
+      const { data } = messageData
+      alert(data)
     }
   },[])
   return <>
