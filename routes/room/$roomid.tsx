@@ -9,7 +9,7 @@ export function data(req: Request, ctx: Context) {
     roomid: url.pathname.split("/").at(-1),
   }
 }
-
+/*
 const connect = async () => {
   const { data } = useData()
   alert(data.roomid)
@@ -23,7 +23,7 @@ const connect = async () => {
       
     })
   })
-}
+}*/
 export default function() {
   const { data } = useData()
   
