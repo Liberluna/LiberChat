@@ -68,7 +68,7 @@ export default function() {
       if(!message){
         continue
       }
-      alert("res")
+      alert(JSON.stringify(message))
       setMessages([...messages, message])
     }
   },[])
