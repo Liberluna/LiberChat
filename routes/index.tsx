@@ -1,9 +1,15 @@
-import { Link } from "aleph/react"
-import Heads from '../components/Heads.tsx';
+import { Link, Head } from "aleph/react"
+//import Heads from '../components/Heads.tsx';
 
 export default function () {
   return <>
-    <Heads />
+    <Head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Liberchat</title>
+      <meta name="description" content="Liberchat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。">
+      <link rel="icon" href="/assets/icon.svg">
+    </Head>
     <div className="mx-10">
       <div className="text-center text-2xl">LiberChat</div>
       <div>LiberChatへようこそ！</div>
