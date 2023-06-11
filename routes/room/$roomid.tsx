@@ -28,6 +28,7 @@ export default function() {
   const { data } = useData()
   
   useEffect(()=>{
+    alert(0)
     connect()
   },[])
   return <>
