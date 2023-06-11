@@ -57,7 +57,7 @@ async function *getMessages(options){
 export default function() {
   const { data } = useData()
   
-  const [messages, setMessages] = useState([])
+  const [messageHistory, setMessageHistory] = useState([0])
   
   useEffect(async ()=>{
     for await (const messageData of getMessages({
@@ -68,8 +68,9 @@ export default function() {
       if(!message){
         continue
       }
-      alert(JSON.stringify([...messages, "aa"]))
-      setMessages([...messages, "aa"])
+      
+      setMessageHistory([...messageHistory, 0])
+      alert(messageHistory.join(" "))
     }
   },[])
   return <>
