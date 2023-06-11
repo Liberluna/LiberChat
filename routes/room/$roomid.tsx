@@ -1,9 +1,15 @@
 import { type Context } from "aleph/server"
+import { useData } from "aleph/react"
 
-export default function(req: Request, ctx: Context) {
-  console.log(req)
-  const url = new URL(req.url)
-  const roomId = url.pathname.split("/").at(-1)
+export function data(req: Request, ctx: Context) {
+  return { req, ctx }
+}
+export default function() {
+  const { data } = useData()
+  const { req, ctx } = data
+  
+  
+  const roomId = ctx.params.roomid
   return <>
     <div>
       This room name is
