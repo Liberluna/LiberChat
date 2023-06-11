@@ -8,7 +8,7 @@ export function GET (req: Request, ctx: Context) {
     start(controller) {
       timeoutId = setInterval(() => {
         // utf8でエンコード
-        const data = encoder.encode(`data: ${new Date()}\n\n`);
+        const data = new TextEncoder().encode(`data: ${new Date()}\n\n`);
         // 送信
         controller.enqueue(data);
       }, 1000); // 1秒おきに送信
