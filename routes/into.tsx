@@ -31,7 +31,7 @@ export default function() {
           <input placeholder="Room ID" className="border" />
         </div>
         <div>
-          <button className="btn">入室</button>
+          <button className="btn p-5 text-white bg-dark rd text-xl">入室</button>
         </div>
       </div>
     </div>
