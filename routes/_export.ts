@@ -8,6 +8,7 @@ import * as $3 from "./todos.tsx";
 import * as $4 from "./index.tsx";
 import * as $5 from "./socket/test.tsx";
 import * as $6 from "./socket/comet.ts";
+import * as $7 from "./room/$roomid.tsx";
 
 export default {
   "/_app": $0,
@@ -17,4 +18,5 @@ export default {
   "/": $4,
   "/socket/test": $5,
   "/socket/comet": $6,
+  "/room/:roomid": $7,
 };
