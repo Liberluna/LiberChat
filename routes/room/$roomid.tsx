@@ -22,7 +22,6 @@ const connect = async ({ roomId }) => {
       room: roomId,
     }),
   })
-  alert("resp")
   if(res.status !== 200){
     // Error
     return { error: "error" }
@@ -62,7 +61,7 @@ export default function() {
       roomId: data.roomId,
     })){
       const { data } = messageData
-      alert(data)
+      alert(JSON.stringify(data))
     }
   },[])
   return <>
