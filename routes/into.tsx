@@ -24,7 +24,7 @@ export default function() {
     if(name.replace(/[ ]/g) === ""){
       return alert("名前を空にすることはできません...")
     }
-    const url = `/chat/room/${roomId !== "" ? roomId : "global"}?userName=${encodeURI(name)}`
+    const url = `/room/${roomId !== "" ? roomId : "global"}?userName=${encodeURI(name)}`
     location.href = url
   }
   return <>
