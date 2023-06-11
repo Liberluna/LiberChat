@@ -21,6 +21,9 @@ const connect = async ({ roomId }) => {
       room: roomId,
     })
   })
+  alert(JSON.stringify({
+      room: roomId,
+    }))
   alert(await res.text())
   if(res.status !== 200){
     // Error
