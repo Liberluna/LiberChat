@@ -7,7 +7,7 @@ export function GET () {
       <h1>SSE TEST</h1>
       <script>
       alert("loaded")
-      const sse = new EventSource()
+      const sse = new EventSource("/socket/comet")
       sse.addEventListener("message", (e) => {
         alert(e.data)
       });
