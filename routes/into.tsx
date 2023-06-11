@@ -1,4 +1,21 @@
 export default function() {
+  const css = `
+      .btn:hover {
+        animation-name: pop;
+        animation-duration: 0.1s;
+      }
+      @keyframes pop {
+        0% {
+          transform: scale(1.0);
+        }
+        40% {
+          transform: scale(1.02);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    `
   return <>
     <div className="mx-10">
       <div className="text-center text-2xl">
@@ -18,6 +35,6 @@ export default function() {
         </div>
       </div>
     </div>
-
+    <style>{css}</style>
   </>
 }
