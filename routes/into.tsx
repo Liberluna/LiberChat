@@ -34,7 +34,7 @@ export default function() {
         <div className="my-5">
           <label>Name: </label>
           <input placeholder="name" className="border" value={name} onInput={(e)=>{
-            setRoomId(e.target.value)
+            setName(e.target.value)
           }}/>
         </div>
         <div className="my-5">
