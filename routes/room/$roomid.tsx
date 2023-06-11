@@ -3,7 +3,7 @@ import { useData, Head } from "aleph/react"
 import { useEffect, useState } from "react"
 import ky from "ky"
 import { type Message } from "~/system/chat/index.ts"
-import Messages from "~/components/chat/messages.ts"
+import Messages from "~/components/chat/messages.tsx"
 
 export function data(req: Request, ctx: Context) {
   const url = new URL(req.url)
