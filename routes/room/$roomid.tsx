@@ -10,9 +10,7 @@ export function data(req: Request, ctx: Context) {
   }
 }
 
-const connect = async (args) => {
-  const { roomId } = args
-  alert(roomId)
+const connect = async ({ roomId }) => {
   const res = await fetch("/socket/commet", {
     method: "POST",
     headers: {
@@ -22,19 +20,36 @@ const connect = async (args) => {
       room: roomId,
     })
   })
-  if(res.status === 200){
-    // OK
-    const json = await res.json()
+  if(res.status !== 200){
+    // Error
+    return { error: "error" }
   }
-  roomId(args)
+  // OK
+  return { data: await res.json() }
+}
+
+async function *getMessages(options){
+  const { roomId } = options
+  
+  while(true){
+    const result = await connect({
+      roomId,
+    })
+    if(result.error){
+      // エラーだった
+      continue // リトライ
+    }
+    // 正常
+    yield result
+  }
 }
 export default function() {
   const { data } = useData()
   
   useEffect(()=>{
-    connect({
-      roomId: data.roomId,
-    })
+    for(const message of getMessages){
+      alert(0)
+    }
   },[])
   return <>
     <div>
