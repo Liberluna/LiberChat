@@ -58,5 +58,10 @@ export default function() {
     <div>
       {data.roomId}
     </div>
+    <div>
+      <button onClick={()=>{
+        alert("btn")
+      }}>send</button>
+    </div>
   </>
 }
