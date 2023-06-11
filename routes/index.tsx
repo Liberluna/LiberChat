@@ -12,7 +12,7 @@ export default function () {
       <div>
         <div>さあ！始めよう！</div>
         <div className="text-center mx-auto">
-          <Link to="/into" className="rounded-lg drop-shadow-md text-white bg-slate-800">チャット開始！</div>
+          <Link to="/into" className="rounded-lg drop-shadow-md text-white bg-slate-800">チャット開始！</Link>
         </div>
       </div>
     </div>
