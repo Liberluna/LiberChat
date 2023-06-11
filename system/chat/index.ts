@@ -6,8 +6,14 @@ export interface Message {
   user: string
   room: string
 }
-export function waitRes () {
-  return new Promise(resolve => {
-    setTimeout(e=>resolve({hello:"world"}),100)
-  })
+class Listener {
+  constructor(room: string){
+    const kv = await Deno.openKv()
+    this.promise = new Promise((resolve) => {
+      
+    })
+  }
+  waitRes () {
+    
+  }
 }
