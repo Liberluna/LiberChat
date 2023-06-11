@@ -71,7 +71,8 @@ export default function() {
     }
   },[])
   useEffect(()=>{
-    setMessageHistory([...messageHistory, 0])
+    setMessageHistory([...messageHistory, 1])
+    setMessageHistory([...messageHistory, 2])
     alert(messageHistory.join(" "))
   }, [])
   return <>
