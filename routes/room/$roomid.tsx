@@ -1,5 +1,5 @@
 import { type Context } from "aleph/server"
-import { useData } from "aleph/react"
+import { useData, Head } from "aleph/react"
 import { useEffect } from "react"
 import ky from "ky"
 
@@ -21,7 +21,6 @@ const connect = async ({ roomId }) => {
       room: roomId,
     }),
   })
-  alert("resp")
   if(res.status !== 200){
     // Error
     return { error: "error" }
@@ -55,6 +54,9 @@ export default function() {
     }
   },[])
   return <>
+    <Head>
+      <title>{`#${data.roomId} | LiberChat`}</title>
+    </Head>
     <div>
       {data.roomId}
     </div>
