@@ -8,8 +8,8 @@ export default function() {
   const { data } = useData()
   const { req, ctx } = data
   
+  console.log(data)
   
-  const roomId = ctx.params.roomid
   return <>
     <div>
       This room name is
