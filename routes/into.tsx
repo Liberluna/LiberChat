@@ -50,7 +50,7 @@ export default function() {
       <div>
         <div className="text-lg">Tips:</div>
         <div>Room idを空にすると、自由な、オープンルームが表示されます。</div>
-      <div>
+      </div>
     </div>
     <style>{css}</style>
   </>
