@@ -47,7 +47,7 @@ export default function() {
   const { data } = useData()
   
   useEffect(()=>{
-    for(const message of getMessages){
+    for await (const message of getMessages()){
       alert(0)
     }
   },[])
