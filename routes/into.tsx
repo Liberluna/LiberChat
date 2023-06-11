@@ -21,9 +21,8 @@ export default function() {
   const [name, setName] = useState("")
   const [roomId, setRoomId] = useState("")
   const intoRoom = () => {
-    
-    const url = `/chat/room/${roomId}?userName`
-    alert(url)
+    const url = `/chat/room/${roomId !== "" ? roomId : "global"}?userName`
+    location.href = url
   }
   return <>
     <div className="mx-10">
@@ -42,12 +41,16 @@ export default function() {
           <input placeholder="Room ID" className="border" value={roomId} onInput={(e)=>{
             setRoomId(e.target.value.replace(/[^a-zA-Z0-9]/g,"").toLowerCase())
           }} />
-          <span>半角英数字</span>
+          <span className="ml-2">半角英数字</span>
         </div>
         <div>
           <button className="btn p-5 text-white bg-dark rd text-xl" onClick={intoRoom}>入室</button>
         </div>
       </div>
+      <div>
+        <div className="text-lg">Tips:</div>
+        <div>Room idを空にすると、自由な、オープンルームが表示されます。</div>
+      <div>
     </div>
     <style>{css}</style>
   </>
