@@ -59,8 +59,13 @@ export default function() {
       {data.roomId}
     </div>
     <div>
-      <button onClick={()=>{
-        alert("btn")
+      <button onClick={async()=>{
+        alert(await ky.post("https://localhost:8000/socket/comet", {
+          json: {
+            message: "Aaa",
+            room: "a",
+          }
+        }).text());
       }}>send</button>
     </div>
   </>
