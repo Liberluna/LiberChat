@@ -24,6 +24,7 @@ export async function POST (req: Request, ctx: Context) {
     })
   }
   
+  return res.json({"a":"a"})
   return await new Promise((resolve) => {
     resolves[room].push(resolve)
   })
