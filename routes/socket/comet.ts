@@ -4,7 +4,6 @@ import * as res from "~/utils/res/index.ts"
 const resolves = []
 
 export async function POST (req: Request, ctx: Context) {
-  return new Response(await req.text())
   const data = await req.json()
   
   const room: string = data.room
