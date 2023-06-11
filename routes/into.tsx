@@ -42,9 +42,10 @@ export default function() {
           <input placeholder="Room ID" className="border" value={roomId} onInput={(e)=>{
             setRoomId(e.target.value.replace(/[^a-zA-Z0-9]/g,"").toLowerCase())
           }} />
+          <span>半角英数字</span>
         </div>
         <div>
-          <button className="btn p-5 text-white bg-dark rd text-xl">入室</button>
+          <button className="btn p-5 text-white bg-dark rd text-xl" onClick={intoRoom}>入室</button>
         </div>
       </div>
     </div>
