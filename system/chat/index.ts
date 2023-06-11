@@ -24,11 +24,13 @@ export function from (msg: Message) {
   callbacks[msg.room] = []
 }
 /**
- * メッセージの受け取りをCallback
+ * メッセージがくるまでWait
  */
-export function setCallback(room: string, callback: Callback) {
-  if(!callbacks[room]){
-    callbacks[room] = []
-  }
-  callbacks[room].push(callback)
+export function getMessage(room: string) {
+  return new Promise((resolve) => {
+    if(!callbacks[room]){
+      callbacks[room] = []
+    }
+    callbacks[room].push(resolve)
+  })
 }
