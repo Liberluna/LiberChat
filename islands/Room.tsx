@@ -57,7 +57,6 @@ export default class extends Component{
     return <>
       <input ref={inp} placeholder="なにか伝えたいことは...?" class="border"/>
       <button onClick={()=>{
-        console.log(inp.current)
         ky.post("/socket/comet", {
           json: {
             room: this.byProps.roomId,
@@ -77,7 +76,6 @@ export default class extends Component{
           this.setState({
             messages: [...this.state.messages, message.data.message],
           })
-          alert(this.state.messages.join(" "))
         })()
       }
     })()
