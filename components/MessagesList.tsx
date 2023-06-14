@@ -12,8 +12,8 @@ export default function MessageList(props: Props) {
           range={index}
           className="block w-full max-w-sm p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
-          <div className="mb-2 tracking-tight text-gray-400 dark:text-white">無名のLiberさん</div>
-          <p className="mb-2 font-bold tracking-tight text-gray-600 dark:text-white">
+          <div className="mb-2 tracking-tight text-gray-600 dark:text-white">無名のLiberさん</div>
+          <p className="mb-2 font-bold tracking-tight text-gray-700 dark:text-white">
             {message}
           </p>
         </div>
