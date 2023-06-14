@@ -4,13 +4,13 @@ export default function () {
   return <>
     <Head>
       <title>Liberchat</title>
-      <meta name="description" content="Liberchat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
+      <meta name="description" content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
       <link rel="icon" href="/assets/icon.svg" />
     </Head>
     <div className="mx-10">
       <div className="text-center text-2xl">LiberChat</div>
       <div>LiberChatへようこそ！</div>
-      <div>LiberChatは、オープンソースのチャットサイトです。</div>
+      <div>LiberChatは、オープンソースのオンラインチャットサービスです。</div>
       <div>
         <div>さあ！始めよう！</div>
         <div className="text-center mx-auto">
