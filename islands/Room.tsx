@@ -66,7 +66,7 @@ export default class extends Component{
         })
       }}
         class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-        >Send :)</button>
+        >Send</button>
       </div>
       <div>
         <MessagesList messages={this.state.messages} />
