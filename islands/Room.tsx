@@ -70,7 +70,10 @@ export default class extends Component{
     (async()=>{
       for await (const message of getMessages({ roomId: this.byProps.roomId })){
         (async()=>{
-          await alert(message.data.message)
+          this.setState({
+            messages: [...this.state.messages, message.data.message],
+          })
+          alert(this.state.messages.join(" "))
         })()
       }
     })()
