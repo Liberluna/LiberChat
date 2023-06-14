@@ -55,11 +55,11 @@ export default class extends Component{
   render(props?: Readonly<Attributes & { children?: ComponentChildren; ref?: Ref<any> | undefined; }> | undefined, state?: Readonly<{}> | undefined, context?: any): ComponentChild {
     const inp = useRef<HTMLInputElement>(null)
     return <>
-      <div className="flex">
+      <div className="flex pl-4">
       <input ref={inp} placeholder="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
       <button onClick={() => {
               if (inp.current.value === "") {
-                alert("送信できませんでした。");
+                alert("送信できませんでした。 送信内容が空の可能性が有ります。");
               } else {
                 ky.post("/socket/comet", {
                   json: {
