@@ -57,14 +57,22 @@ export default class extends Component{
     return <>
       <div className="flex">
       <input ref={inp} placeholder="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
-      <button onClick={()=>{
-        ky.post("/socket/comet", {
-          json: {
-            room: this.byProps.roomId,
-            message: inp.current?.value
-          }
-        })
-      }}
+      <button onClick={() => {
+              if (inp.current.value === "") {
+                alert("送信できませんでした。");
+              } else {
+                ky.post("/socket/comet", {
+                  json: {
+                    room: this.byProps.roomId,
+                    message: inp.current?.value,
+                  },
+                });
+              }
+
+              if (inp.current) {
+                inp.current.value = "";
+              } // inputBoxを空にする
+            }}
         class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
         >Send</button>
       </div>
