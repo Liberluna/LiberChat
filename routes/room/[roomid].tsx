@@ -4,7 +4,7 @@ export default function (props: PageProps) {
   const { roomid } = props.params
 
   return <>
-    <div className="bg-blue-800 w-full h-screen">
+    <div className="bg-gray-800 w-full h-screen">
       <Room roomId={roomid} />
     </div>
   </>
