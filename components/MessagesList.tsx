@@ -6,6 +6,6 @@ export interface Props {
 
 export default function(props: Props){
   return props.messages.map((message) => {
-    return <div>{message}</div>
+    return <div class="mt-5 ml-5">{message}</div>
   })
 }
