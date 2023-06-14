@@ -6,6 +6,9 @@ export default function (props: PageProps) {
 
   return <>
     <Head>
+      <!--
+        (c) : Liberluna
+      -->
       <title>Room : {roomid} | Liberchat </title>
       <meta name="description" content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
       <link rel="icon" href="/static/logo.svg" />
