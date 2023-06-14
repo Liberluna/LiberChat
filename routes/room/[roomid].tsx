@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts"
 import { Head } from "$fresh/runtime.ts"
 import Room from "~/islands/Room.tsx"
-import "~/static/Native.css";
+import "~/routes/static/Native.css";
 
 export default function (props: PageProps) {
   const { roomid } = props.params
