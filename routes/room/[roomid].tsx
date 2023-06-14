@@ -8,7 +8,7 @@ export default function (props: PageProps) {
     <Head>
       <title>Room : {roomid} | Liberchat </title>
       <meta name="description" content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
-      <link rel="icon" href="/assets/icon.svg" />
+      <link rel="icon" href="/static/logo.svg" />
     </Head>
     <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden">
       <Room roomId={roomid}/>
