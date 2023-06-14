@@ -5,7 +5,7 @@ export default function (props: PageProps) {
 
   return <>
     <div className="bg-gray-800 w-full h-screen">
-      <Room roomId={roomid} />
+      <Room roomId={roomid} className="pl-4"/>
     </div>
   </>
 }
