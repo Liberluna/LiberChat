@@ -3,6 +3,7 @@ import { useRef } from "preact/hooks"
 import ky from "ky"
 import { Attributes, Component, ComponentChild, ComponentChildren, Ref } from "preact"
 import { type Message } from "~/core/chat/index.ts"
+import MessagesList from "~/components/MessagesList.tsx"
 
 interface Props {
   roomId: string
@@ -56,7 +57,6 @@ export default class extends Component{
     return <>
       <input ref={inp} placeholder="なにか伝えたいことは...?" class="border"/>
       <button onClick={()=>{
-        console.log(inp.current)
         ky.post("/socket/comet", {
           json: {
             room: this.byProps.roomId,
@@ -64,13 +64,18 @@ export default class extends Component{
           }
         })
       }}>Send :)</button>
+      <div>
+        <MessagesList messages={this.state.messages} />
+      </div>
     </>
   }
   componentDidMount(): void {
     (async()=>{
       for await (const message of getMessages({ roomId: this.byProps.roomId })){
         (async()=>{
-          await alert(message.data.message)
+          this.setState({
+            messages: [...this.state.messages, message.data.message],
+          })
         })()
       }
     })()
