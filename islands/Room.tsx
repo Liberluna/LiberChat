@@ -3,6 +3,7 @@ import { useRef } from "preact/hooks"
 import ky from "ky"
 import { Attributes, Component, ComponentChild, ComponentChildren, Ref } from "preact"
 import { type Message } from "~/core/chat/index.ts"
+import MessagesList from "~/components/MessagesList.tsx"
 
 interface Props {
   roomId: string
@@ -64,6 +65,9 @@ export default class extends Component{
           }
         })
       }}>Send :)</button>
+      <div>
+        <MessagesList messages={this.state.messages} />
+      </div>
     </>
   }
   componentDidMount(): void {
