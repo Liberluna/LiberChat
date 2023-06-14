@@ -6,7 +6,7 @@ export default function (props: PageProps) {
 
   return <>
     <Head>
-      <title>Liberchat room:{roomid}</title>
+      <title>Room : {roomid}  Liberchat</title>
     </Head>
     <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden">
       <Room roomId={roomid}/>
