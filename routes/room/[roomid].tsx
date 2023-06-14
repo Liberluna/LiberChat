@@ -11,27 +11,6 @@ export default function (props: PageProps) {
     </Head>
     <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden">
       <Room roomId={roomid}/>
-      <style>
-         ::-webkit-scrollbar-track {
-            background-color: #f1f1f1;
-         }
-
-         ::-webkit-scrollbar-thumb {
-            background-color: #888;
-       　}
-
-         ::-webkit-scrollbar-thumb:hover {
-            background-color: #555;
-         }
-
-         ::-webkit-scrollbar-corner {
-            background-color: #f1f1f1;
-         }
-
-         ::-webkit-scrollbar-resizer {
-            background-color: #f1f1f1;
-         }
-      </style>
     </div>
   </>
 }
