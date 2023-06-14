@@ -63,7 +63,9 @@ export default class extends Component{
             message: inp.current?.value
           }
         })
-      }}>Send :)</button>
+      }}
+        class="ml-5 border"
+        >Send :)</button>
       <div>
         <MessagesList messages={this.state.messages} />
       </div>
