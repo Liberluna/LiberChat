@@ -1,5 +1,4 @@
-import { Head, Link } from "aleph/react"
-//import Heads from '../components/Heads.tsx';
+import { Head } from "$fresh/runtime.ts"
 
 export default function () {
   return <>
@@ -15,7 +14,7 @@ export default function () {
       <div>
         <div>さあ！始めよう！</div>
         <div className="text-center mx-auto">
-          <Link to="/into" className="rounded-lg drop-shadow-md text-white bg-slate-800">チャット開始！</Link>
+          <a href="/into" className="rounded-lg drop-shadow-md text-white bg-slate-800">チャット開始！</a>
         </div>
       </div>
     </div>
