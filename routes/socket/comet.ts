@@ -1,17 +1,15 @@
-import { Context } from "aleph/server"
-import * as res from "~/utils/res/index.ts"
+import * as res from "resx"
+import { HandlerContext } from "$fresh/server.ts";
 
 const resolves: Record<string,resolve[]> = {}
 
-type resolve = {
-  (): Promise<void>;
-  <T>(value: T): Promise<Awaited<T>>;
-  <T>(value: T | PromiseLike<T>): Promise<Awaited<T>>;
-}
+type resolve = (...any: any) => void
 
-export async function POST (req: Request, ctx: Context) {
+export async function handler (req: Request, _ctx: HandlerContext) {
+  if(req.method !== "POST"){
+    return new Response("Method not allowed")
+  }
   const data = await req.json()
-  
   const room: string = data.room
   
   if(!resolves[room]){
@@ -24,11 +22,11 @@ export async function POST (req: Request, ctx: Context) {
       console.log(room,"disconn")
       resolve(res.json({
         message: data.message
-      }))
+      }, {}))
     }
     return res.json({
       status: "ok!"
-    })
+    }, {})
   }
   
   //return res.json({"a":"a"})
