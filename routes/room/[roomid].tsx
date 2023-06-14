@@ -4,6 +4,8 @@ export default function (props: PageProps) {
   const { roomid } = props.params
 
   return <>
-    <Room roomId={roomid} />
+    <div className="bg-blue-200">
+      <Room roomId={roomid} />
+    </div>
   </>
 }
