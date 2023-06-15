@@ -125,7 +125,9 @@ export default class extends Component {
     );
   }
   init(){
-    alert(window.socket)
+    this.setState({
+      socket: window.socket,
+    })
   }
   componentDidMount(): void {
     (async () => {
