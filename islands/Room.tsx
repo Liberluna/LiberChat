@@ -101,7 +101,11 @@ export default class extends Component {
                   message: inp.current?.value,
                 },
               });
-              inp.current?.value = "";
+              if(inp.current){
+                // 文字の消去
+                inp.current.value = "";
+              }
+              alert("x")
             }}
             class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
           >
