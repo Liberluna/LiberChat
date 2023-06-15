@@ -5,7 +5,7 @@ export interface Props {
 }
 
 export default function MessageList(props: Props) {
-  const max = 140
+  const max = 200
   return (
     <div>
       {props.messages.map((message, index) => (
