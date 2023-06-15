@@ -133,11 +133,9 @@ export default class extends Component {
       socket: window.socket,
     })
     try{
-      alert(1)
-      alert(0)
-      alert(this.state.socket.on("message", data => {
-        alert(JSON.stringify(data))
-      }))
+      setTimeout(()=>{
+        console.log(this.state.socket)
+      },7000)
     }catch(e){   
       document.body.innerHTML = `${e.name}: ${e.message}\n\n${e.stack}`.replaceAll("\n", "<br>")
     }
