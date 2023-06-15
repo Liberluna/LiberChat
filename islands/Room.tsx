@@ -101,14 +101,13 @@ export default class extends Component {
                   message: inp.current?.value,
                 },
               });
+              this.state.socket.emit("message", {
+                message: inp.current?.value,
+              })
               if(inp.current){
                 // 文字の消去
                 inp.current.value = "";
               }
-              this.state.socket.emit("message", {
-                message: inp.current?.value,
-              })
-              alert(inp.current?.value)
             }}
             class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
           >
