@@ -82,8 +82,8 @@ export default class extends Component{
           key="join" 
           className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
          >
-         <p className="mb-2 font-bold tracking-tight text-gray-800 dark:text-white break-words">
-            ---Join---
+         <p className="mb-2 font-bold tracking-tight text-gray-800 dark:text-white break-words text-center">
+            - - - - Join - - - -
          </p>
         </div> <c style="display: none">暫定メッセージ</c>
         
