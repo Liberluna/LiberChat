@@ -133,6 +133,7 @@ export default class extends Component {
       socket: window.socket,
     })
     try{
+      aler(Object.keys(this.state.socket))
       alert(this.state.socket.on("message", data => {
         alert(JSON.stringify(data))
       }))
