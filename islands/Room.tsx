@@ -70,13 +70,13 @@ export default class extends Component{
               }
 
               if (inp.current) {
-                inp.current.value = "";
+                inp.current.value = ""
               } // inputBoxを空にする
             }}
         class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
         >Send</button>
       </div>
-      <div>
+      <div className="h-5/6 overflow-y-scroll">
         <MessagesList messages={this.state.messages} />
       </div>
     </>
