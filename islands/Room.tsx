@@ -100,7 +100,6 @@ export default class extends Component {
                     message: inp.current?.value,
                   },
                 });
-                console.log(this.state.socket.emit("message","a"))
               }
               if (inp.current) {
                 inp.current.value = "";
@@ -126,10 +125,7 @@ export default class extends Component {
     );
   }
   init(){
-    const socket = io("https://liberchat-api.nakasyou.repl.co/")
-    this.setState({
-      socket: socket,
-    })
+    alert(window.socket)
   }
   componentDidMount(): void {
     (async () => {
