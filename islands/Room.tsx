@@ -129,6 +129,7 @@ export default class extends Component {
     );
   }
   init(){
+    alert("init")
     this.setState({
       socket: window.socket,
     })
