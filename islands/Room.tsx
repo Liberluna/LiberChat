@@ -93,17 +93,15 @@ export default class extends Component {
                 alert(
                   "送信できませんでした。 送信内容が空の可能性が有ります。",
                 );
-              } else {
-                ky.post("/socket/comet", {
-                  json: {
-                    room: this.byProps.roomId,
-                    message: inp.current?.value,
-                  },
-                });
+                return;
               }
-              if (inp.current) {
-                inp.current.value = "";
-              } // inputBoxを空にする
+              ky.post("/socket/comet", {
+                json: {
+                  room: this.byProps.roomId,
+                  message: inp.current?.value,
+                },
+              });
+              inp.current?.value = "";
             }}
             class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
           >
