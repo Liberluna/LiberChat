@@ -42,7 +42,7 @@ export default function (props: PageProps) {
       <style>
         {css}
       </style>
-      <script src="https://liberchat-api.nakasyou.repl.co/socket.io/socket.io.js"></script>
+      <script src="https://cdn.socket.io/socket.io-2.3.0.js"></script>
       <script src="/socket-init.js"></script>
     </Head>
     <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden">
