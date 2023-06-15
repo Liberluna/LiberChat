@@ -34,9 +34,7 @@ export default function (props: PageProps) {
   border-radius: 8px;
   opacity: 0.8;
 }
-
   `
-  
   return <>
     <Head>
       <title>Room : {roomid} | Liberchat </title>
@@ -44,6 +42,8 @@ export default function (props: PageProps) {
       <style>
         {css}
       </style>
+      <script src="https://liberchat-api.nakasyou.repl.co/socket.io/socket.io.js"></script>
+      <script src="/socket-init.js"></script>
     </Head>
     <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden">
       <Room roomId={roomid}/>
