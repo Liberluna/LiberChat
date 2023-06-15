@@ -132,6 +132,9 @@ export default class extends Component {
     this.setState({
       socket: window.socket,
     })
+    this.state.socket.on("message", data => {
+      alert(JSON.stringify(data))
+    })
   }
   componentDidMount(): void {
     (async () => {
