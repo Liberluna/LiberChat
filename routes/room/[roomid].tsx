@@ -5,24 +5,34 @@ import Room from "~/islands/Room.tsx"
 export default function (props: PageProps) {
   const { roomid } = props.params
   const css = `
-  ::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #888;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+  background-color: #aaa;
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: #f1f1f1;
+  background-color: #333;
+  border-radius: 8px;
+  opacity: 0.8;
 }
 
 ::-webkit-scrollbar-resizer {
-  background-color: #f1f1f1;
+  background-color: #333;
+  border-radius: 8px;
+  opacity: 0.8;
 }
 
   `
