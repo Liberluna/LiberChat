@@ -129,10 +129,10 @@ export default class extends Component {
     );
   }
   init(){
-    alert("init")
     this.setState({
       socket: window.socket,
     })
+    alert("setState")
     alert(this.state.socket.on("message", data => {
       alert(JSON.stringify(data))
     }))
