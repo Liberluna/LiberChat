@@ -132,10 +132,13 @@ export default class extends Component {
     this.setState({
       socket: window.socket,
     })
-    alert(this.state.socket.on("message", data => {
-      alert(JSON.stringify(data))
-    }))
-    alert("on")
+    try{
+      alert(this.state.socket.on("message", data => {
+        alert(JSON.stringify(data))
+      }))
+    }catch(e){   
+      document.body.innerHTML = `${e.name}: ${e.message}\n\n${e.stack}`.replaceAll("\n", "<br>")
+    }
   }
   componentDidMount(): void {
     (async () => {
