@@ -12,7 +12,7 @@ export default function JoinPage() {
         />
       </Head>
       <div className="mx-10 dark:bg-gray-100">
-        <img alt="LiberChat" src="https://github.com/Liberluna/L" className="mx-auto"/>
+        <img alt="LiberChat" src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg" className="mx-auto text-center"/>
         <div className="text-center text-2xl">LiberChat</div>
         <div>LiberChatへようこそ！</div>
         <div>LiberChatは、オープンソースのオンラインチャットサービスです。</div>
