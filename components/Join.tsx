@@ -10,7 +10,7 @@ export default function () {
       <div className="text-center text-2xl">LiberChat Join</div>
       <label for="room">Room</label>
       <input type="text" id="room" className="border" placeholder="main" />
-        <button onClick="join()" className="border">Join</button>
+        <button onClick={join} className="border">Join</button>
     </div>
   </>
 }
