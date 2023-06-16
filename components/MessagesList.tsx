@@ -1,16 +1,17 @@
 import { type Message } from "~/core/chat/index.ts";
 import * as dateFns from "date-fns";
+import DoNotUseWords from "./message/disabled.ts";
 
 export interface Props {
   messages: Message[];
 }
 
 export default function MessageList(props: Props) {
+  
   return (
     <div>
       {props.messages.map((message, index) => {
         const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
-        const DoNotUseWords: string[] = ["唐澤貴洋殺す", "ポチンチン"];
         const SysMsg = "**システムにより伏字になりました**"; //伏字にしたときに置き換えられる言葉
 
         if (DoNotUseWords.includes(message.body)) {
