@@ -10,7 +10,7 @@ import {
 } from "preact";
 import { type Message } from "~/core/chat/index.ts";
 import MessagesList from "~/components/MessagesList.tsx";
-import { io } from "socket.io-client"
+import { getIO } from "~/core/socketio/io.ts"
 
 interface Props {
   roomId: string;
@@ -95,14 +95,8 @@ export default class extends Component {
                 );
                 return;
               }
-              ky.post("/socket/comet", {
-                json: {
-                  room: this.byProps.roomId,
-                  message: inp.current?.value,
-                },
-              });
               this.state.socket.emit("message", {
-                message: inp.current?.value,
+                body: inp.current?.value,
               })
               if(inp.current){
                 // 文字の消去
@@ -128,27 +122,27 @@ export default class extends Component {
       </>
     );
   }
-  init(){
+  async init(){
+    const io = await getIO()
+    const socket = io("https://liberchat-api.nakasyou.repl.co/")
     this.setState({
-      socket: window.socket,
+      socket: socket,
     })
-    try{
-      setTimeout(()=>{
-        console.log(this.state.socket)
-      },7000)
-    }catch(e){   
-      document.body.innerHTML = `${e.name}: ${e.message}\n\n${e.stack}`.replaceAll("\n", "<br>")
-    }
+    socket.on("message", (data)=>{
+      this.addMessage({
+        user: "Anonymous",
+        type: "text",
+        body: data.body,
+        room: data.room
+      })
+    })
+  }
+  addMessage(message: Message) {
+    this.setState({
+      messages: [...this.state.messages, message],
+    })
   }
   componentDidMount(): void {
-    (async () => {
-      for await (
-        const message of getMessages({ roomId: this.byProps.roomId })
-      ) {
-        this.setState({
-          messages: [...this.state.messages, message.data.message],
-        });
-      }
-    })();
+
   }
 }
