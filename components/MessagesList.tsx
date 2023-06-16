@@ -11,7 +11,7 @@ export default function MessageList(props: Props) {
       {props.messages.map((message, index) => {
         const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
         const DoNotUseWords: string[] = ["唐澤貴洋殺す", "ポチンチン"];
-        const SysMsg = "**伏字**"; //伏字にしたときに置き換えられる言葉
+        const SysMsg = "*<span class='font-bold text-red-500'>**システムにより伏字になりました**</span>"; //伏字にしたときに置き換えられる言葉
 
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
