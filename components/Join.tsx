@@ -4,11 +4,11 @@ export default function Join() {
      const [room, setRoom] = useState("");
 
      const join = () => {
-          window.location.href = "https://liberchat.deno.dev/room/" + room;
+          window.location.href = "https://liberchat.deno.dev/room/" + room; //くっつける
      };
 
      const handleChange = (e) => {
-          setRoom(e.target.value);
+          setRoom(e.target.value); //roomと同期
      };
 
      return (
