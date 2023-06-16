@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "preact";
 
 export default function Join() {
      const [room, setRoom] = useState("");
