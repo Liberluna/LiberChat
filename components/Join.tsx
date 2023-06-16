@@ -1,4 +1,4 @@
-import { useState } from "/react";
+import { useState } from "react";
 
 export default function Join() {
   const [room, setRoom] = useState(""); //room <=> setRoom
