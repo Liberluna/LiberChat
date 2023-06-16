@@ -12,6 +12,14 @@ export default function MessageList(props: Props) {
       {
         props.messages.map((message, index) => {
           const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd")
+          const DoNotUseWords: string[] = ["唐澤貴洋殺す","ポチンチン"];
+
+          if(DoNotUseWords.includes(message.body)){
+            for (let i = 0; i < DoNotUseWords.length; i++){
+              message.body.replaceAll(DoNotUseWords[i], "");
+            }
+          }
+
           return <div
             key={index} 
             className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
