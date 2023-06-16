@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export default function () {
+export default function Join() {
   const [room, setRoom] = useState("");
   const history = useHistory();
 
   const join = () => {
-    history.push("/room/" + room);
+    history.push("/room/" + room); ///room/valに飛ぶ
   };
-  
-  const changeVal = (e) => setRoom(e.target.value);
 
   return (
     <div className="mx-10">
@@ -21,7 +19,7 @@ export default function () {
         className="border"
         placeholder="main"
         value={room}
-        onChange={changeVal}
+        onChange={(e) => setRoom(e.target.value)}　
       />
       <button onClick={join} className="border">
         Join
