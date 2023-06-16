@@ -11,6 +11,8 @@ export default function Join() {
      const handleChange = (e) => {
           setRoom(e.target.value); //roomと同期
      };
+     
+     window.console.log("Welcome to Liberchat!"); //test
 
      return (
           <div>
