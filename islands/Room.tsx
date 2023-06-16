@@ -133,7 +133,8 @@ export default class extends Component {
         user: "Anonymous",
         type: "text",
         body: data.body,
-        room: data.room
+        room: data.room,
+        date: new Date(),
       })
     })
   }
