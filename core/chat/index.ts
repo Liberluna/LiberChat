@@ -3,4 +3,5 @@ export interface Message {
   type: "text" | "enter"
   body: string
   room: string
+  date: Date
 }

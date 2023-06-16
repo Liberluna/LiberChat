@@ -11,6 +11,8 @@
     "$std/": "https://deno.land/std@0.187.0/",
     "resx": "https://deno.land/x/resx@0.1.3/mod.ts",
     "ky": "https://esm.sh/ky@0.33.3",
-    "~/": "./"
+    "~/": "./",
+    "socket.io-client": "https://cdn.socket.io/4.4.1/socket.io.esm.min.js",
+    "date-fns": "https://esm.sh/date-fns@2.30.0"
   }
 }
