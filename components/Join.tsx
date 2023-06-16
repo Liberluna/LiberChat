@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 
 export default function Join() {
-  const [room, setRoom] = useState("");
-  const history = useHistory();
+  const [room, setRoom] = useState(""); //room <=> setRoom
 
   const join = () => {
-    history.push("/room/" + room); ///room/valに飛ぶ
+    window.location.href = "https://liberchat.deno.dev/room/" + room; //urlにくっつける
+  };
+
+  const handleChange = (e) => {
+    setRoom(e.target.value);
   };
 
   return (
@@ -19,7 +21,7 @@ export default function Join() {
         className="border"
         placeholder="main"
         value={room}
-        onChange={(e) => setRoom(e.target.value)}　
+        onChange={handleChange}
       />
       <button onClick={join} className="border">
         Join
