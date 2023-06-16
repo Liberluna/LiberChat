@@ -10,13 +10,13 @@ export default function MessageList(props: Props) {
   const url = new URL(window.location.href);
   const roomId = url.pathname.split("/")[2]; // domain/room/{roomId}
 
-  const filteredMessages = props.messages.filter(
+  const fillMessages = props.messages.filter(
     (message) => message.room === roomId
-  );
+  ); //stack
 
   return (
     <div>
-      {filteredMessages.map((message, index) => {
+      {fillMessages.map((message, index) => {
         const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
         let body = message.body;
 
