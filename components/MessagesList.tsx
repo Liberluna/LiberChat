@@ -11,7 +11,7 @@ export default function MessageList(props: Props) {
     <div>
       {
         props.messages.map((message, index) => {
-          const dateText = dateFns.format(message.date, "HH:MM:ss yyyy/mm/dd")
+          const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd")
           return <div
             key={index} 
             className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
