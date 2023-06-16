@@ -1,0 +1,1 @@
+window.socket = io("https://liberchat-api.nakasyou.repl.co/")

@@ -1,19 +1,25 @@
-import { Link } from "aleph/react"
-import Heads from '../components/Heads.tsx';
+import { Head } from "$fresh/runtime.ts";
+import Join from "~/islands/Join.tsx";
 
-export default function () {
-  return <>
-    <Heads />
-    <div className="mx-10">
-      <div className="text-center text-2xl">LiberChat</div>
-      <div>LiberChatへようこそ！</div>
-      <div>LiberChatは、オープンソースのチャットサイトです。</div>
-      <div>
-        <div>さあ！始めよう！</div>
-        <div className="text-center mx-auto">
-          <Link to="/into" className="rounded-lg drop-shadow-md text-white bg-slate-800">チャット開始！</Link>
+export default function JoinPage() {
+  return (
+    <>
+      <Head>
+        <title>Liberchat</title>
+        <meta
+          name="description"
+          content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。"
+        />
+      </Head>
+      <div className="mx-10">
+        <div className="text-center text-2xl">LiberChat</div>
+        <div>LiberChatへようこそ！</div>
+        <div>LiberChatは、オープンソースのオンラインチャットサービスです。</div>
+        <div>
+          <div>さあ！始めよう！</div>
         </div>
+        <Join />
       </div>
-    </div>
-  </>
+    </>
+  );
 }

@@ -1,5 +1,8 @@
 {
   "deno.enable": true,
   "deno.lint": true,
-  "deno.config": "./deno.json"
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  }
 }
