@@ -1,4 +1,5 @@
 import { Head } from "$fresh/runtime.ts"
+import Join from "~/components/Join.tsx"
 
 export default function () {
   return <>
@@ -12,10 +13,9 @@ export default function () {
       <div>LiberChatは、オープンソースのオンラインチャットサービスです。</div>
       <div>
         <div>さあ！始めよう！</div>
-        <div className="text-center mx-auto">
-          <a href="/into" className="rounded-lg drop-shadow-md text-white bg-slate-800">チャット開始！</a>
-        </div>
       </div>
+      
+      <Join />
     </div>
   </>
 }
