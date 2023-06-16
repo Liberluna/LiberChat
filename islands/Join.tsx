@@ -2,8 +2,14 @@ import { useRef } from "preact/hooks";
 
 export default function() {
   const inputRef = useRef<HTMLInputElement>(null);
+  
   const join = () => {
-    window.location.href = "https://liberchat.deno.dev/room/" + inputRef.current.value; //くっつける
+    const id = inputRef.current.value;
+    if (id == "" || id == null) {
+      window.alert("入力値が空の可能性が有ります。") 
+    }else {
+      window.location.href = "https://liberchat.deno.dev/room/" + id; //くっつける
+    }
   }
      
      return (
