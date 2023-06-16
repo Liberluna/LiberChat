@@ -2,7 +2,7 @@
 import { Head } from "$fresh/runtime.ts";
 
 export default function DevPage() {
-  //パスワード機能
+  //パスワード機能 伏字管理 ログ 任意のルーム監視
   return (
     <>
       <Head>
