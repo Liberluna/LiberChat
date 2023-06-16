@@ -13,12 +13,20 @@ export default function JoinPage() {
       </Head>
       <div className="bg-gray-800 w-full h-screen text-white flex flex-col">
         <h1 className="hidden">LiberChat</h1>
-        <img src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/logo.svg" alt="Logo" className="h-20"/>
+        <img
+          src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
+          alt="Logo"
+          className="h-20"
+        />
         <div className="text-center mt-8">LiberChatへようこそ！</div>
-        <div className="text-center">LiberChatはオープンソースのリアルタイムチャットサービスです。</div>
-        <div className="text-center"><a href="https://github.com/Liberluna/" className="underline">Liberluna</a>により開発されています。</div>
         <div className="text-center">
-          <div>さあ！始めよう！</div>
+          LiberChatはオープンソースのリアルタイムチャットサービスです。
+        </div>
+        <div className="text-center">
+          <a href="https://github.com/Liberluna/" className="underline">
+            Liberluna
+          </a>
+          により開発されています。
         </div>
         <div className="text-center mt-5">
           <Join />
