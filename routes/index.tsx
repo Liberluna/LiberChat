@@ -1,5 +1,5 @@
 import { Head } from "$fresh/runtime.ts"
-import Join from "~/components/Join.tsx"
+import Join from "~/islands/Join.tsx"
 
 export default function () {
   return <>
