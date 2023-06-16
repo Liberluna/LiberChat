@@ -7,7 +7,7 @@ export interface Props {
 }
 
 export default function MessageList(props: Props) {
-  const url = new URL(window.location.href);
+  const url = new URL("https://liberchat.deno.dev/room/a");
   const roomId = url.pathname.split("/")[2]; // domain/room/{roomId}
 
   const filteredMessages = props.messages.filter(
