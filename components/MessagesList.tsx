@@ -7,9 +7,8 @@ export interface Props {
 }
 
 export default function MessageList(props: Props) {
-
   const url = new URL(window.location.href);
-  const roomId = url.pathname.split("/")[2];
+  const roomId = url.pathname.split("/")[2]; // domain/room/{roomId}
   const roomHere = roomId;
 
   return (
@@ -17,10 +16,12 @@ export default function MessageList(props: Props) {
       {props.messages.map((message, index) => {
         const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
 
-        if (
-          message.room != roomHere
-        ) {
-          return <></>; //何も返さない
+        if (message.room != roomHere) {
+          return (
+            <>
+              <p className="hidden">other room's msg</p>
+            </>
+          ); //何も返さない
         }
 
         if (DoNotUseWords.includes(message.body)) {
