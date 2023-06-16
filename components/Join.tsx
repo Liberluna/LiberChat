@@ -8,6 +8,8 @@ export default function () {
   const join = () => {
     history.push("/room/" + room);
   };
+  
+  const changeVal = (e) => setRoom(e.target.value);
 
   return (
     <div className="mx-10">
@@ -19,7 +21,7 @@ export default function () {
         className="border"
         placeholder="main"
         value={room}
-        onChange={(e) => setRoom(e.target.value)}
+        onChange={changeVal}
       />
       <button onClick={join} className="border">
         Join
