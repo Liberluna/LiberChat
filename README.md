@@ -1,11 +1,12 @@
-# fresh project
+<div align="center">
+  <img style="" alt="LiberChat" src="https://github.com/Liberluna/LiberChat/blob/main/assets/concept.svg" />
+</div>
 
-### Usage
+# Welcome to LiberChat repo!
+年齢関係なく使える、オープンソースのチャットサイト、LiberChatのソースコードです。
+## 構造
+Freshを使用しています。
+## LICENSE
+MIT LICENSED.
 
-Start the project:
-
-```
-deno task start
-```
-
-This will watch the project directory and restart as necessary.
+Producted by [Liberluna](https://liberluna.github.io)
