@@ -130,7 +130,7 @@ export default class extends Component {
     })
     socket.on("message", (data)=>{
       this.addMessage({
-        user: "Anonymous",
+        user: "Anonymous", //ここは後でユーザーネームに
         type: "text",
         body: data.body,
         room: data.room,

@@ -1,24 +1,34 @@
 import { type Message } from "~/core/chat/index.ts";
 import * as dateFns from "date-fns";
-import { DoNotUseWords, SysMsg }  from "./message/disabled.ts";
+import { DoNotUseWords, SysMsg } from "./message/disabled.ts";
 
 export interface Props {
   messages: Message[];
 }
 
 export default function MessageList(props: Props) {
-  
+
+  const url = new URL(window.location.href);
+  const roomId = url.pathname.split("/")[2];
+  const roomHere = roomId;
+
   return (
     <div>
       {props.messages.map((message, index) => {
         const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
+
+        if (
+          message.room != roomHere
+        ) {
+          return <></>; //何も返さない
+        }
 
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
             message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
           }
         }
-        
+
         return (
           <div
             key={index}
