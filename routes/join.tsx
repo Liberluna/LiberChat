@@ -1,5 +1,3 @@
-import { Head } from "$fresh/runtime.ts"
-
 export default function () {
 
   const join = () => {
@@ -8,12 +6,8 @@ export default function () {
   }
 
   return <>
-    <Head>
-      <title>Liberchat</title>
-      <meta name="description" content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
-    </Head>
     <div className="mx-10">
-      <div className="text-center text-2xl">LiberChat Join Page</div>
+      <div className="text-center text-2xl">LiberChat Join</div>
       <label for="room">Room</label>
       <input type="text" id="room" placeholder="main">
         <button onClick="join">Join</button>
