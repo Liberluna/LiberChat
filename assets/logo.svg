@@ -16,7 +16,7 @@
   <style>
     .color { fill: #202020; }
     @media (prefers-color-scheme: dark) {
-     .color { fill: #ffffff; }
+     .color { fill: #d0d0d0; }
     }
   </style>
 </svg>
