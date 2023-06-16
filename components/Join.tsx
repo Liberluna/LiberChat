@@ -1,4 +1,4 @@
-import { useState } from "preact";
+import { useState } from "preact/hooks";
 
 export default function Join() {
      const [room, setRoom] = useState("");
