@@ -5,6 +5,7 @@ export default function Join() {
 
      const join = () => {
           window.location.href = "https://liberchat.deno.dev/room/" + room; //くっつける
+          window.console.log(room);
      };
 
      const handleChange = (e) => {
