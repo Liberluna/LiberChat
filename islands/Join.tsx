@@ -11,7 +11,7 @@ export default function () {
     const id = inputRef.current.value;
     if (id == "" || id == null) {
       //MainRoom
-      window.location.href = "https://liberchat.deno.dev/main";
+      window.location.href = "https://liberchat.deno.dev/room/main";
     } else {
       window.location.href = "https://liberchat.deno.dev/room/" + id; //くっつける
     }
