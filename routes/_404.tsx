@@ -9,7 +9,7 @@ export default function(props: PageProps) {
     <div class="text-center text-2xl">
       あれれ? 君が探しているページはこのサーバーになかったようだよ
     </div>
-    <div class="text-center" style={{ marginBottom: "4rem" }}>
+    <div class="text-center" style={{ marginBottom: "40rem" }}>
       URLを間違えていないか確認してみてください。
     </div>
   </Layout>
