@@ -4,8 +4,19 @@
 
 # Welcome to LiberChat repo!
 年齢関係なく使える、オープンソースのチャットサイト、LiberChatのソースコードです。
-## 構造
-Freshを使用しています。
+## 使用ライブラリ等
+### SaaS
+- Deno Deploy
+- Replit
+### Runtimes
+- Deno
+- Node.js
+### Web frameworks
+- Fresh
+- Preact
+- Socket.IO
+### CSS Frameworks
+- Twind
 ## LICENSE
 MIT LICENSED.
 
