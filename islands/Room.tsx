@@ -133,12 +133,12 @@ export default class extends Component {
     });
 
     if (!localStorage.getItem("username")) {
-      localStorage.setItem("username", this.easyEncrypt("Anonymous", 3));
+      localStorage.setItem("username", "Anonymous");
     }
 
     socket.on("message", (data) => {
       this.addMessage({
-        user: "@" + this.easyDecrypt(localStorage.getItem("username"), 3), //暫定 後で高度な物に変更
+        user: "@" + "Anonymous",
         type: "text",
         body: data.body,
         room: data.room,
@@ -152,16 +152,4 @@ export default class extends Component {
     });
   }
   componentDidMount(): void {}
-  easyEncrypt(message: any, range: number) {
-    for (let i = 0;i < range;i++) {
-      message = btoa(message);
-    }
-    return message;
-  }
-  easyDecrypt(message: any, range: number) {
-    for (let i = 0;i < range;i++) {
-      message = atob(message);
-    }
-    return message;
-  }
 }
