@@ -16,13 +16,12 @@ export default function MessageList(props: Props) {
 
           if(message.type === "enter"){
             // 誰かが入室
-            return <div class="">
-              <span>{ dateText }</span>
+            return <div class="text-center bg-slate-500 text-white rounded-lg drop-shadow-lg">
+              <span class="mx-2">{ dateText }</span>
               <span class="mx-2">@{ message.user }</span>
-              <span>が入室しました。</span>
+              <span class="mx-2">が入室しました。</span>
             </div>
           }
-
           
           const MsgTripID = EasyHash(message.date + message.user + message.body); //識別ID  ここ消さんでな リプライ用
           return <div
