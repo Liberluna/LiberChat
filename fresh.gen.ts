@@ -6,12 +6,11 @@ import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/api/joke.ts";
 import * as $2 from "./routes/dev347.tsx";
-import * as $3 from "./routes/devs.tsx";
+import * as $3 from "./routes/developers.tsx";
 import * as $4 from "./routes/index.tsx";
 import * as $5 from "./routes/room/[roomid].tsx";
 import * as $6 from "./routes/updates.tsx";
 import * as $$0 from "./islands/BeautifulFooter.tsx";
-import * as $$1 from "./islands/Developer.tsx";
 import * as $$2 from "./islands/Join.tsx";
 import * as $$3 from "./islands/Room.tsx";
 
@@ -20,14 +19,13 @@ const manifest = {
     "./routes/_404.tsx": $0,
     "./routes/api/joke.ts": $1,
     "./routes/dev347.tsx": $2,
-    "./routes/devs.tsx": $3,
+    "./routes/developers.tsx": $3,
     "./routes/index.tsx": $4,
     "./routes/room/[roomid].tsx": $5,
     "./routes/updates.tsx": $6,
   },
   islands: {
     "./islands/BeautifulFooter.tsx": $$0,
-    "./islands/Developer.tsx": $$1,
     "./islands/Join.tsx": $$2,
     "./islands/Room.tsx": $$3,
   },
