@@ -96,9 +96,7 @@ export default class extends Component {
     const io = await getIO();
     const socket = io("https://liberchat-api.nakasyou.repl.co/");
 
-    socket.emit('enter', {
-      room: this.byProps.roomId,
-    })
+    socket.emit("a", 0)
     //userName 暫定
 
     this.setState({
