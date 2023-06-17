@@ -10,7 +10,7 @@ export default function(props: PageProps) {
     <div class="text-center text-2xl">
       あれれ? 君が探しているページはこのサーバーになかったようだよ
     </div>
-    <div class="text-center text-xl hover:underline mx-5 mt-5 mt-10 cursor-pointer">
+    <div class="text-center text-xl hover:underline mx-5 mt-5 mb-10 cursor-pointer">
       <Logo width="300" height="any"/>
     </div>
     <div class="text-center" style={{ marginBottom: "30rem" }}>
