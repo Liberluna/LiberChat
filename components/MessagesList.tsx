@@ -17,8 +17,8 @@ export default function MessageList(props: Props) {
           if(message.type === "enter"){
             // 誰かが入室
             return <div class="">
-              <span>dateText</span>
-              <span>@{ message.user }</span>
+              <span>{ dateText }</span>
+              <span class="mx-2">@{ message.user }</span>
               <span>が入室しました。</span>
             </div>
           }
