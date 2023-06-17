@@ -85,7 +85,6 @@ export default class extends Component {
               this.state.socket.emit("message", {
                 body: inp.current?.value,
                 room: this.byProps.roomId,
-                date: new Date(),
                 trip: Math.random().toString(), //リプライ機能 他にも良ければ使ってな (くじ引きとか)
               });
               if (inp.current) {
@@ -151,7 +150,7 @@ export default class extends Component {
       room: this.byProps.roomId,
       type: "enter",
       user: "",
-      date: "",
+      date: new Date(),
       body: "Join / follow me! https://twitter.com/macl2189",
     }); //これ何・・・
   }
