@@ -9,13 +9,13 @@ function FooterCol (props: { children: any, title: string, }) {
 export default function () {
   return (
     <>
-      <footer className="bg-gray-800 text-white pt-20 mt-20">
+      <footer className="bg-gray-800 text-white pt-20 mt-20 mb-20">
         <div class="flex flex-wrap">
           <FooterCol title="Links">
             <Link to="/developers">Developers</Link>
           </FooterCol>
         </div>
-        <div>
+        <div className="mt-5">
           <div className="mx-2 mt-5 text-center w-screen">
             &copy; 2023 LiberChat Team. MIT LICENSED. All Rights Reserved.
           </div>
