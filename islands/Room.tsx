@@ -178,7 +178,7 @@ export default class extends Component {
         ...data, //エラー抑制
       };
 
-      safeData.user  "Anonymous";
+      safeData.user = "Anonymous";
       safeData.type = ["text", "enter", "exit", "system"].includes(data.type)
         ? data.type
         : "text";
