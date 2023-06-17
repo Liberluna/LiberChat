@@ -4,7 +4,7 @@ export default function () {
   return <header className="sticky bg-slate-50  dark:bg-gray-800 top-0 w-full">
     <div className="drop-shadow-lg flex flex-wrap">
       <div>
-        <Logo class="h-20" />
+        <Logo class="w-20" />
       </div>
     </div>
   </header>
