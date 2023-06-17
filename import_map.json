@@ -15,6 +15,7 @@
     "socket.io-client": "https://cdn.socket.io/4.4.1/socket.io.esm.min.js",
     "date-fns": "https://esm.sh/date-fns@2.30.0",
     "markdown-wasm": "https://deno.land/x/markdown_wasm@1.2.2/mod.ts",
-    "libercomp/": "./components/LiberComp/"
+    "libercomp/": "./components/LiberComp/",
+    "easyhash": "./core/util/encrypt.ts"
   }
 }

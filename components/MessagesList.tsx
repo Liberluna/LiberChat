@@ -1,6 +1,7 @@
 import { type Message } from "~/core/chat/index.ts";
 import * as dateFns from "date-fns";
 import { DoNotUseWords, SysMsg }  from "./config/disabled.ts";
+import EasyHash from "easyhash";
 
 export interface Props {
   messages: Message[];
@@ -12,6 +13,7 @@ export default function MessageList(props: Props) {
     <div>
       {props.messages.map((message, index) => {
         const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
+        const MsgTripID = EasyHash(message.date + message.user); //識別ID
 
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
@@ -22,6 +24,7 @@ export default function MessageList(props: Props) {
         return (
           <div
             key={index}
+            msg-trip={MsgTripID}
             className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <div className="mb-2 tracking-tight text-gray-600 dark:text-white flex gap-4">
