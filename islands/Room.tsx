@@ -11,6 +11,7 @@ import {
 import { type Message } from "~/core/chat/index.ts";
 import MessagesList from "~/components/MessagesList.tsx";
 import { getIO } from "~/core/socketio/io.ts";
+import { IconArrowBigDownFilled } from 'tabler-icons'
 
 interface Props {
   roomId: string;
@@ -60,15 +61,9 @@ export default class extends Component {
       element.scrollTop = element.scrollHeight;
     } //一番下までスクロール
 
-    const AddRes = (id: string) => {
-      //inputBoxに追加
-      if (!inp.current) return;
-      inp.current.value += ">>" + id + " ";
-      //子要素から
-    }
     return (
       <>
-        <div className="flex pl-4 py-2" ref={refBox}>
+        <div className="flex pl-4 py-2">
           <input
             ref={inp}
             placeholder="message"
@@ -85,7 +80,6 @@ export default class extends Component {
               this.state.socket.emit("message", {
                 body: inp.current?.value,
                 room: this.byProps.roomId,
-                trip: Math.random().toString(), //リプライ機能
               });
               if (inp.current) {
                 // 文字の消去
@@ -106,20 +100,9 @@ export default class extends Component {
               - - - - Join - - - -
             </p>
           </div>
-          <MessagesList messages={this.state.messages} onRes={AddRes}/>
+          <MessagesList messages={this.state.messages} />
         </div>
-        <button
-          onClick={SDOB}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-4 rounded inline-flex items-cente fixed bottom-5 right-5"
-        >
-          <svg
-            class="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-          </svg>
-        </button>
+        <button onClick={SDOB}><IconArrowBigDownFilled /></button>
       </>
     );
   }
@@ -142,17 +125,16 @@ export default class extends Component {
         body: data.body,
         room: data.room,
         date: new Date(),
-        trip: data.trip //Math.random().toString() //リプライ機能
       });
     });
-
+    
     socket.emit("message", {
       room: this.byProps.roomId,
       type: "enter",
       user: "",
       date: "",
       body: "Join / follow me! https://twitter.com/macl2189",
-    }); 
+    });
   }
   addMessage(message: Message) {
     this.setState({

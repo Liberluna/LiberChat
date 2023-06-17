@@ -5,7 +5,6 @@ import EasyHash from "easyhash";
 
 export interface Props {
   messages: Message[];
-  onRes: any;
 }
 
 export default function MessageList(props: Props) {
@@ -21,6 +20,8 @@ export default function MessageList(props: Props) {
         // 2~9文字目まで
         MsgTripID = MsgTripID + "000000000";
         MsgTripID = MsgTripID.substring(2, 10);
+        const MsgTripID = EasyHash(message.date + message.user + message.body); //識別ID  ここ消さんでな リプライ用
+
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
             message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
@@ -37,7 +38,7 @@ export default function MessageList(props: Props) {
         const bodyWithLinks = message.body.replace(regex, (match, p1) => {
           return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${p1}">${match}</a>`; //ここをhoverしたときに idが{p1}の要素のクラスにfocusを付けたい 
         });
-
+            
         return (
           <div
             key={index}

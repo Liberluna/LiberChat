@@ -4,5 +4,4 @@ export interface Message {
   body: string
   room: string
   date: Date
-  trip: string
 }
