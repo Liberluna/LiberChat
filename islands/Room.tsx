@@ -114,7 +114,9 @@ export default class extends Component {
       });
     });
     
-    socket.emit("a", 0)
+    socket.emit("join", {
+      room: this.byProps.roomId,
+    })
   }
   addMessage(message: Message) {
     this.setState({
