@@ -11,6 +11,7 @@ import {
 import { type Message } from "~/core/chat/index.ts";
 import MessagesList from "~/components/MessagesList.tsx";
 import { getIO } from "~/core/socketio/io.ts";
+import { IconArrowBigDownFilled } from 'tabler-icons'
 
 interface Props {
   roomId: string;
@@ -101,7 +102,7 @@ export default class extends Component {
           </div>
           <MessagesList messages={this.state.messages} />
         </div>
-        <button onClick={SDOB}>一番下まで行く test</button>
+        <button onClick={SDOB}><IconArrowBigDownFilled /></button>
       </>
     );
   }
