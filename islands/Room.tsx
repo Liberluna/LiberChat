@@ -135,7 +135,6 @@ export default class extends Component {
         body: data.body,
         room: data.room,
         date: new Date(),
-        trip: Math.random().toString() //リプライ機能
       });
     });
 
