@@ -3,6 +3,7 @@ import Layout from "~/components/Layout.tsx"
 import Devs from "~/components/configs/developer.ts"
 
 export default function DevPage() {
+
   return (
     <>
       <Head>
@@ -24,6 +25,8 @@ export default function DevPage() {
               Description
             </div>
           </div>
+
+          { Devs }
         </div>
       </Layout>
     </>

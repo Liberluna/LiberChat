@@ -14,4 +14,12 @@ const Devs: Devs[] = [
     }
 ]
 
+
+//ここで組み立て
+
+/*
+
+
+ */
+
 export default Devs
