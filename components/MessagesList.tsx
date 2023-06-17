@@ -6,6 +6,10 @@ import { DoNotUseWords, SysMsg } from "./config/disabled.ts";
 
 import { Message } from "~/core/chat/index.ts";
 
+import replaceWords from "./config/replace.ts";
+
+import max from "./config/rule.ts";
+
 export interface Props {
   messages: Message[];
   reply: (message: string) => void;
@@ -29,28 +33,64 @@ export default function MessageList(props: Props) {
           );
         }
 
-        if (DoNotUseWords.includes(message.body)) {
-          for (let i = 0; i < DoNotUseWords.length; i++) {
-            message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
-          }
+        if (message.type === "exit") {
+          return (
+            <div className="text-center bg-slate-500 text-white rounded-lg drop-shadow-lg">
+              <span className="mx-2">{dateText}</span>
+
+              <span className="mx-2">{message.user}</span>
+
+              <span className="mx-2">が退室しました。</span>
+            </div>
+          );
         }
 
-        let MsgTripID = EasyHash(message.user + message.body + message.trip);
+        if (!message.processed) {
+          //処理済みか判定
+          if (DoNotUseWords.includes(message.body)) {
+            for (let i = 0; i < DoNotUseWords.length; i++) {
+              message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
+            }
+          }
 
-        MsgTripID = MsgTripID + "00000000";
+          for (let i = 0; i < replaceWords.length; i++) {
+            message.body = message.body.replaceAll(
+              replaceWords[i][0],
+              replaceWords[i][1]
+            );
+          } // 置き換える configの中さんしょう
+        }
 
-        MsgTripID = MsgTripID.substring(2, 10);
+        let MsgTripID = "";
 
-        const regex = />>(\d{8})/g;
+        if (!message.hashtrip) {
+          MsgTripID = EasyHash(message.user + message.body + message.trip);
 
-        message.body = message.body.replace(regex, (match, p1) => {
-          return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${p1}">${match}</a>`;
-        });
+          MsgTripID = MsgTripID + "00000000";
+
+          MsgTripID = MsgTripID.substring(2, 10); 
+
+          message.hashtrip = MsgTripID;
+        }else {
+          MsgTripID = message.hashtrip;
+        }
+
+        if (!message.processed) {
+          const regex = />>(\d{8})/g;
+
+          message.body = message.body.replace(regex, (match, p1) => {
+            return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${p1}">${match}</a>`;
+          });
+        }
+
+        if (!message.processed) {
+          message.processed = true; //二回目は処理しないように
+        }
 
         return (
           <div
             key={index}
-            id={MsgTripID}
+            id={MsgTripID ? MsgTripID : "XXXXXXXX"}
             className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <div className="mb-2 tracking-tight text-gray-600 dark:text-white flex gap-4">
@@ -65,7 +105,12 @@ export default function MessageList(props: Props) {
 
             <p
               className="mb-2 font-bold tracking-tight text-gray-800 dark:text-white break-words"
-              dangerouslySetInnerHTML={{ __html: message.body }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  message.body.length > max
+                    ? message.body.substring(0, max) + "... (省略)"
+                    : message.body,
+              }}
             ></p>
           </div>
         );
