@@ -101,7 +101,7 @@ export default class extends Component {
           </div>
           <MessagesList messages={this.state.messages} />
         </div>
-        <button onClick={SDOB} class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center dark:bg-gray-700 dark:hover:bg-gray-600">一番下まで行く test</button>
+        <button onClick={SDOB}>一番下まで行く test</button>
       </>
     );
   }
@@ -130,8 +130,8 @@ export default class extends Component {
     socket.emit("message", {
       room: this.byProps.roomId,
       type: "enter",
-      body: "Joined  " + "'Anonymous'",
-    }) //これ何・・・
+      body: "enter",
+    })
   }
   addMessage(message: Message) {
     this.setState({
