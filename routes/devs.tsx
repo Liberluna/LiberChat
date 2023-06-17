@@ -21,8 +21,8 @@ export default function DevPage() {
               alt="DevIcon"
               className="rounded-full w-20 h-20 mt-5 mx-auto"
             />
-            <div className="mt-5 text-xl">Name</div>
-            <div className="mt-2 text-sm word-break">Description</div>
+            <div className="mt-5 text-xl">ame . x</div>
+            <div className="mt-2 text-sm word-break">色々してる訳ではないが色々してる </div>
           </div>
         </div>
       </Layout>
