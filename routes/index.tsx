@@ -14,22 +14,25 @@ export default function JoinPage() {
       </Head>
       <Layout>
         <div className="mx-auto text-center">
-          <img
-            src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
-            alt="Logo"
-            height="150"
-            className="h-80 mx-auto text-center"
-          />
-        </div>
-        <div className="text-center mt-8">LiberChatへようこそ！</div>
-        <div className="text-center">
-          LiberChatはオープンソースのリアルタイムチャットサービスです。
-        </div>
-        <div className="text-center">
-          <a href="https://github.com/Liberluna/" className="underline">
-            Liberluna
-          </a>
-          により開発されています。
+          <div>
+            <img
+              src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
+              alt="Logo"
+              height="150"
+              className="h-80 mx-auto text-center"
+            />
+          </div>
+          <div>LiberChat 0.1.0 Alpha</div>
+          <div>
+            <div className="text-2xl">About</div>
+            <div>LiberChatは、自由で開かれたチャットサイトです。</div>
+            <div>
+              13歳未満使用禁止、16歳未満使用禁止、、、<br />
+              ネット上のサイトには、さまざまな年齢制限があります。
+              しかし、LiberChatには年齢制限はありません。
+              誰でも、年齢性別関係なく、公平に話せるチャットサイトです。
+            </div>
+          </div>
         </div>
         <div className="text-center mt-5">
           <Join />
