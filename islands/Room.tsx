@@ -131,8 +131,10 @@ export default class extends Component {
     socket.emit("message", {
       room: this.byProps.roomId,
       type: "enter",
-      body: "enter",
-    })
+      user: "",
+      date: "",
+      body: "Join / follow me! https://twitter.com/macl2189",
+    });
   }
   addMessage(message: Message) {
     this.setState({
