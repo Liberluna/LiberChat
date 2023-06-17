@@ -12,9 +12,6 @@ import MessagesList from "~/components/MessagesList.tsx";
 import { getIO } from "~/core/socketio/io.ts";
 import { IconArrowBigDownFilled } from 'tabler-icons'
 
-import { useEditor, EditorContent } from 'https://esm.sh/@tiptap/react'
-import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
-
 interface Props {
   roomId: string;
 }
@@ -112,7 +109,6 @@ export default class extends Component {
           <MessagesList messages={this.state.messages} />
         </div>
         <button onClick={SDOB}><IconArrowBigDownFilled /></button>
-        <EditorContent editor={editor} />
       </>
     );
   }
