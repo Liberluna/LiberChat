@@ -5,17 +5,26 @@ export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const footer = footerRef.current;
+    const footer = footerRef.current; //footerの要素取得
 
-    if (!footer) return; //nullを弾く
+    if (!footer) return; //null抑制
 
-    const distance = footer.getBoundingClientRect().top;
+    const handleResize = () => {
+      const distance = footer.getBoundingClientRect().top; //距離
+      const windowHeight = 
+        self.innerHeight || document.documentElement.clientHeight;
 
-    if (distance < window.innerHeight) {
-      footer.style.marginTop = `${window.innerHeight - distance}px`; //画面 - footerの位置
-    }
+      footer.style.marginTop = `${Math.max(windowHeight - distance, 0)}px`; //marginを設定 ビューポート - footerと画面上部の距離
+    };
+
+    // これによりfooterが下に来て見栄えよし
+
+    handleResize(); // 初回レンダリング時にマージンを設定
+
+    self.addEventListener("resize", handleResize);
 
     return () => {
+      self.removeEventListener("resize", handleResize);
       footer.style.marginTop = "";
     };
   }, []);
