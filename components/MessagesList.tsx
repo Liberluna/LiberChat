@@ -1,5 +1,5 @@
 import { type Message } from "~/core/chat/index.ts";
-import dataFns from "date-fns"; //エラーメッセージによるとparseISO使え
+import { dataFns , parseISO } from "date-fns"; //エラーメッセージによるとparseISO使え
 import { DoNotUseWords, SysMsg } from "./config/disabled.ts";
 import EasyHash from "easyhash";
 
