@@ -1,5 +1,5 @@
 import { type Message } from "~/core/chat/index.ts";
-import { dataFns } from 'date-fns';
+import { dataFns } from "date-fns";
 import { DoNotUseWords, SysMsg } from "./config/disabled.ts";
 import EasyHash from "easyhash";
 
@@ -37,7 +37,7 @@ export default function MessageList(props: Props) {
         const regex = />>(\d{8})/g;
         const bodyWithLinks = message.body.replace(regex, (match, p1) => {
           return `<a className="underline" href="#${p1}">${match}</a>`;
-        });
+        }); //🔥AIの力🔥 正規表現助かる
 
         return (
           <div
