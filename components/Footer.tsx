@@ -1,4 +1,4 @@
-import Link from "liberchat/link.tsx"
+import Link from "libercomp/link.tsx"
 
 function FooterCol (props: { children: any, title: string, }) {
   return <div class="grid grid-rows-4 gap-2">
