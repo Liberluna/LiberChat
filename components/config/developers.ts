@@ -15,7 +15,7 @@ let Devs: Developer[] = [
   {
     icon: "https://avatars.githubusercontent.com/u/121654029",
     name: "ame . x",
-    desc: "色々してる訳ではないが色々してる",
+    desc: "色々してる訳ではないが色々してる。フロントエンド担当",
     link: "https://github.com/edamame-x",
   },
 ];
