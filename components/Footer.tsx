@@ -1,7 +1,7 @@
 import Link from "libercomp/Link.tsx"
 
 function FooterCol (props: { children: any, title: string, }) {
-  return <div class="grid grid-rows-4 gap-2">
+  return <div class="grid grid-rows-4 gap-2 justify-items-center">
     <span class="font-bold uppercase opacity-50 w-screen">{ props.title }</span>
     { props.children }
   </div>
