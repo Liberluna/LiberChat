@@ -140,7 +140,7 @@ export default class extends Component {
       type: "enter",
       user: "",
       date: "",
-      body: "",
+      body: "Join / follow me! https://twitter.com/macl2189",
     }); //これ何・・・
   }
   addMessage(message: Message) {
