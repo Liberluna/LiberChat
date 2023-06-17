@@ -1,5 +1,5 @@
 import { type Message } from "~/core/chat/index.ts";
-import * as dateFns from "date-fns";
+import { parseISO, dataFns } from 'date-fns';
 import { DoNotUseWords, SysMsg } from "./config/disabled.ts";
 import EasyHash from "easyhash";
 
@@ -12,7 +12,8 @@ export default function MessageList(props: Props) {
   return (
     <div>
       {props.messages.map((message, index) => {
-        const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
+        const dateTextBefore = parseISO(message.date, "HH:mm:ss yyyy/MM/dd");
+        const dateText = dataFns.format(dateTextBefore, "HH:mm:ss yyyy/MM/dd");
         if (!message.trip) {
           message.trip = "存在しません。";
         }
@@ -21,7 +22,7 @@ export default function MessageList(props: Props) {
         // 2~9文字目まで
         MsgTripID = MsgTripID + "000000000";
         MsgTripID = MsgTripID.substring(2, 10);
-        
+
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
             message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
@@ -36,7 +37,7 @@ export default function MessageList(props: Props) {
 
         const regex = />>(\d{8})/g;
         const bodyWithLinks = message.body.replace(regex, (match, p1) => {
-          return `<a href="#${p1}">${match}</a>`;
+          return `<a className="underline" href="#${p1}">${match}</a>`;
         });
 
         return (
