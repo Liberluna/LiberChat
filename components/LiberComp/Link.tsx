@@ -3,7 +3,7 @@ interface Props {
   to: URL | string
 }
 export default function (props: Props) {
-  return <a href={String(props.url)} className="cursor-pointer hover:underline mx-5">
+  return <a href={String(props.to)} className="cursor-pointer hover:underline mx-5">
     { props.children }
   </a>
 }
