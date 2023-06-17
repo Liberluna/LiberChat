@@ -1,5 +1,5 @@
 interface Props {
-  children
+  children: any, //エラーが邪魔なので抑制
   to: URL | string
 }
 export default function (props: Props) {
