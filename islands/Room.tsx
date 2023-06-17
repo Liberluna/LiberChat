@@ -60,10 +60,10 @@ export default class extends Component {
       element.scrollTop = element.scrollHeight;
     } //一番下までスクロール
 
-    const AddRes = (id: string) => {
+    const AddRes = (message: Message) => {
       //inputBoxに追加
       if (!inp.current) return;
-      inp.current.value += ">>" + id + " ";
+      inp.current.value += ">>" + message;
       //子要素から
     }
     return (
