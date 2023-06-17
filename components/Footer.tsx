@@ -7,7 +7,7 @@ export default function Footer() {
   useEffect(() => {
     const footer = footerRef.current;
 
-    if (!footer) return; //nulllを弾く
+    if (!footer) return; //nullを弾く
 
     const distance = footer.getBoundingClientRect().top;
 
