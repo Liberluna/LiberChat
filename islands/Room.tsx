@@ -63,7 +63,8 @@ export default class extends Component {
     const AddRes = (message: Message) => {
       //inputBoxに追加
       if (!inp.current) return;
-      inp.current.value += message;
+      inp.current.value += ">>" + message;
+      //子要素から
     }
     return (
       <>
