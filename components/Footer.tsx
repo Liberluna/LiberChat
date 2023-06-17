@@ -34,7 +34,7 @@ export default function () {
               </a>
             </div>
           </div>
-          <div className="mx-2 text-center w-screen">
+          <div className="mx-2 mt-5 text-center w-screen">
             &copy; 2023 LiberCht Team. MIT LICENSED. All Rights Reserved.
           </div>
           <div className="mx-2 text-center w-screen">
