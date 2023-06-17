@@ -101,7 +101,7 @@ export default class extends Component {
           </div>
           <MessagesList messages={this.state.messages} />
         </div>
-        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-3 rounded inline-flex items-cente fixed bottom-5 right-5">
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-4 rounded inline-flex items-cente fixed bottom-5 right-5">
           <svg
             class="fill-current w-4 h-4 mr-2"
             xmlns="http://www.w3.org/2000/svg"
