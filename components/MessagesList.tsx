@@ -20,7 +20,8 @@ export default function MessageList(props: Props) {
             message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
           }
         }
-        
+      
+
         return (
           <div
             key={index}

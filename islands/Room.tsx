@@ -48,6 +48,18 @@ export default class extends Component {
       this.init();
     }, []);
 
+    //Box取得
+    const refBox = useRef<HTMLDivElement>(null);
+    function SDOB() {
+      const ref = refBox.current;
+      if (ref) {
+        STOB(ref);
+      }
+    }
+    function STOB(element: HTMLDivElement) {
+      element.scrollTop = element.scrollHeight;
+    } //一番下までスクロール
+
     return (
       <>
         <div className="flex pl-4 py-2">
@@ -78,7 +90,7 @@ export default class extends Component {
             Send
           </button>
         </div>
-        <div className="h-5/6 overflow-y-scroll">
+        <div className="h-5/6 overflow-y-scroll" ref={refBox}>
           <div
             key="join"
             className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
@@ -89,6 +101,7 @@ export default class extends Component {
           </div>
           <MessagesList messages={this.state.messages} />
         </div>
+        <button onClick={SDOB}>一番下まで行く test</button>
       </>
     );
   }
