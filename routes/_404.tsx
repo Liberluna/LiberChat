@@ -1,5 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import Layout from "../components/Layout.tsx";
+import Logo from "../components/Logo.tsx";
 
 export default function(props: PageProps) {
   return <Layout>
@@ -9,8 +10,8 @@ export default function(props: PageProps) {
     <div class="text-center text-2xl">
       あれれ? 君が探しているページはこのサーバーになかったようだよ
     </div>
-    <div class="text-center text-2xl hover:underline">
-      <a href="/">トップへ戻る</a>
+    <div class="text-center text-xl hover:underline">
+      <Logo width="300" />
     </div>
     <div class="text-center" style={{ marginBottom: "30rem" }}>
       URLを間違えていないか確認してみてください。

@@ -1,4 +1,4 @@
-export default function ({ width, height } : { width: number, height: number, }) {
+export default function ({ width, height } : { width: string, height: string, }) {
   return (
     <>
       <a href="/">
