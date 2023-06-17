@@ -1,6 +1,6 @@
 import { type Message } from "~/core/chat/index.ts";
 import * as dateFns from "date-fns";
-import { DoNotUseWords, SysMsg }  from "./configs/disabled.ts";
+import { DoNotUseWords, SysMsg }  from "./config/disabled.ts";
 
 export interface Props {
   messages: Message[];
