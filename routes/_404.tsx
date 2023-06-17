@@ -11,7 +11,7 @@ export default function(props: PageProps) {
       あれれ? 君が探しているページはこのサーバーになかったようだよ
     </div>
     <div class="text-center text-xl hover:underline">
-      <Logo width="300" />
+      <Logo width="300" height="any"/>
     </div>
     <div class="text-center" style={{ marginBottom: "30rem" }}>
       URLを間違えていないか確認してみてください。

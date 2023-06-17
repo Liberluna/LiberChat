@@ -1,4 +1,13 @@
 export default function ({ width, height } : { width: string, height: string, }) {
+
+  if (height == "any") {
+    height="auto"
+  }
+
+  if (width == "any") {
+    width="auto"
+  }
+
   return (
     <>
       <a href="/">
