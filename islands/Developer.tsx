@@ -2,7 +2,7 @@ import Devs from "~/components/config/developer.ts";
 
 export default function Developers() {
 
-  [Devs[1], Devs[0]] = [Devs[0], Devs[1]];
+  [Devs[1], Devs[0]] = [Devs[0], Devs[1]]; //消したかったら消してええ((
 
   const devElements = Devs.map((dev, index) => (
     <a className="text-center w-30" key={index} href={dev.Link}>
