@@ -6,7 +6,7 @@ export default function DevPage() {
   return (
     <>
       <Head>
-        <title>Liberchat Developer</title>
+        <title>Liberchat Developers</title>
         <meta
           name="description"
           content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。"

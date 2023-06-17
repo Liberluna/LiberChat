@@ -3,6 +3,9 @@ import { useEffect, useRef } from "preact/hooks";
 
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
+  if (footerRef.current) {
+    footerRef.current.style.marginTop = "1000px"; //カクツキ抑制
+  }
 
   useEffect(() => {
     const handleResize = () => {
