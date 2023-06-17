@@ -13,7 +13,7 @@ export default function DevPage() {
         />
       </Head>
       <Layout>
-        <h1 className="text-4xl font-bold">LiberChat Developers</h1>
+        <h1 className="text-4xl font-bold text-center">LiberChat Developers</h1>
         <div className="mt-5 flex flex-col gap-5 md:flex-row md:gap-10">
           <Devs />
         </div>
