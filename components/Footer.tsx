@@ -4,11 +4,11 @@ export default function () {
       <footer className="bg-gray-800 text-white pt-20">
         <div className="flex flex-wrap bg-gray-700">
           <div>
-            <div className="font-bold uppercase opacity-50 text-center">
+            <div className="font-bold uppercase opacity-50 text-center w-full">
               Links
             </div>
             <p className="hidden">後でsvgにする</p>
-            <div className="text-center">
+            <div className="text-center w-full">
               <a
                 href="https://liberluna.github.io/"
                 className="cursor-pointer hover:underline mx-5"
