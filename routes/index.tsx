@@ -1,7 +1,6 @@
 import { Head } from "$fresh/runtime.ts"
 import Join from "~/islands/Join.tsx"
 import Layout from "~/components/Layout.tsx"
-import { IconAward } from 'https://esm.sh/@tabler/icons-preact'
 
 export default function JoinPage() {
   return (
@@ -38,7 +37,6 @@ export default function JoinPage() {
           <div className="text-2xl">さあ！始めよう！</div>
           <Join />
           <div>Room IDを入力してください。同じRoom Idの人と話すことができます。何も入力しないで送信することでメインの部屋に入れます。</div>
-                  <IconAward />
         </div>
       </Layout>
     </>
