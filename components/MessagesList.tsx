@@ -1,5 +1,5 @@
 import { type Message } from "~/core/chat/index.ts";
-import { dataFns } from "date-fns";
+import * as dataFns from "date-fns";
 import { DoNotUseWords, SysMsg } from "./config/disabled.ts";
 import EasyHash from "easyhash";
 
