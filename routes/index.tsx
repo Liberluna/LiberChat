@@ -13,11 +13,14 @@ export default function JoinPage() {
         />
       </Head>
       <Layout>
-        <img
-          src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
-          alt="Logo"
-          className="h-20"
-        />
+        <div className="mx-auto text-center">
+          <img
+            src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
+            alt="Logo"
+            height="150"
+            className="h-80"
+          />
+        </div>
         <div className="text-center mt-8">LiberChatへようこそ！</div>
         <div className="text-center">
           LiberChatはオープンソースのリアルタイムチャットサービスです。
