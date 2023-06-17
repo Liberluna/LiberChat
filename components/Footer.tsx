@@ -1,6 +1,6 @@
 export default function () {
   return <>
-    <footer className="bg-gray-700 text-white pt-20">
+    <footer className="bg-gray-800 text-white pt-20">
       <div className="flex flex-wrap">
         <div>
           <div className="font-bold uppercase opacity-50">Links</div>
