@@ -10,6 +10,7 @@ export default function DevPage() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <h1>管理ページ&ログページ テスト</h1>
+      <hr/>
     </>
   );
 }

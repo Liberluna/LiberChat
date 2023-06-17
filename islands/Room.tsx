@@ -10,7 +10,7 @@ import {
 } from "preact";
 import { type Message } from "~/core/chat/index.ts";
 import MessagesList from "~/components/MessagesList.tsx";
-import { getIO } from "~/core/socketio/io.ts"
+import { getIO } from "~/core/socketio/io.ts";
 
 interface Props {
   roomId: string;
@@ -64,20 +64,20 @@ export default class extends Component {
   render(
     props?:
       | Readonly<
-        Attributes & {
-          children?: ComponentChildren;
-          ref?: Ref<any> | undefined;
-        }
-      >
+          Attributes & {
+            children?: ComponentChildren;
+            ref?: Ref<any> | undefined;
+          }
+        >
       | undefined,
     state?: Readonly<{}> | undefined,
-    context?: any,
+    context?: any
   ): ComponentChild {
     const inp = useRef<HTMLInputElement>(null);
 
-    useEffect(()=>{
-      this.init()
-    }, [])
+    useEffect(() => {
+      this.init();
+    }, []);
 
     return (
       <>
@@ -91,14 +91,14 @@ export default class extends Component {
             onClick={() => {
               if (inp.current?.value === "") {
                 alert(
-                  "送信できませんでした。 送信内容が空の可能性が有ります。",
+                  "送信できませんでした。 送信内容が空の可能性が有ります。"
                 );
                 return;
               }
               this.state.socket.emit("message", {
                 body: inp.current?.value,
-              })
-              if(inp.current){
+              });
+              if (inp.current) {
                 // 文字の消去
                 inp.current.value = "";
               }
@@ -122,28 +122,46 @@ export default class extends Component {
       </>
     );
   }
-  async init(){
-    const io = await getIO()
-    const socket = io("https://liberchat-api.nakasyou.repl.co/")
+  async init() {
+    const io = await getIO();
+    const socket = io("https://liberchat-api.nakasyou.repl.co/");
+
+    //userName 暫定
+
     this.setState({
       socket: socket,
-    })
-    socket.on("message", (data)=>{
+    });
+
+    if (!localStorage.getItem("username")) {
+      localStorage.setItem("username", this.easyEncrypt("Anonymous", 3));
+    }
+
+    socket.on("message", (data) => {
       this.addMessage({
-        user: "Anonymous", //ここは後でユーザーネームに
+        user: "@" + this.easyDecrypt(localStorage.getItem("username"), 3), //暫定 後で高度な物に変更
         type: "text",
         body: data.body,
         room: data.room,
         date: new Date(),
-      })
-    })
+      });
+    });
   }
   addMessage(message: Message) {
     this.setState({
       messages: [...this.state.messages, message],
-    })
+    });
   }
-  componentDidMount(): void {
-
+  componentDidMount(): void {}
+  easyEncrypt(message: any, range: number) {
+    for (let i = 0;i < range;i++) {
+      message = btoa(message);
+    }
+    return message;
+  }
+  easyDecrypt(message: any, range: number) {
+    for (let i = 0;i < range;i++) {
+      message = atob(message);
+    }
+    return message;
   }
 }
