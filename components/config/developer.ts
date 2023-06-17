@@ -20,6 +20,6 @@ const Devs: Devs[] = [
 /*
 
 
- */
+*/
 
 export default Devs

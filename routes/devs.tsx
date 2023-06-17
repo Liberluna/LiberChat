@@ -13,15 +13,16 @@ export default function DevPage() {
         />
       </Head>
       <Layout>
-        <h1>LiberChat Developers</h1>
+        <h1 className="text-4xl font-bold">LiberChat Developers</h1>
         <div className="mt-5 flex flex-col gap-5 md:flex-row md:gap-10">
-          <div>
+          <div className="text-center w-60">
             <img
               src="https://avatars.githubusercontent.com/u/121654029"
               alt="DevIcon"
+              className="rounded-full w-36 h-36 mt-5"
             />
-            <div>Name</div>
-            <div className="">Description</div>
+            <div className="mt-5 text-xl">Name</div>
+            <div className="mt-2 text-lg word-break">Description</div>
           </div>
         </div>
       </Layout>
