@@ -10,7 +10,7 @@ export default function () {
             <p className="hidden">後でsvgにする</p>
             <div className="text-center">
               <a
-                href="https://liberluna.com"
+                href="https://liberluna.github.io/"
                 className="cursor-pointer hover:underline mx-5"
               >
                 Liberluna Sites
