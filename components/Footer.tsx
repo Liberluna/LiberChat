@@ -7,7 +7,7 @@ export default function () {
             <div className="font-bold uppercase opacity-50 text-center w-screen">
               Links
             </div>
-            <div className="text-center grid grid-rows-8">
+            <div className="text-center grid grid-rows-4">
               <a
                 href="https://liberluna.github.io/"
                 className="cursor-pointer hover:underline mx-5"
