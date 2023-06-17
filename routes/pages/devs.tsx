@@ -1,7 +1,8 @@
 import { Head } from "$fresh/runtime.ts"
 import Layout from "~/components/Layout.tsx"
+import Devs from "~/components/configs/developer.ts"
 
-export default function JoinPage() {
+export default function DevPage() {
   return (
     <>
       <Head>
