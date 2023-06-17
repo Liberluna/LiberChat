@@ -57,7 +57,11 @@ export default class extends Component {
       }
     }
     function STOB(element: HTMLDivElement) {
-      element.scrollTop = element.scrollHeight;
+      if (element.scrollTop >= element.scrollHeight - 20) {
+        element.scrollTop = 0;
+      }else{
+        element.scrollTop = element.scrollHeight;
+      }
     } //一番下までスクロール
 
     return (
