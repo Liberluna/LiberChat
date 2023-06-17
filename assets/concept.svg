@@ -19,7 +19,7 @@
   <style>
     .color { fill: #202020; stroke: #202020; }
     @media (prefers-color-scheme: dark) {
-     .color { fill: #dfdfdf; stroke: #dfdfdf; }
+     .color { fill: #ffffff; stroke: #ffffff; }
     }
   </style>
 </svg>
