@@ -4,7 +4,7 @@ export default function () {
       <div className="flex flex-wrap bg-gray-700">
         <div>
           <div className="font-bold uppercase opacity-50">Links</div>
-          <div></div>
+          <div className="red">Red</div>
         </div>
       </div>
       <div className="text-center bg-gray-700">
