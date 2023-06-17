@@ -1,4 +1,5 @@
 import Header from "./Header.tsx"
+import Footer from "./Footer.tsx"
 
 export default function (props) {
   return <>
@@ -8,5 +9,6 @@ export default function (props) {
         { props.children }
       </div>
     </div>
+    <Footer />
   </>
 }
