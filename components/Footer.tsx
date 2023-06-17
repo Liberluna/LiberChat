@@ -7,8 +7,7 @@ export default function () {
             <div className="font-bold uppercase opacity-50 text-center w-screen">
               Links
             </div>
-            <p className="hidden">後でsvgにする</p>
-            <div className="text-center w-screen flex flex-wrap">
+            <div className="text-center grid grid-rows-8">
               <a
                 href="https://liberluna.github.io/"
                 className="cursor-pointer hover:underline mx-5"
