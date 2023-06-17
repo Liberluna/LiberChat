@@ -1,9 +1,12 @@
-import Header from "./Header.tsx"
-import Footer from "./Footer.tsx"
+import Header from "./Header.tsx";
+import Footer from "./Footer.tsx";
 
-export default function (props) {
-  
-    const css = `
+export default function (props: any) {
+  const css = `
+body {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -33,16 +36,16 @@ export default function (props) {
   border-radius: 8px;
   opacity: 0.8;
 }
-  `
-  
-  return <>
-    <style>{css}</style>
-    <Header />
-    <div className="dark:bg-gray-800 dark:text-gray-50">
-      <div className="mx-10">
-        { props.children }
+  `;
+
+  return (
+    <>
+      <style>{css}</style>
+      <Header />
+      <div className="dark:bg-gray-800 dark:text-gray-50">
+        <div className="mx-10">{props.children}</div>
       </div>
-    </div>
-    <Footer />
-  </>
+      <Footer />
+    </>
+  );
 }
