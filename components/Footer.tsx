@@ -14,6 +14,12 @@ export default function () {
               >
                 Release notes
               </a>
+              <a
+                href="https://github.com/LiberLuna/LiberChat"
+                className="cursor-pointer hover:underline mx-5"
+              >
+                Repository
+              </a>
             </div>
           </div>
           <div className="mx-2 mt-5 text-center w-screen">
