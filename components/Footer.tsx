@@ -1,4 +1,4 @@
-import Link from "LiberComp/Link.tsx"
+import Link from "libercomp/Link.tsx"
 
 export default function () {
   return (
