@@ -16,6 +16,7 @@
     "date-fns": "https://esm.sh/date-fns@2.30.0",
     "markdown-wasm": "https://deno.land/x/markdown_wasm@1.2.2/mod.ts",
     "libercomp/": "./components/LiberComp/",
-    "easyhash": "./core/util/encrypt.ts"
+    "easyhash": "./core/util/encrypt.ts",
+    "tabler-icons": "https://esm.sh/@tabler/icons-preact@2.22.0"
   }
 }
