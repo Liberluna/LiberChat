@@ -1,3 +1,5 @@
+import Link from "LiberComp/Link.tsx"
+
 export default function () {
   return (
     <>
@@ -8,18 +10,14 @@ export default function () {
               Links
             </div>
             <div className="text-center grid grid-rows-2 grid-cols-2 gap-2">
-              <a
-                href="/updates"
-                className="cursor-pointer hover:underline mx-5"
+              <Link
+                to="/updates"
+              >Release notes</Link>
+              <Link
+                to="https://github.com/LiberLuna/LiberChat"
               >
-                Release notes
-              </a>
-              <a
-                href="https://github.com/LiberLuna/LiberChat"
-                className="cursor-pointer hover:underline mx-5"
-              >
-                Repository
-              </a>
+                GitHub
+              </Link>
             </div>
           </div>
           <div className="mx-2 mt-5 text-center w-screen">
