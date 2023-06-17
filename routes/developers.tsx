@@ -2,12 +2,6 @@ import { Head } from "$fresh/runtime.ts"
 import Layout from "~/components/Layout.tsx"
 import developers from "~/components/config/developer.ts"
 
-export default function Developers() {
-  const devElements =
-
-  return <>{devElements}</>;
-}
-
 export default function DevPage() {
   return (
     <>
