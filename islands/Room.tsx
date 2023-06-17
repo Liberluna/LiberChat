@@ -101,7 +101,15 @@ export default class extends Component {
           </div>
           <MessagesList messages={this.state.messages} />
         </div>
-        <button onClick={SDOB} class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white">一番下まで行く test</button>
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-cente fixed bottom-5 right-5">
+          <svg
+            class="fill-current w-4 h-4 mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+          </svg>
+        </button>
       </>
     );
   }
@@ -126,14 +134,14 @@ export default class extends Component {
         date: new Date(),
       });
     });
-    
+
     socket.emit("message", {
       room: this.byProps.roomId,
       type: "enter",
       user: "",
       date: "",
-      body: "Joined  " + "'Anonymous'",
-    }) //これ何・・・
+      body: "",
+    }); //これ何・・・
   }
   addMessage(message: Message) {
     this.setState({
