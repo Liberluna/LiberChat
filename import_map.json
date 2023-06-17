@@ -17,6 +17,7 @@
     "markdown-wasm": "https://deno.land/x/markdown_wasm@1.2.2/mod.ts",
     "libercomp/": "./components/LiberComp/",
     "easyhash": "./core/util/encrypt.ts",
-    "readt-icons": "https://esm.sh/react-icons@4.9.0"
+    "react-icons": "https://esm.sh/react-icons@4.9.0",
+    "react-icons/": "https://esm.sh/react-icons@4.9.0/"
   }
 }
