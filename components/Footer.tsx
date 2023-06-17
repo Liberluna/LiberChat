@@ -7,7 +7,7 @@ export default function () {
             <div className="font-bold uppercase opacity-50 text-center w-screen">
               Links
             </div>
-            <div className="text-center grid grid-rows-4">
+            <div className="text-center grid grid-rows-2 grid-cols-2 gap-2">
               <a
                 href="/updates"
                 className="cursor-pointer hover:underline mx-5"
