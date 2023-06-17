@@ -1,5 +1,6 @@
-import { Head } from "$fresh/runtime.ts";
-import Join from "~/islands/Join.tsx";
+import { Head } from "$fresh/runtime.ts"
+import Join from "~/islands/Join.tsx"
+import Layout from "~/components/Layout.tsx"
 
 export default function JoinPage() {
   return (
@@ -11,27 +12,34 @@ export default function JoinPage() {
           content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。"
         />
       </Head>
-      <div className="bg-gray-800 w-full h-screen text-white flex flex-col">
-        <h1 className="hidden">LiberChat</h1>
-        <img
-          src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
-          alt="Logo"
-          className="h-20"
-        />
-        <div className="text-center mt-8">LiberChatへようこそ！</div>
-        <div className="text-center">
-          LiberChatはオープンソースのリアルタイムチャットサービスです。
-        </div>
-        <div className="text-center">
-          <a href="https://github.com/Liberluna/" className="underline">
-            Liberluna
-          </a>
-          により開発されています。
+      <Layout>
+        <div className="mx-auto text-center">
+          <div>
+            <img
+              src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
+              alt="Logo"
+              height="150"
+              className="h-80 mx-auto text-center"
+            />
+          </div>
+          <div className="leading-loose">LiberChat 0.1.0 Alpha</div>
+          <div>
+            <div className="text-2xl">About</div>
+            <div>LiberChatは、自由で開かれたチャットサイトです。</div>
+            <div>
+              13歳未満使用禁止、16歳未満使用禁止...<br />
+              ネット上のサイトには、さまざまな年齢制限があります。
+              しかし、LiberChatには年齢制限はありません。
+              誰でも、年齢性別関係なく、公平に話せるチャットサイトです。
+            </div>
+          </div>
         </div>
         <div className="text-center mt-5">
+          <div className="text-2xl">さあ！始めよう！</div>
           <Join />
+          <div>Room IDを入力してください。同じRoom Idの人と話すことができます。何も入力しないと、みんながいるルームに入ります。</div>
         </div>
-      </div>
+      </Layout>
     </>
   );
 }
