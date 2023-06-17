@@ -36,7 +36,7 @@ export default function MessageList(props: Props) {
 
         const regex = />>(\d{8})/g;
         const bodyWithLinks = message.body.replace(regex, (match, p1) => {
-          return `<a className="text-blue-500 hover:text-blue-700 hover:underline" href="#${p1}">${match}</a>`;
+          return `<a className="underline" href="#${p1}">${match}</a>`;
         }); //🔥AIの力🔥 正規表現助かる
 
         return (
