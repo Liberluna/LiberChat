@@ -11,9 +11,13 @@ export default function MessageList(props: Props) {
   
   return (
     <div>
+
       {props.messages.map((message, index) => {
         const dateText = dateFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
-        const MsgTripID = EasyHash(message.date + message.user + message.body); //識別ID  ここ消さんでな リプライ用
+        if (!message.trip) {
+          message.trip = "存在しません。";
+        }
+        const MsgTripID = EasyHash(message.date + message.user + message.body + message.trip); //識別ID  ここ消さんでな リプライ用
 
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
