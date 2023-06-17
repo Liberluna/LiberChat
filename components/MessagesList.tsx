@@ -18,10 +18,8 @@ export default function MessageList(props: Props) {
         if (!message.trip) {
           message.trip = "存在しません。";
         }
-        let MsgTripID = EasyHash(message.user + message.body + message.trip); //識別ID  ここ消さんでな リプライ用
-        //2~10文字目まで
-        MsgTripID = MsgTripID + "0000000000";
-        MsgTripID = MsgTripID.substring(2, 10);
+        const MsgTripID = EasyHash(message.date + message.user + message.body + message.trip); //識別ID  ここ消さんでな リプライ用
+
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
             message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
