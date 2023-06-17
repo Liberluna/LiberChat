@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import Layout from "~/components/Layout.tsx";
-import Devs from "~/components/config/developer.ts";
+import Devs from "~/islands/Developer.tsx"
 
 export default function DevPage() {
   return (
@@ -15,15 +15,7 @@ export default function DevPage() {
       <Layout>
         <h1 className="text-4xl font-bold">LiberChat Developers</h1>
         <div className="mt-5 flex flex-col gap-5 md:flex-row md:gap-10">
-          <div className="text-center w-30">
-            <img
-              src="https://avatars.githubusercontent.com/u/121654029"
-              alt="DevIcon"
-              className="rounded-full w-20 h-20 mt-5 mx-auto"
-            />
-            <div className="mt-5 text-xl">ame . x</div>
-            <div className="mt-2 text-sm word-break">色々してる訳ではないが色々してる </div>
-          </div>
+          <Devs />
         </div>
       </Layout>
     </>
