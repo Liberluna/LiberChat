@@ -1,5 +1,5 @@
 import { type Message } from "~/core/chat/index.ts";
-import { dataFns , parseISO } from "date-fns";
+import * as dataFns from "date-fns";
 import { DoNotUseWords, SysMsg } from "./config/disabled.ts";
 import EasyHash from "easyhash";
 
@@ -12,7 +12,7 @@ export default function MessageList(props: Props) {
   return (
     <div>
       {props.messages.map((message, index) => {
-        const dateText = dataFns.format(parseISO(message.date), "HH:mm:ss yyyy/MM/dd");
+        const dateText = dataFns.format(message.date, "HH:mm:ss yyyy/MM/dd");
         if (!message.trip) {
           message.trip = "存在しません。";
         }
