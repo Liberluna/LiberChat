@@ -9,7 +9,7 @@ export default function(props: PageProps) {
     <div class="text-center text-2xl">
       あれれ? 君が探しているページはこのサーバーになかったようだよ
     </div>
-    <div class="text-center text-2xl">
+    <div class="text-center text-2xl hover:underline">
       <a href="/">トップへ戻る</a>
     </div>
     <div class="text-center" style={{ marginBottom: "30rem" }}>
