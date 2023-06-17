@@ -16,8 +16,14 @@ const Devs: Devs[] = [
         Icon: "https://avatars.githubusercontent.com/u/121654029",
         Name: "ame . x",
         Desc: "色々してる訳ではないが色々してる",
-        Link: "https://github.com/edamame-x" //後で実装
+        Link: "https://github.com/edamame-x" 
     },
+    {
+        Icon: "https://avatars.githubusercontent.com/u/121510825",
+        Name: "Pochi",
+        Desc: "未定",
+        Link: "https://github.com/Pochi-Liberluna"
+    }
 ]
 
 
