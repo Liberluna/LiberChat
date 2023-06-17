@@ -9,28 +9,10 @@ export default function () {
             </div>
             <div className="text-center grid grid-rows-4">
               <a
-                href="https://liberluna.github.io/"
+                href="/updates"
                 className="cursor-pointer hover:underline mx-5"
               >
-                Liberluna Sites
-              </a>
-              <a
-                href="https://github.com/liberluna"
-                className="cursor-pointer hover:underline mx-5"
-              >
-                Liberluna GitHub
-              </a>
-              <a
-                href="https://github.com/liberluna/liberchat"
-                className="cursor-pointer hover:underline mx-5"
-              >
-                Liberchat Repo
-              </a>
-              <a
-                href="https://line.me/ti/g2/beNFT8zr5MEL_Um5xmSBZthZwfIuZcQu8-bYMA"
-                className="cursor-pointer hover:underline mx-5"
-              >
-                Liberluna OC
+                Release notes
               </a>
             </div>
           </div>
