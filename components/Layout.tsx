@@ -5,7 +5,6 @@ export default function (props: any) {
   const css = `
 body {
   overflow-x: hidden;
-  background-color: #1F2937;
 }
 
 ::-webkit-scrollbar {

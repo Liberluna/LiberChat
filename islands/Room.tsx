@@ -96,8 +96,6 @@ export default class extends Component {
     const io = await getIO();
     const socket = io("https://liberchat-api.nakasyou.repl.co/");
 
-    //userName 暫定
-
     this.setState({
       socket: socket,
     });
@@ -115,6 +113,8 @@ export default class extends Component {
         date: new Date(),
       });
     });
+    
+    socket.emit("a", 0)
   }
   addMessage(message: Message) {
     this.setState({
