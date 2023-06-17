@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts"
 import Layout from "~/components/Layout.tsx"
-import developers from "~/components/config/developer.ts"
+import developers from "~/components/config/developers.ts"
 
 export default function DevPage() {
   return (
