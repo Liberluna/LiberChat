@@ -20,8 +20,8 @@ export default function MessageList(props: Props) {
         }
         let MsgTripID = EasyHash(message.user + message.body + message.trip); //識別ID  ここ消さんでな リプライ用
         //2~10文字目まで
-        MsgTripID = MsgTripID + "0000000000";
-        MsgTripID = MsgTripID.substring(2, 10);
+        MsgTripID = MsgTripID + "0000000000" + message.user + message.body + message.trip;
+        //MsgTripID = MsgTripID.substring(2, 10);
         if (DoNotUseWords.includes(message.body)) {
           for (let i = 0; i < DoNotUseWords.length; i++) {
             message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
