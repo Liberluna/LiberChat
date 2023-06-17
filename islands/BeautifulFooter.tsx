@@ -5,29 +5,29 @@ export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const footer = footerRef.current; //footerの要素取得
-
-    if (!footer) return; //null抑制
-
     const handleResize = () => {
-      const distance = footer.getBoundingClientRect().top; //距離
-      const windowHeight = 
+      const footer = footerRef.current;
+
+      if (!footer) return;
+
+      const distance = footer.getBoundingClientRect().top;
+      const windowHeight =
         self.innerHeight || document.documentElement.clientHeight;
 
-      footer.style.marginTop = `${Math.max(windowHeight - distance, 0)}px`; //marginを設定 ビューポート - footerと画面上部の距離
+      footer.style.marginTop = `${Math.max(windowHeight - distance, 0)}px`;
     };
 
-    // これによりfooterが下に来て見栄えよし
-
-    handleResize(); // 初回レンダリング時にマージンを設定
+    handleResize();
 
     self.addEventListener("resize", handleResize);
 
     return () => {
       self.removeEventListener("resize", handleResize);
-      footer.style.marginTop = "";
+      if (footerRef.current) {
+        footerRef.current.style.marginTop = "";
+      }
     };
-  }, []);
+  }, [footerRef]);
 
   return (
     <footer className="bg-gray-800 text-white pt-50" ref={footerRef}>
@@ -45,7 +45,7 @@ export default function Footer() {
           &copy; 2023 LiberChat Team. MIT LICENSED. All Rights Reserved.
         </div>
         <div className="mx-2 text-center w-screen">
-          Producted by{" "}
+          Produced by{" "}
           <a
             href="https://liberluna.github.io"
             className="cursor-pointer underline hover:no-underline"
