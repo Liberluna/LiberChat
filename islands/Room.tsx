@@ -60,9 +60,6 @@ export default class extends Component {
       element.scrollTop = element.scrollHeight;
     } //一番下までスクロール
 
-    const AddRes = (message: Message) => {
-      //inputBoxに追加
-    }
     return (
       <>
         <div className="flex pl-4 py-2" ref={refBox}>
@@ -102,7 +99,7 @@ export default class extends Component {
               - - - - Join - - - -
             </p>
           </div>
-          <MessagesList messages={this.state.messages} onRes={AddRes}/>
+          <MessagesList messages={this.state.messages} />
         </div>
         <button
           onClick={SDOB}
