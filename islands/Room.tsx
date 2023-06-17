@@ -92,6 +92,16 @@ export default class extends Component {
       }
     };
 
+    function SystemMsg(msg: string): void {
+      this.state.socket.emit("message", {
+        room: this.byProps.roomId,
+
+        type: "system",
+
+        body: msg, //退室
+      });
+    }
+
     return (
       <>
         <div className="flex pl-4 py-2">
@@ -162,11 +172,10 @@ export default class extends Component {
           onClick={() => {
             this.state.socket.emit("message", {
               room: this.byProps.roomId,
-        
-              type: "exit",
-        
-              body: "@Anonymous" + "が退出しました。", //退室
 
+              type: "exit",
+
+              body: "@Anonymous" + "が退出しました。", //退室
             });
 
             window.location.href = "/";
@@ -199,7 +208,7 @@ export default class extends Component {
 
       safeData.user = "@" + "Anonymous";
 
-      safeData.type = ["text", "enter", "exit"].includes(data.type)
+      safeData.type = ["text", "enter", "exit", "system"].includes(data.type)
         ? data.type
         : "text";
 
@@ -207,7 +216,9 @@ export default class extends Component {
 
       safeData.room = data.room;
 
-      safeData.date = new Date() ? new Date() : "Sat Jun 1 2023 20:40:20 GMT+0900 (日本標準時)"; 
+      safeData.date = new Date()
+        ? new Date()
+        : "Sat Jun 1 2023 20:40:20 GMT+0900 (日本標準時)";
 
       safeData.trip = data.trip ? data.trip : 0.114514;
 
