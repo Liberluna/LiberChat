@@ -34,8 +34,6 @@ export default function () {
               </a>
             </div>
           </div>
-        </div>
-        <div className="text-center bg-gray-700">
           <div>
             &copy; 2023 LiberCht Team. MIT LICENSED. All Rights Reserved.
           </div>
