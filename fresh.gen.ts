@@ -11,8 +11,8 @@ import * as $4 from "./routes/index.tsx";
 import * as $5 from "./routes/room/[roomid].tsx";
 import * as $6 from "./routes/updates.tsx";
 import * as $$0 from "./islands/BeautifulFooter.tsx";
-import * as $$2 from "./islands/Join.tsx";
-import * as $$3 from "./islands/Room.tsx";
+import * as $$1 from "./islands/Join.tsx";
+import * as $$2 from "./islands/Room.tsx";
 
 const manifest = {
   routes: {
@@ -26,8 +26,8 @@ const manifest = {
   },
   islands: {
     "./islands/BeautifulFooter.tsx": $$0,
-    "./islands/Join.tsx": $$2,
-    "./islands/Room.tsx": $$3,
+    "./islands/Join.tsx": $$1,
+    "./islands/Room.tsx": $$2,
   },
   baseUrl: import.meta.url,
   config,
