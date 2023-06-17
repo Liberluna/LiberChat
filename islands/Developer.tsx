@@ -1,6 +1,13 @@
 import Devs from "~/components/config/developer.ts";
 
 export default function Developers() {
+
+  const Devs0 = Devs[0]
+  const Devs1 = Devs[1]
+
+  Devs[0] = Devs1
+  Devs[1] = Devs0
+
   const devElements = Devs.map((dev, index) => (
     <a className="text-center w-30" key={index} href={dev.Link}>
       <img src={dev.Icon} alt="DevIcon" className="rounded-full w-20 h-20 mt-5 mx-auto" />
