@@ -85,6 +85,7 @@ export default class extends Component {
               this.state.socket.emit("message", {
                 body: inp.current?.value,
                 room: this.byProps.roomId,
+                trip: Math.random().toString(), //リプライ機能
               });
               if (inp.current) {
                 // 文字の消去
@@ -141,7 +142,7 @@ export default class extends Component {
         body: data.body,
         room: data.room,
         date: new Date(),
-        trip: Math.random().toString() //リプライ機能
+        trip: data.trip //Math.random().toString() //リプライ機能
       });
     });
 
