@@ -22,7 +22,7 @@ export default function DevPage() {
               className="rounded-full w-20 h-20 mt-5 mx-auto"
             />
             <div className="mt-5 text-xl">Name</div>
-            <div className="mt-2 text-lg word-break">Description</div>
+            <div className="mt-2 text-sm word-break">Description</div>
           </div>
         </div>
       </Layout>
