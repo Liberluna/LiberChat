@@ -25,19 +25,19 @@ export default function JoinPage() {
           <div className="leading-loose">LiberChat 0.1.0 Alpha</div>
           <div>
             <div className="text-2xl">About</div>
-            <div>LiberChatは、自由で開かれたチャットサイトです。</div>
+            <div>LiberChatは、どこよりも自由なチャットサイトです。</div>
             <div>
               13歳未満使用禁止、16歳未満使用禁止...<br />
               ネット上のサイトには、さまざまな年齢制限があります。
-              しかし、LiberChatには年齢制限はありません。
-              誰でも、年齢性別関係なく、公平に話せるチャットサイトです。
+              しかし、LiberChatには*年齢制限*はありません。
+              誰でも年齢性別関係なく、誰でも話せるチャットサイトです。
             </div>
           </div>
         </div>
         <div className="text-center mt-5">
           <div className="text-2xl">さあ！始めよう！</div>
           <Join />
-          <div>Room IDを入力してください。同じRoom Idの人と話すことができます。何も入力しないと、みんながいるルームに入ります。</div>
+          <div>Room IDを入力してください。同じRoom Idの人と話すことができます。何も入力しないで送信することでメインの部屋に入れます。</div>
         </div>
       </Layout>
     </>
