@@ -45,6 +45,17 @@ export default function MessageList(props: Props) {
           );
         }
 
+        if (message.type === "system") {
+          return (
+            <div className="text-center bg-slate-500 text-white rounded-lg drop-shadow-lg">
+              <span className="mx-2">System : </span>
+              <span className="mx-2">{dateText}</span>
+            </div>
+          );
+        }
+
+        // 型の混乱を防ぐため else ifにはしないで
+
         if (!message.processed) {
           //処理済みか判定
           if (DoNotUseWords.includes(message.body)) {
