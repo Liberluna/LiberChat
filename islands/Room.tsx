@@ -1,6 +1,5 @@
 import { YieldExpression } from "https://deno.land/x/ts_morph@17.0.1/ts_morph.js";
 import { useRef, useEffect } from "preact/hooks";
-import ky from "ky";
 import {
   Attributes,
   Component,
@@ -12,6 +11,9 @@ import { type Message } from "~/core/chat/index.ts";
 import MessagesList from "~/components/MessagesList.tsx";
 import { getIO } from "~/core/socketio/io.ts";
 import { IconArrowBigDownFilled } from 'tabler-icons'
+
+import { useEditor, EditorContent } from 'https://esm.sh/@tiptap/react'
+import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
 
 interface Props {
   roomId: string;
@@ -61,6 +63,13 @@ export default class extends Component {
       element.scrollTop = element.scrollHeight;
     } //一番下までスクロール
 
+    const editor = useEditor({
+      extensions: [
+        StarterKit,
+      ],
+      content: '<p>Hello World!</p>',
+    })
+    
     return (
       <>
         <div className="flex pl-4 py-2">
@@ -103,6 +112,7 @@ export default class extends Component {
           <MessagesList messages={this.state.messages} />
         </div>
         <button onClick={SDOB}><IconArrowBigDownFilled /></button>
+        <EditorContent editor={editor} />
       </>
     );
   }
