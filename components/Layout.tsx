@@ -41,11 +41,11 @@ body {
   return (
     <>
       <style>{css}</style>
-      <Header />
       <div className="dark:bg-gray-800 dark:text-gray-50">
+        <Header />
         <div className="mx-10">{props.children}</div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
