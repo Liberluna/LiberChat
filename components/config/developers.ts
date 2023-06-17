@@ -9,13 +9,13 @@ let Devs: Developer[] = [
   {
     icon: "https://github.com/nakasyou.png",
     name: "nakasyou",
-    desc: "LiberChatの開発指揮者、メイン開発者。主にバックエンドを担当。",
+    desc: "LiberChatの開発指揮者、メイン開発者。主にバックエンド・UXを担当。",
     link: "https://nakasyou.github.io",
   },
   {
     icon: "https://avatars.githubusercontent.com/u/121654029",
     name: "ame . x",
-    desc: "色々してる訳ではないが色々してる。フロントエンド担当",
+    desc: "色々してる訳ではないが色々してる。フロントエンド・UI担当",
     link: "https://github.com/edamame-x",
   },
 ];
