@@ -39,7 +39,7 @@ export default function () {
           <div>
             &copy; 2023 LiberCht Team. MIT LICENSED. All Rights Reserved.
           </div>
-          <div>
+          <div className="mx-2 text-center w-screen">
             Producted by{" "}
             <a
               href="https://liberluna.github.io"
