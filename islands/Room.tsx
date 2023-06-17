@@ -62,7 +62,7 @@ export default class extends Component {
 
     return (
       <>
-        <div className="flex pl-4 py-2" ref={refBox}>
+        <div className="flex pl-4 py-2">
           <input
             ref={inp}
             placeholder="message"
@@ -127,11 +127,11 @@ export default class extends Component {
       });
     });
     
-    /*socket.emit("message", {
+    socket.emit("message", {
       room: this.byProps.roomId,
       type: "enter",
       body: "enter",
-    })*/ //ここ何・・・？
+    })
   }
   addMessage(message: Message) {
     this.setState({
