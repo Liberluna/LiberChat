@@ -145,6 +145,7 @@ export default class extends Component {
         </div>
 
         <button
+          title="Down"
           onClick={SDOB}
           class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-4 rounded inline-flex items-cente fixed bottom-5 right-5"
         >
@@ -155,6 +156,24 @@ export default class extends Component {
           >
             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path>
           </svg>
+        </button>
+
+        <button
+          onClick={() => {
+            this.state.socket.emit("message", {
+              room: this.byProps.roomId,
+        
+              type: "exit",
+        
+              body: "@Anonymous" + "が退出しました。", //退室
+
+            });
+
+            window.location.href = "/";
+          }}
+          className="font-bold bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 left-0"
+        >
+          <span>Exit</span>
         </button>
       </>
     );
@@ -174,11 +193,13 @@ export default class extends Component {
     }
 
     socket.on("message", (data) => {
-      const safeData = {};
+      const safeData = {
+        ...data, //エラー抑制
+      };
 
       safeData.user = "@" + "Anonymous";
 
-      safeData.type = ["text", "enter"].includes(data.type)
+      safeData.type = ["text", "enter", "exit"].includes(data.type)
         ? data.type
         : "text";
 
@@ -186,9 +207,13 @@ export default class extends Component {
 
       safeData.room = data.room;
 
-      safeData.date = new Date();
+      safeData.date = new Date() ? new Date() : "Sat Jun 1 2023 20:40:20 GMT+0900 (日本標準時)"; 
 
-      safeData.trip = data.trip;
+      safeData.trip = data.trip ? data.trip : 0.114514;
+
+      safeData.processed = data.processed ? data.processed : false;
+
+      safeData.hashtrip = data.hashtrip ? data.hashtrip : false; //hashtripが存在するか
 
       this.addMessage(safeData);
     });
@@ -198,7 +223,7 @@ export default class extends Component {
 
       type: "enter",
 
-      body: "enter",
+      body: "@Anonymous" + "が入室しました。",
     });
   }
 
