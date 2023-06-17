@@ -4,7 +4,11 @@ export default function () {
       <div className="flex flex-wrap bg-gray-700">
         <div>
           <div className="font-bold uppercase opacity-50">Links</div>
-          <div className="red">Red</div>
+          <p className="hidden">後でsvgにする</p>
+          <a href="https://liberluna.com" className="cursor-pointer hover:underline mx-5">Liberluna Sites</a>
+          <a href="https://github.com/liberluna" className="cursor-pointer hover:underline mx-5">Liberluna GitHub</a>
+          <a href="https://github.com/liberluna/liberchat" className="cursor-pointer hover:underline mx-5">Liberchat Repo</a>
+          <a href="https://line.me/ti/g2/beNFT8zr5MEL_Um5xmSBZthZwfIuZcQu8-bYMA" className="cursor-pointer hover:underline mx-5">Liberluna OC</a>
         </div>
       </div>
       <div className="text-center bg-gray-700">
