@@ -18,7 +18,7 @@ export default function JoinPage() {
             src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
             alt="Logo"
             height="150"
-            className="h-80"
+            className="h-80 mx-auto text-center"
           />
         </div>
         <div className="text-center mt-8">LiberChatへようこそ！</div>
