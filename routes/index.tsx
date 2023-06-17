@@ -22,7 +22,7 @@ export default function JoinPage() {
               className="h-80 mx-auto text-center"
             />
           </div>
-          <div className="leading-loose">LiberChat 0.1.0 Alpha</div>
+          <div className="leading-loose">LiberChat 0.1.1 Alpha</div>
           <div>
             <div className="text-2xl">About</div>
             <div>LiberChatは、どこよりも自由なチャットサイトです。</div>

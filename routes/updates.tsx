@@ -11,6 +11,8 @@ export default function () {
 LiberChatのアップデート
 ### v0.1.0 alpha-1 (2026-06-16) Hydrogen
 チャット機能の追加。
+### v0.1.1 alpha-2 (2026-06-17) 
+簡易的なユーザーネーム機能 大幅なUI改善 伏字機能 fix etc
     `}</Markdown>
   </>
 }
