@@ -119,13 +119,13 @@ export default class extends Component {
     }
 
     socket.on("message", (data) => {
-      this.addMessage({
-        user: "@" + "Anonymous",
-        type: "text",
-        body: data.body,
-        room: data.room,
-        date: new Date(),
-      });
+      const safeData = {}
+      safeData.user = "@" + "Anonymous"
+      safeData.type = ["text","enter"].includes(data.type) ? data.type : "text"
+      safeData.body = data.body ? data.body : ""
+      safeData.room = data.room
+      safeData.date = new Date()
+      this.addMessage(safeData);
     });
     
     socket.emit("message", {
