@@ -1,8 +1,8 @@
 interface Devs {
-    Icon: string | URL,
+    Icon: string,
     Name: string,
     Desc: string
-    Link: string | URL
+    Link: string
 }
 
 const Devs: Devs[] = [
