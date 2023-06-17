@@ -6,5 +6,5 @@ export interface Message {
   date: Date
   processed: boolean // 既に処理されているか。
   hashtrip: string //二度の処理を防ぐ
-  [x: string]: string //こことの競合　プロパティ意外はオウム返し 
+  [x: string]: any //こことの競合 プロパティ意外はオウム返し 
 }
