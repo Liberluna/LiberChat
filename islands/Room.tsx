@@ -152,7 +152,7 @@ export default class extends Component {
       user: "",
       date: "",
       body: "Join / follow me! https://twitter.com/macl2189",
-    }); //これ何・・・
+    }); 
   }
   addMessage(message: Message) {
     this.setState({
