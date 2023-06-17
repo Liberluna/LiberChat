@@ -15,38 +15,7 @@ import { getIO } from "~/core/socketio/io.ts";
 interface Props {
   roomId: string;
 }
-const connect = async (options: { roomId: string }) => {
-  const { roomId } = options;
 
-  const res = await fetch("/socket/comet", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      room: roomId,
-    }),
-  });
-  if (res.status !== 200) {
-    // Error
-    return { error: "error" };
-  }
-  // OK
-  return {
-    data: await res.json(),
-  };
-};
-async function* getMessages(options: { roomId: string }) {
-  while (true) {
-    const result = await connect({
-      roomId: options.roomId,
-    });
-    if (result.error) {
-      continue;
-    }
-    yield result;
-  }
-}
 export default class extends Component {
   state: Readonly<{
     messages: Message[];
@@ -97,6 +66,7 @@ export default class extends Component {
               }
               this.state.socket.emit("message", {
                 body: inp.current?.value,
+                room: this.byProps.roomId,
               });
               if (inp.current) {
                 // 文字の消去
