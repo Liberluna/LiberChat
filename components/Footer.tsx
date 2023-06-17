@@ -3,7 +3,7 @@ import Link from "libercomp/Link.tsx"
 export default function () {
   return (
     <>
-      <footer className="bg-gray-800 text-white pt-20">
+      <footer className="bg-gray-800 text-white pt-20 pb-5">
         <div className="flex flex-wrap bg-gray-700">
           <div>
             <div className="font-bold uppercase opacity-50 text-center w-screen">
