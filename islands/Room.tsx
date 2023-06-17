@@ -66,6 +66,7 @@ export default class extends Component {
               }
               this.state.socket.emit("message", {
                 body: inp.current?.value,
+                room: this.byProps.roomId,
               });
               if (inp.current) {
                 // 文字の消去
