@@ -1,27 +1,21 @@
+import Link from "liberchat/link.tsx"
+
+function FooterCol (props: { children: any, title: string, }) {
+  return <div class="grid grid-rows-4 gap-2">
+    <span class="font-bold uppercase opacity-50 text-center w-screen">{ props.title }</span>
+    { props.children }
+  </div>
+}
 export default function () {
   return (
     <>
       <footer className="bg-gray-800 text-white pt-20">
-        <div className="flex flex-wrap bg-gray-700">
-          <div>
-            <div className="font-bold uppercase opacity-50 text-center w-screen">
-              Links
-            </div>
-            <div className="text-center grid grid-rows-2 grid-cols-2 gap-2">
-              <a
-                href="/updates"
-                className="cursor-pointer hover:underline mx-5"
-              >
-                Release notes
-              </a>
-              <a
-                href="https://github.com/LiberLuna/LiberChat"
-                className="cursor-pointer hover:underline mx-5"
-              >
-                Repository
-              </a>
-            </div>
-          </div>
+        <div class="flex flex-wrap">
+          <FooterCol title="Links">
+            <Link to="/developers">Developers</Link>
+          </FooterCol>
+        </div>
+        <div>
           <div className="mx-2 mt-5 text-center w-screen">
             &copy; 2023 LiberChat Team. MIT LICENSED. All Rights Reserved.
           </div>
