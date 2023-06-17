@@ -5,6 +5,7 @@ import EasyHash from "easyhash";
 
 export interface Props {
   messages: Message[];
+  onRes: any;
 }
 
 export default function MessageList(props: Props) {
@@ -24,6 +25,12 @@ export default function MessageList(props: Props) {
             message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
           }
         }
+
+        function res(MsgTripID: string):void {
+          console.log("res :" + MsgTripID);
+          //親へ送る
+          props.onRes(MsgTripID);
+        }
       
 
         return (
@@ -35,6 +42,7 @@ export default function MessageList(props: Props) {
             <div className="mb-2 tracking-tight text-gray-600 dark:text-white flex gap-4">
               <span>{message.user}</span>
               <span>{dateText}</span>
+              <button className="underline" onClick={() => res(MsgTripID)}>リプライボタン テスト機能 後でsvgにする予定</button>
             </div>
             <p className="mb-2 font-bold tracking-tight text-gray-800 dark:text-white break-words">
               {message.body}
