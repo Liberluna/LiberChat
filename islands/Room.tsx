@@ -131,7 +131,7 @@ export default class extends Component {
                       if(window.confirm("退出しますか？"))
                         window.location.href = "/"
                     }}
-                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg"
+                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg w-6 h-6"
                   >
                     <IconLogout />
                   </button>
@@ -153,7 +153,7 @@ export default class extends Component {
           onClick={()=>{
             window.scrollTo(999999999999999)
           }}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 pl-4 rounded-full inline-flex items-center fixed bottom-20 right-20"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 pl-4 rounded-full inline-flex items-center fixed bottom-20 right-20 justify-items-center"
         >
           <IconArrowDown />
         </button>
