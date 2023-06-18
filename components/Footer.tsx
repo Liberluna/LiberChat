@@ -9,7 +9,7 @@ function FooterCol (props: { children: any, title: string, }) {
 export default function () {
   return (
     <>
-      <footer className="bg-gray-800 text-white pt-20 mt-20 mb-20">
+      <footer className="bg-gray-800 text-white pt-20 pb-10 mt-20">
         <div class="flex flex-wrap">
           <FooterCol title="Links">
             <Link to="/developers">Developers</Link>
