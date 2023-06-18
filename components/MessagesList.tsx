@@ -2,13 +2,9 @@ import { format } from "date-fns";
 
 import EasyHash from "easyhash";
 
-import { DoNotUseWords, SysMsg } from "./config/disabled.ts";
-
-import { Message } from "~/core/chat/index.ts";
-
-import replaceWords from "./config/replace.ts";
-
-import max from "./config/rule.ts";
+import { doNotUseWords } from "./config/disabled.ts";
+import { type Message } from "~/core/chat/index.ts";
+import { maxMessage } from "./config/rule.ts";
 
 export interface Props {
   messages: Message[];

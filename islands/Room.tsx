@@ -184,8 +184,6 @@ export default class extends Component {
       safeData.room = data.room;
       safeData.date = new Date()
       safeData.trip = data.trip ? data.trip : 0.114514;
-      safeData.processed = data.processed ? data.processed : false;
-      safeData.hashtrip = data.hashtrip ? data.hashtrip : false; //hashtripが存在するか
 
       this.addMessage(safeData);
     });
@@ -198,7 +196,6 @@ export default class extends Component {
   }
 
   addMessage(message: Message) {
-    
     this.setState({
       messages: [...this.state.messages, message],
     });
