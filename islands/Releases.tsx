@@ -23,6 +23,7 @@ export default function () {
         }
         let { name, body } = release
         body = body.replaceAll("\r\n", "\n")
+          .replace(/^## /g, "### ")
         return <div>
           <h2 class="text-3xl">{ name }</h2>
           <div>
