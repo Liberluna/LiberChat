@@ -6,10 +6,11 @@ import Layout from "~/components/Layout.tsx"
 export default function () {
   return <>
     <Head>
-      <title>Liberchat</title>
-      <meta name="description" content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
+      <title>Release Notes | Liberchat</title>
+      <meta name="description" content="LiberChatの歴史を紹介します。" />
     </Head>
     <Layout>
+      <div class="text-3xl">Release Notes</div>
       <Releases />
     </Layout>
   </>
