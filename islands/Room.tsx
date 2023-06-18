@@ -89,7 +89,7 @@ export default class extends Component {
     return (
       <>
         <div class="relative w-full h-full">
-          <div className="h-[100dvh] fixed top-0 left-0 right-0 overflow-y-scroll" ref={refBox}>
+          <div className="absolute top-0 left-0 right-0 overflow-y-scroll" ref={refBox}>
             <MessagesList messages={this.state.messages} reply={reply} />
           </div>
           <div className="flex fixed bottom-0 left-0 right-0">
