@@ -53,7 +53,7 @@ export default function MessageList(props: Props) {
 
         let messageHtml: string = message.body
 
-        for(const doNotUseWord of DoNotUseWords){
+        for(const doNotUseWord of doNotUseWords){
           messageHtml.replaceAll(doNotUseWord, "***") // 禁止用語の削除
         }
 

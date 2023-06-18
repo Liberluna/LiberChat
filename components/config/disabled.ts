@@ -1,1 +1,1 @@
-export const DoNotUseWords: string[] = []; //伏字にする言葉
+export const doNotUseWords: string[] = []; //伏字にする言葉
