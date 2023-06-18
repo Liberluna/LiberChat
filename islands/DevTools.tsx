@@ -91,29 +91,6 @@ function DevTool(prop: Props) {
   const nameRef = useRef<HTMLInputElement | null>(null);
   const msgRef = useRef<HTMLInputElement | null>(null);
 
-  let socket: any = null;
-
-  const SubmitMsg = () => {
-    (async () => {
-      const io = await getIO();
-      socket = io("https://liberchat-api.nakasyou.repl.co/");
-    })();
-
-    if (roomRef.current && nameRef.current && msgRef.current) {
-      const room = roomRef.current.value;
-      const name = nameRef.current.value;
-      const msg = msgRef.current.value;
-
-      socket.emit("message", {
-        body: msg,
-        room: room,
-        type: "text",
-        user: name,
-        uuid: crypto.randomUUID(),
-      });
-    }
-  };
-
   return (
     <>
       <div>
@@ -148,7 +125,10 @@ function DevTool(prop: Props) {
             />
 
             <button
-              onClick={SubmitMsg}
+              onClick={() => {
+                console.log("send");
+                // TBD
+              }}
               className="mx-5 bg-gray-500 text-white rounded-md hover:bg-gray-400"
             >
               {s}Send{s}
