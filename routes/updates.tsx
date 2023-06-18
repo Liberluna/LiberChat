@@ -1,12 +1,16 @@
 import Markdown from "~/components/Markdown.tsx"
 import { Head } from "$fresh/runtime.ts"
 
-export default function () {
+export default async function () {
+  const releasesRes = await fetch("https://api.github.com/repos/liberluna/liberchat/releases")
   return <>
     <Head>
       <title>Liberchat</title>
       <meta name="description" content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
     </Head>
+    <div>
+
+    </div>
     <Markdown>{`# Updates
 LiberChatのアップデート
 ### v0.1.0 alpha-1 (2026-06-16) Hydrogen
