@@ -37,6 +37,7 @@ export default function(props: Props) {
 
   .md ul {
     list-style-type: disc !important;
+    padding: revert;
   }
   .md ol {
     list-style-type: decimal !important;
