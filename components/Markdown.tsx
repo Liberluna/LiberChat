@@ -38,6 +38,9 @@ export default function(props: Props) {
   .md ul {
     list-style-type: disc !important;
   }
+  .md ol {
+    list-style-type: decimal !important;
+  }
   `
   
   const text = typeof props.children === "string" ? props.children : renderToString(props.children)
