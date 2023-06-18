@@ -58,9 +58,10 @@ export default function MessageList(props: Props) {
           easyHash(message.user + message.body + message.uuid))  // Hash
           .slice(-8,-1)
 
-        messageHtml = messageHtml.replace(/>>[0-9]{8}/g, (id, index)=>{
-          return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${index}">${id}</a>`;
-        })
+        messageHtml = message.body.replace(/>>(\d{8})/g, (match, id) => {
+          return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${id}">${match}</a>`;
+        });
+
         return (
           <div
             key={index}
