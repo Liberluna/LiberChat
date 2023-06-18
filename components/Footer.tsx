@@ -13,6 +13,7 @@ export default function () {
         <div class="flex flex-wrap">
           <FooterCol title="Links">
             <Link to="/developers">Developers</Link>
+            <Link to="/release-notes">Release Notes</Link>
           </FooterCol>
         </div>
         <div className="mt-5">
