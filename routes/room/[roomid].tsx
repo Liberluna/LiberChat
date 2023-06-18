@@ -35,7 +35,8 @@ export default function (props: PageProps) {
   opacity: 0.8;
 }
 body{
-
+  width: 100%;
+  height: 100%;
 }
   `
   return <>
@@ -48,7 +49,7 @@ body{
       <script src="https://cdn.socket.io/socket.io-2.3.0.js"></script>
       <script src="/socket-init.js"></script>
     </Head>
-    <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden overflow-y-hidden">
+    <div className="bg-white dark:bg-gray-800 w-full h-full">
       <Room roomId={roomid}/>
     </div>
   </>
