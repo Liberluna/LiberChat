@@ -65,18 +65,6 @@ export default class extends Component {
     //Box取得
 
     const refBox = useRef<HTMLDivElement>(null);
-
-    function SDOB() {
-      const ref = refBox.current;
-
-      if (ref) {
-        STOB(ref);
-      }
-    }
-
-    function STOB(element: HTMLDivElement) {
-      element.scrollTop = element.scrollHeight;
-    } //一番下までスクロール
     
     const reply = (msg: string): void => {
       if (inp.current == null) {
@@ -124,7 +112,9 @@ export default class extends Component {
         </div>
         <button
           title="Down"
-          onClick={SDOB}
+          onClick={()=>{
+            alert(refBox.current.scrollTop)
+          }}
           class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-4 rounded inline-flex items-cente fixed bottom-5 right-5"
         >
           <svg
