@@ -86,55 +86,11 @@ function DevTool(prop: Props) {
 
   const s = "　";
 
-  //MsgForm
-  const roomRef = useRef<HTMLInputElement | null>(null);
-  const nameRef = useRef<HTMLInputElement | null>(null);
-  const msgRef = useRef<HTMLInputElement | null>(null);
-
   return (
     <>
       <div>
         <div className="flex space-x-4 mb-4 py-2 border-b border-gray-300 rounded bg-gray-700 flex-wrap">
-          <div className="w-full flex flex-wrap">
-            <label htmlFor="room">
-              {s}Room{s}:{s}
-            </label>
-            <input
-              id="room"
-              type="text"
-              value=""
-              class="text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <label htmlFor="name">
-              {s}Name{s}:{s}
-            </label>
-            <input
-              id="name"
-              type="text"
-              value=""
-              class="text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <label htmlFor="msg">
-              {s}Message{s}:{s}
-            </label>
-            <input
-              id="msg"
-              type="text"
-              value=""
-              class="text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-
-            <button
-              onClick={() => {
-                console.log("send");
-                // TBD
-              }}
-              className="mx-5 bg-gray-500 text-white rounded-md hover:bg-gray-400"
-            >
-              {s}Send{s}
-            </button>
-          </div>
-
+          <div className="w-full flex flex-wrap"></div>
           <div className="w-full"></div>
         </div>
       </div>
