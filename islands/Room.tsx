@@ -115,8 +115,13 @@ export default class extends Component {
               <IconSend />
             </button>
             <div>
-              <div class="absolute bottom-12 right-0 gap-2" hidden={!isOpenMenu}>
-                <button class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg">
+              <div class="absolute bottom-12 right-0 gap-2 grid grid-rows-3" hidden={!isOpenMenu}>
+                <button
+                  class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg"
+                  onClick={()=>{
+                    setIsOpenMenu(false)
+                  }}
+                >
                   <IconX />
                 </button>
                 <button
