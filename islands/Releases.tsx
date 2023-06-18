@@ -7,12 +7,11 @@ export default function () {
   
   useEffect(()=>{
     (async()=>{
-      const releaseRes: Respobse = await fetch("https://api.github.com/repos/liberluna/liberchat/releases")
+      const releaseRes: Response = await fetch("https://api.github.com/repos/liberluna/liberchat/releases")
       const json = await releaseRes.json()
       if(!Array.isArray(json)){
         alert("Error. リリースの取得に失敗しました。")
       }
-      alert("Loaded!")
       setReleases(json)
     })()
   }, [])
@@ -28,7 +27,7 @@ export default function () {
         return <div>
           <h2 class="text-3xl">{ name }</h2>
           <div>
-            { parseMarkdown(body) }
+            body
           </div>
         </div>
       })
