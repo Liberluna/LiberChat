@@ -109,7 +109,15 @@ export default class extends Component {
 
     return (
       <>
-        <div class="relative w-full h-screen overflow-y-scroll" ref={refBox}>
+        <div
+          class="relative w-full h-screen overflow-y-scroll"
+          ref={refBox}
+          onClick={() => {
+            if (isOpenMenu) {
+              setIsOpenMenu(!isOpenMenu);
+            }
+          }}
+        >
           <div className="top-0 left-0 right-0 min-h-screen">
             <MessagesList messages={this.state.messages} reply={reply} />
           </div>
@@ -165,7 +173,10 @@ export default class extends Component {
               </div>
               <button
                 onClick={() => {
-                  setIsOpenMenu(!isOpenMenu);
+                  setTimeout(() => {
+                    setIsOpenMenu(!isOpenMenu);
+                  });
+                  // async
                 }}
                 class="mb-5 bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
               >
