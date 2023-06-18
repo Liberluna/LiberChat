@@ -3,6 +3,7 @@ import {
   IconSend,
   IconLogout,
   IconMenu2,
+  IconX,
 } from "tabler-icons"
 import ky from "ky";
 
@@ -115,6 +116,9 @@ export default class extends Component {
             </button>
             <div>
               <div class="absolute bottom-12 right-0 gap-2" hidden={!isOpenMenu}>
+                <button class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg">
+                  <IconX />
+                </button>
                 <button
                   onClick={()=>{
                     if(window.confirm("退出しますか？"))
@@ -129,7 +133,7 @@ export default class extends Component {
                 onClick={()=>{
                   setIsOpenMenu(!isOpenMenu)
                 }}
-                class="bg-gray-300 hover:bg-gray-400 rounded text-center p-2"
+                class="bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
               >
                 <IconMenu2 />
               </button>
@@ -150,15 +154,6 @@ export default class extends Component {
           >
             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path>
           </svg>
-        </button>
-
-        <button
-          onClick={() => {
-            window.location.href = "/";
-          }}
-          className="font-bold bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 left-0"
-        >
-          <IconLogout />
         </button>
       </>
     );
