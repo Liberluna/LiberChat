@@ -177,7 +177,7 @@ export default class extends Component {
 
         <button
           onClick={SDOB}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 rounded-full inline-flex items-center fixed bottom-20 right-1 justify-items-center text-center"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 rounded-full inline-flex items-center fixed bottom-20 right-4 justify-items-center text-center"
         >
           <IconArrowDown />
         </button>
