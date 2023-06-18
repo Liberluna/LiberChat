@@ -79,6 +79,7 @@ export default class extends Component {
         inp.current.value += " >>" + msg + " ";
       }
     }
+    const [canSubmit, setCanSubmit] = useState(false) // 送信可能か
     const sendMessage = (): void => {
       if (inp.current?.value === "") {
         alert(
@@ -95,9 +96,9 @@ export default class extends Component {
         // 文字の消去
         inp.current.value = ""
       }
+      setCanSubmit(false)
     }
     const [isOpenMenu, setIsOpenMenu] = useState(false)  // メニューがオンか
-    const [canSubmit, setCanSubmit] = useState(false) // 送信可能か
 
     return (
       <>
@@ -126,6 +127,9 @@ export default class extends Component {
               }}
               class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
               disabled={!canSubmit}
+              style={{
+                opacity: canSubmit ? 1 : 0.5
+              }}
             >
               <IconSend />
             </button>
