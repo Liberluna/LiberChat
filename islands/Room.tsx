@@ -1,5 +1,11 @@
-import { useRef, useEffect } from "preact/hooks"
-
+import { useRef, useEffect, useState } from "preact/hooks"
+import {
+  IconSend,
+  IconLogout,
+  IconMenu2,
+  IconX,
+  IconArrowDown,
+} from "tabler-icons"
 import ky from "ky";
 
 import {
@@ -65,19 +71,7 @@ export default class extends Component {
     //Box取得
 
     const refBox = useRef<HTMLDivElement>(null);
-
-    function SDOB() {
-      const ref = refBox.current;
-
-      if (ref) {
-        STOB(ref);
-      }
-    }
-
-    function STOB(element: HTMLDivElement) {
-      element.scrollTop = element.scrollHeight;
-    } //一番下までスクロール
-
+    
     const reply = (msg: string): void => {
       if (inp.current == null) {
         return;
@@ -85,66 +79,83 @@ export default class extends Component {
         inp.current.value += " >>" + msg + " ";
       }
     }
-    
+
+    const [isOpenMenu, setIsOpenMenu] = useState(false)
     return (
       <>
-        <div className="flex pl-4 py-2">
-          <input
-            ref={inp}
-            placeholder="message"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          />
-
-          <button
-            onClick={() => {
-              if (inp.current?.value === "") {
-                alert(
-                  "送信できませんでした。 送信内容が空の可能性が有ります。"
-                );
-                return;
-              }
-
-              this.state.socket.emit("message", {
-                body: inp.current?.value,
-                room: this.byProps.roomId,
-                uuid: crypto.randomUUID(),
-              });
-
-              if (inp.current) {
-                // 文字の消去
-                inp.current.value = "";
-              }
-            }}
-            class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-          >
-            Send
-          </button>
+        <div class="relative w-full h-full">
+          <div className="top-0 left-0 right-0 min-h-screen">
+            <MessagesList messages={this.state.messages} reply={reply} />
+          </div>
+          <div className="flex sticky bottom-0 left-0 right-0">
+            <input
+              ref={inp}
+              placeholder="message"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+            <button
+              onClick={() => {
+                if (inp.current?.value === "") {
+                  alert(
+                    "送信できませんでした。 送信内容が空の可能性が有ります。"
+                  );
+                  return;
+                }
+                this.state.socket.emit("message", {
+                  body: inp.current?.value,
+                  room: this.byProps.roomId,
+                  uuid: crypto.randomUUID(),
+                })
+                if (inp.current) {
+                  // 文字の消去
+                  inp.current.value = ""
+                }
+              }}
+              class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+            >
+              <IconSend />
+            </button>
+            <div>
+              <div hidden={!isOpenMenu}>
+                <div class="absolute bottom-12 right-0 gap-2 grid grid-rows-3 justify-items-center">
+                  <button
+                    class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg"
+                    onClick={()=>{
+                      setIsOpenMenu(false)
+                    }}
+                  >
+                    <IconX />
+                  </button>
+                  <button
+                    onClick={()=>{
+                      if(window.confirm("退出しますか？"))
+                        window.location.href = "/"
+                    }}
+                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg w-12 h-12"
+                  >
+                    <IconLogout />
+                  </button>
+                </div>
+              </div>
+              <button 
+                onClick={()=>{
+                  setIsOpenMenu(!isOpenMenu)
+                }}
+                class="bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
+              >
+                <IconMenu2 />
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="h-5/6 overflow-y-scroll" ref={refBox}>
-          <MessagesList messages={this.state.messages} reply={reply} />
-        </div>
-
         <button
           title="Down"
-          onClick={SDOB}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-4 rounded inline-flex items-cente fixed bottom-5 right-5"
-        >
-          <svg
-            class="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path>
-          </svg>
-        </button>
-
-        <button
-          onClick={() => {
-            window.location.href = "/";
+          onClick={()=>{
+            window.scrollTo(999999999999999)
           }}
-          className="font-bold bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 left-0"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 pl-4 rounded-full inline-flex items-center fixed bottom-20 right-20 justify-items-center text-center"
         >
-          <span>Exit</span>
+          <IconArrowDown />
         </button>
       </>
     );
