@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "preact/hooks"
-
+import { IconSend } from "tabler-icons"
 import ky from "ky";
 
 import {
@@ -118,7 +118,7 @@ export default class extends Component {
               }}
               class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
             >
-              Send
+              <IconSend />
             </button>
           </div>
         </div>
