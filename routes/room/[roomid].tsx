@@ -34,6 +34,9 @@ export default function (props: PageProps) {
   border-radius: 8px;
   opacity: 0.8;
 }
+body{
+
+}
   `
   return <>
     <Head>
@@ -45,7 +48,7 @@ export default function (props: PageProps) {
       <script src="https://cdn.socket.io/socket.io-2.3.0.js"></script>
       <script src="/socket-init.js"></script>
     </Head>
-    <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden">
+    <div className="bg-white dark:bg-gray-800 w-full h-screen overflow-x-hidden overflow-y-hidden">
       <Room roomId={roomid}/>
     </div>
   </>
