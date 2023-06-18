@@ -121,7 +121,7 @@ export default class extends Component {
                 onClick={()=>{
                   setIsOpenMenu(!isOpenMenu)
                 }}
-                class="bg-gray-300 hover:bg-gray-400 rounded text-center"
+                class="bg-gray-300 hover:bg-gray-400 rounded text-center p-2"
               >
                 <IconMenu2 />
               </button>
