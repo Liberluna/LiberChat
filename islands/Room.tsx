@@ -115,24 +115,26 @@ export default class extends Component {
               <IconSend />
             </button>
             <div>
-              <div class="absolute bottom-12 right-0 gap-2 grid grid-rows-3 justify-items-center" hidden={true}>
-                <button
-                  class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg"
-                  onClick={()=>{
-                    setIsOpenMenu(false)
-                  }}
-                >
-                  <IconX />
-                </button>
-                <button
-                  onClick={()=>{
-                    if(window.confirm("退出しますか？"))
-                      window.location.href = "/"
-                  }}
-                  class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg"
-                >
-                  <IconLogout />
-                </button>
+              <div hidden={true}>
+                <div class="absolute bottom-12 right-0 gap-2 grid grid-rows-3 justify-items-center">
+                  <button
+                    class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg"
+                    onClick={()=>{
+                      setIsOpenMenu(false)
+                    }}
+                  >
+                    <IconX />
+                  </button>
+                  <button
+                    onClick={()=>{
+                      if(window.confirm("退出しますか？"))
+                        window.location.href = "/"
+                    }}
+                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg"
+                  >
+                    <IconLogout />
+                  </button>
+                </div>
               </div>
               <button 
                 onClick={()=>{
