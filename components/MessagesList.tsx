@@ -42,24 +42,27 @@ export default function MessageList(props: Props) {
           return (
             <div className="text-center bg-slate-500 text-white rounded-lg drop-shadow-lg">
               <span className="mx-2">System : </span>
+              <span className="mx-2">{message.body}</span>
               <span className="mx-2">{dateText}</span>
             </div>
           );
         }
 
-        let messageHtml: string = message.body
+        let messageHtml: string = message.body;
 
-        for(const doNotUseWord of doNotUseWords){
-          messageHtml.replaceAll(doNotUseWord, "***") // 禁止用語の削除
+        for (const doNotUseWord of doNotUseWords) {
+          messageHtml = messageHtml.replaceAll(doNotUseWord, "***"); // 禁止用語の削除
         }
 
-        const tripId = 
-          ("00000000" + 
-          easyHash(message.user + message.body + message.uuid))  // Hash
-          .slice(-8,-1)
+        const tripId = (
+          "00000000" + easyHash(message.user + message.body + message.uuid)
+        ) // Hash
+          .slice(-9, -1);
 
-        messageHtml = message.body.replace(/>>(\d{8})/g, (match, id) => {
-          return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${id}">${match}</a>`;
+
+        messageHtml = messageHtml.replace(/>>(\d{8})/g, (match, p1) => {
+          console.log(match, p1);
+          return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${p1}">${match}</a>`;
         });
 
         return (
