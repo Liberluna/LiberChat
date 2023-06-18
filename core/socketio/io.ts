@@ -1,25 +1,25 @@
 interface Socket {
-  emit: (data: any) => void
-  on: (eventName: string, callBack: (data: any) => any) => void
+  emit: (data: any) => void;
+  on: (eventName: string, callBack: (data: any) => any) => void;
 }
-type Io = (t: string, e?: Record<any,any>) => Socket
+type Io = (t: string, e?: Record<any, any>) => Socket;
 
-export async function getIO(): Promise<Io>{
-  const res = await fetch("https://cdn.socket.io/socket.io-2.3.0.js")
+export async function getIO(): Promise<Io> {
+  const res = await fetch("https://cdn.socket.io/socket.io-2.3.0.js");
 
-  const script = await res.text()
+  const script = await res.text();
 
-  const func = new Function(script)
+  const func = new Function(script);
 
   const ioContainer: {
-    io?: Io,
-  } = {}
+    io?: Io;
+  } = {};
 
-  func.call(ioContainer)
+  func.call(ioContainer);
 
   const newContainer = ioContainer as {
-    io: Io
-  }
+    io: Io;
+  };
 
-  return newContainer.io
+  return newContainer.io;
 }
