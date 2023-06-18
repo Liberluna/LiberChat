@@ -32,7 +32,7 @@ export default function () {
         }
         let { name, body, html_url, tag_name } = release
         body = body.replaceAll("\r\n", "\n")
-        body = body.replace(/@[a-zA-z0-9]+/g, (user: string)=>{
+        body = body.replace(/@[a-zA-z0-9\-]+/g, (user: string)=>{
           return `[${user}](https://github.com/${user.slice(1)})`
         })
         body = body.replaceAll(/## /g, "### ")
