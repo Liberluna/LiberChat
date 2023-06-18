@@ -26,7 +26,7 @@ export default function () {
         return <div>
           <h2 class="text-3xl">{ name }</h2>
           <div>
-            <Markdown>{ body }</Markdown>
+            { body }
           </div>
         </div>
       })
