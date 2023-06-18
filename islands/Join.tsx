@@ -25,7 +25,10 @@ export default function () {
     <div>
       <div className="text-center text-2xl mb-5">LiberChat Join</div>
 
-      <label htmlFor="room" className="border p-1.5">
+      <label
+        htmlFor="room"
+        className="text-black p-1.5 rounded dark:text-white"
+      >
         RoomID :
       </label>
 
@@ -36,7 +39,10 @@ export default function () {
         ref={inputRef}
       />
 
-      <button onClick={join} className="border w-20 p-1">
+      <button
+        onClick={join}
+        className="text-black border w-20 p-1 rounded hover:bg-gray-400 hover:text-black dark:text-white"
+      >
         Join
       </button>
     </div>
