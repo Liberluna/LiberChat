@@ -19,5 +19,4 @@ LiberChatのアップデート
 簡易的なユーザーネーム機能 大幅なUI改善 伏字機能 fix etc
     `}</Markdown>
     </>
-  );
 }
