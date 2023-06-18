@@ -31,7 +31,8 @@ export default function(props: Props) {
     font-size: 0.67em !important;
   }
   .md a{
-    color: blue;
+    color: blue !important;
+    text-decoration-line: underline !important;
   }`
   
   const text = typeof props.children === "string" ? props.children : renderToString(props.children)
