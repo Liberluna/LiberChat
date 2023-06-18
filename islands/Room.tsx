@@ -77,7 +77,7 @@ export default class extends Component {
     function STOB(element: HTMLDivElement) {
       element.scrollTop = element.scrollHeight;
     } //一番下までスクロール
-
+    
     const reply = (msg: string): void => {
       if (inp.current == null) {
         return;
