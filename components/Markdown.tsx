@@ -36,7 +36,7 @@ export default function(props: Props) {
   }
 
   .md ul {
-    list-style-type: disc;
+    list-style-type: disc !important;
   }
   `
   
