@@ -9,7 +9,7 @@ import * as $2 from "./routes/dev347.tsx";
 import * as $3 from "./routes/developers.tsx";
 import * as $4 from "./routes/index.tsx";
 import * as $5 from "./routes/room/[roomid].tsx";
-import * as $6 from "./routes/updates.tsx";
+import * as $6 from "./routes/release-notes.tsx";
 import * as $$0 from "./islands/DevTools.tsx";
 import * as $$1 from "./islands/Join.tsx";
 import * as $$2 from "./islands/Releases.tsx";
@@ -23,7 +23,7 @@ const manifest = {
     "./routes/developers.tsx": $3,
     "./routes/index.tsx": $4,
     "./routes/room/[roomid].tsx": $5,
-    "./routes/updates.tsx": $6,
+    "./routes/release-notes.tsx": $6,
   },
   islands: {
     "./islands/DevTools.tsx": $$0,
