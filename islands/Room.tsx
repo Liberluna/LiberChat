@@ -97,6 +97,10 @@ export default class extends Component {
     }
     const [isOpenMenu, setIsOpenMenu] = useState(false)  // メニューがオンか
 
+    const SODB = () => {
+      
+    }
+
     return (
       <>
         <div class="relative w-full h-full">
@@ -166,7 +170,7 @@ export default class extends Component {
         <button
           title="Down"
           onClick={SDOB}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-4 rounded inline-flex items-cente fixed bottom-5 right-5"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 right-5"
         >
           <svg
             class="fill-current w-4 h-4 mr-2"
