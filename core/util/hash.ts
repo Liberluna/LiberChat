@@ -10,5 +10,7 @@ export function easyHash(data: string): string {
     hash = hash & hash;
   }
 
+  hash = Math.abs(hash);
+
   return hash.toString();
 }
