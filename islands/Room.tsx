@@ -131,7 +131,7 @@ export default class extends Component {
                       if(window.confirm("退出しますか？"))
                         window.location.href = "/"
                     }}
-                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg w-6 h-6"
+                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg w-12 h-12"
                   >
                     <IconLogout />
                   </button>
