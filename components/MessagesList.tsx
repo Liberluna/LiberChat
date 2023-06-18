@@ -53,19 +53,10 @@ export default function MessageList(props: Props) {
           messageHtml.replaceAll(doNotUseWord, "***") // 禁止用語の削除
         }
 
-        let MsgTripID = "";
-
-        if (!message.hashtrip) {
-          MsgTripID = easyHash(message.user + message.body + message.trip);
-
-          MsgTripID = MsgTripID + "00000000";
-
-          MsgTripID = MsgTripID.substring(2, 10); 
-
-          message.hashtrip = MsgTripID;
-        }else {
-          MsgTripID = message.hashtrip;
-        }
+        const tripId = 
+          ("00000000" + 
+          easyHash(message.user + message.body + message.uuid))  // Hash
+          .splice(-8,-1)
 
         messageHtml = messageHtml.replace(/>>[0-9]{8}/g, (id, index)=>{
           return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${index}">${id}</a>`;
@@ -73,14 +64,14 @@ export default function MessageList(props: Props) {
         return (
           <div
             key={index}
-            id={MsgTripID ? MsgTripID : "XXXXXXXX"}
+            id={tripId}
             className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <div className="mb-2 tracking-tight text-gray-600 dark:text-white flex gap-4">
               <span>{message.user}</span>
               <span>{dateText}</span>
-              <button onClick={() => props.reply(MsgTripID)}>Reply</button>
-              <span className="mx-2">ID : {MsgTripID}</span>
+              <button onClick={() => props.reply(tripId)}>Reply</button>
+              <span className="mx-2">ID : {tripId}</span>
             </div>
             <p
               className="mb-2 font-bold tracking-tight text-gray-800 dark:text-white break-words"

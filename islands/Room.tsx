@@ -115,7 +115,7 @@ export default class extends Component {
               this.state.socket.emit("message", {
                 body: inp.current?.value,
                 room: this.byProps.roomId,
-                trip: Math.random().toString(), //trip
+                uuid: crypto.randomUUID(),
               });
 
               if (inp.current) {
@@ -183,7 +183,7 @@ export default class extends Component {
       safeData.body = data.body ? data.body : "";
       safeData.room = data.room;
       safeData.date = new Date()
-      safeData.trip = data.trip ? data.trip : 0.114514;
+      safeData.uuid = data.uuid ? data.uuid : crypto.randomUUID()
 
       this.addMessage(safeData);
     });
