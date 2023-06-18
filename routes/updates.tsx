@@ -1,6 +1,6 @@
 import Markdown from "~/components/Markdown.tsx"
 import { Head } from "$fresh/runtime.ts"
-//import Releases from "~/islands/Releases.tsx"
+import Releases from "~/islands/Releases.tsx"
 
 export default function () {
   return <>
@@ -9,7 +9,7 @@ export default function () {
       <meta name="description" content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。" />
     </Head>
     <div>
-      a
+      <Releases />
     </div>
     <Markdown>{`# Updates
 LiberChatのアップデート
