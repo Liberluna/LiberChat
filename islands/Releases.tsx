@@ -4,7 +4,6 @@ export default function () {
   const [ releases, setReleases ] = useState(["Now loding..."])
   
   useEffect(()=>{
-    alert(0)
     (async()=>{
       const releaseRes: Response = await fetch("https://api.github.com/repos/liberluna/liberchat/releases")
       const json = await releaseRes.json()
@@ -21,7 +20,7 @@ export default function () {
           // Now loding
           return <p>{ release }</p>
         }
-        const { name, body } = release
+        let { name, body } = release
         body = body.replaceAll("\r\n", "\n")
         return <div>
           <h2 class="text-3xl">{ name }</h2>
