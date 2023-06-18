@@ -1,6 +1,4 @@
-import { YieldExpression } from "https://deno.land/x/ts_morph@17.0.1/ts_morph.js";
-
-import { useRef, useEffect } from "preact/hooks";
+import { useRef, useEffect } from "preact/hooks"
 
 import ky from "ky";
 
@@ -200,6 +198,7 @@ export default class extends Component {
   }
 
   addMessage(message: Message) {
+    
     this.setState({
       messages: [...this.state.messages, message],
     });

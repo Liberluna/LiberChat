@@ -46,6 +46,7 @@ export default function MessageList(props: Props) {
         }
 
         if (message.type === "system") {
+          // システムメッセージの場合
           return (
             <div className="text-center bg-slate-500 text-white rounded-lg drop-shadow-lg">
               <span className="mx-2">System : </span>
@@ -54,22 +55,10 @@ export default function MessageList(props: Props) {
           );
         }
 
-        // 型の混乱を防ぐため else ifにはしないで
+        let messageHtml: string = message.body
 
-        if (!message.processed) {
-          //処理済みか判定
-          if (DoNotUseWords.includes(message.body)) {
-            for (let i = 0; i < DoNotUseWords.length; i++) {
-              message.body = message.body.replaceAll(DoNotUseWords[i], SysMsg);
-            }
-          }
-
-          for (let i = 0; i < replaceWords.length; i++) {
-            message.body = message.body.replaceAll(
-              replaceWords[i][0],
-              replaceWords[i][1]
-            );
-          } // 置き換える configの中さんしょう
+        for(const doNotUseWord of DoNotUseWords){
+          messageHtml.replaceAll(doNotUseWord, "***") // 禁止用語の削除
         }
 
         let MsgTripID = "";
@@ -86,18 +75,9 @@ export default function MessageList(props: Props) {
           MsgTripID = message.hashtrip;
         }
 
-        if (!message.processed) {
-          const regex = />>(\d{8})/g;
-
-          message.body = message.body.replace(regex, (match, p1) => {
-            return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${p1}">${match}</a>`;
-          });
-        }
-
-        if (!message.processed) {
-          message.processed = true; //二回目は処理しないように
-        }
-
+        messageHtml = messageHtml.replace(/>>[0-9]{8}/g, (id, index)=>{
+          return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${index}">${id}</a>`;
+        })
         return (
           <div
             key={index}
@@ -106,21 +86,14 @@ export default function MessageList(props: Props) {
           >
             <div className="mb-2 tracking-tight text-gray-600 dark:text-white flex gap-4">
               <span>{message.user}</span>
-
               <span>{dateText}</span>
-
               <button onClick={() => props.reply(MsgTripID)}>Reply</button>
-
               <span className="mx-2">ID : {MsgTripID}</span>
             </div>
-
             <p
               className="mb-2 font-bold tracking-tight text-gray-800 dark:text-white break-words"
               dangerouslySetInnerHTML={{
-                __html:
-                  message.body.length > max
-                    ? message.body.substring(0, max) + "... (省略)"
-                    : message.body,
+                __html: messageHtml,
               }}
             ></p>
           </div>
