@@ -46,8 +46,8 @@ body{
       <style>
         {css}
       </style>
-      <script src="https://cdn.socket.io/socket.io-2.3.0.js"></script>
-      <script src="/socket-init.js"></script>
+      {/*<script src="https://cdn.socket.io/socket.io-2.3.0.js"></script>
+      <script src="/socket-init.js"></script>*/}
     </Head>
     <div className="bg-white dark:bg-gray-800 w-full h-full">
       <Room roomId={roomid}/>
