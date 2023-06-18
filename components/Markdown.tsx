@@ -1,4 +1,4 @@
-import { parseMarkdown } from "markdown-wasm"
+import * as marked from "marked"
 import { type ComponentChildren, } from "preact"
 import renderToString from "preact-render-to-string"
 
@@ -79,7 +79,7 @@ export default function(props: Props) {
   return (<>
     <style>{css}</style>
     <div dangerouslySetInnerHTML={{
-      __html: parseMarkdown(text),
+      __html: marked.parse(text),
     }} class="md"></div>
   </>)
 }
