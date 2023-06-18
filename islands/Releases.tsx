@@ -1,4 +1,5 @@
 import { useState, useEffect } from "preact/hooks"
+import Markdown from "~/components/Markdown.tsx"
 
 export default function () {
   const [ releases, setReleases ] = useState(["Now loding..."])
@@ -16,7 +17,18 @@ export default function () {
   return <>
     {
       releases.map(release=>{
-        return <p>{JSON.stringify(release)}</p>
+        if(typeof release === "string"){
+          // Now loding
+          return <p>{ release }</p>
+        }
+        const { name, body } = release
+
+        return <div>
+          <h2 class="text-3xl">{ name }</h2>
+          <div>
+            <Markdown>{ body }</Markdown>
+          </div>
+        </div>
       })
     }
   </>
