@@ -25,7 +25,7 @@ interface Props {
   roomId: string | null;
 }
 
-export default class extends Component {
+export default class ChatRoom extends Component {
   state: Readonly<{
     messages: Message[];
 
@@ -74,9 +74,20 @@ export default class extends Component {
       if (inp.current == null) {
         return;
       } else {
-        inp.current.value += " >>" + msg + " ";
+        if (inp.current.value === "") {
+          inp.current.value += " ";
+        }
+    
+        const replyText = ` >>${msg} `;
+        const regex = new RegExp(`\\s>>${msg}\\s`);
+        if (!regex.test(inp.current.value)) {
+          inp.current.value += replyText;
+        }
       }
     };
+    
+    
+
     const [canSubmit, setCanSubmit] = useState(false); // 送信可能か
     const sendMessage = (): void => {
       if (!inp.current?.value) {
@@ -95,15 +106,15 @@ export default class extends Component {
     };
     const [isOpenMenu, setIsOpenMenu] = useState(false); // メニューがオンか
 
-    function SDOB() {
+    function ScrollDown() {
       const ref = refBox.current;
 
       if (ref) {
-        STOB(ref);
+        ScrollDowner(ref);
       }
     }
 
-    function STOB(element: HTMLDivElement) {
+    function ScrollDowner(element: HTMLDivElement) {
       element.scrollTop = element.scrollHeight;
     } //一番下までスクロール
 
@@ -176,7 +187,6 @@ export default class extends Component {
                   setTimeout(() => {
                     setIsOpenMenu(!isOpenMenu);
                   });
-                  // async
                 }}
                 class="mb-5 bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
               >
@@ -187,7 +197,7 @@ export default class extends Component {
         </div>
 
         <button
-          onClick={SDOB}
+          onClick={ScrollDown}
           class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2.5 rounded-full inline-flex items-center fixed bottom-20 right-3 justify-items-center text-center"
         >
           <IconArrowDown />

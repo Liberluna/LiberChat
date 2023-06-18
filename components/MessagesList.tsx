@@ -74,7 +74,10 @@ export default function MessageList(props: Props) {
               <span>{message.user}</span>
               <span>{dateText}</span>
               <span className="mx-2">ID : {tripId}</span>
-              <button onClick={() => props.reply(tripId)} className="mx-2 filter dark:invert">
+              <button
+                onClick={() => props.reply(tripId)}
+                className="mx-2 filter dark:invert hover:bg-gray-400 w-15 text-center p-1 rounded"
+              >
                 <Reply />
               </button>
             </div>
