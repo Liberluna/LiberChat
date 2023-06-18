@@ -1,9 +1,10 @@
 import { useState, useEffect } from "preact/hooks"
 import Markdown from "~/components/Markdown.tsx"
+import { parseMarkdown } from "markdown-wasm"
 
 export default function () {
   const [ releases, setReleases ] = useState(["Now loding..."])
-
+  
   useEffect(()=>{
     (async()=>{
       const releaseRes: Respobse = await fetch("https://api.github.com/repos/liberluna/liberchat/releases")
@@ -26,8 +27,7 @@ export default function () {
         return <div>
           <h2 class="text-3xl">{ name }</h2>
           <div>
-            { body }
-            <Markdown>{body}</Markdown>
+            { parseMarkdown(body) }
           </div>
         </div>
       })
