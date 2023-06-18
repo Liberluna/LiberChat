@@ -81,11 +81,8 @@ export default class extends Component {
     }
     const [canSubmit, setCanSubmit] = useState(false) // 送信可能か
     const sendMessage = (): void => {
-      if (inp.current?.value === "") {
-        alert(
-          "送信できませんでした。 送信内容が空の可能性が有ります。"
-        );
-        return;
+      if(!(inp.current?.value)){
+        return
       }
       this.state.socket.emit("message", {
         body: inp.current?.value,
