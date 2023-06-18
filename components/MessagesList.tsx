@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 
-import EasyHash from "easyhash";
+import { easyHash } from "hash";
 
 import { doNotUseWords } from "./config/disabled.ts";
 import { type Message } from "~/core/chat/index.ts";
@@ -21,9 +21,7 @@ export default function MessageList(props: Props) {
           return (
             <div className="text-center bg-slate-500 text-white rounded-lg drop-shadow-lg">
               <span className="mx-2">{dateText}</span>
-
               <span className="mx-2">{message.user}</span>
-
               <span className="mx-2">が入室しました。</span>
             </div>
           );
@@ -33,9 +31,7 @@ export default function MessageList(props: Props) {
           return (
             <div className="text-center bg-slate-500 text-white rounded-lg drop-shadow-lg">
               <span className="mx-2">{dateText}</span>
-
               <span className="mx-2">{message.user}</span>
-
               <span className="mx-2">が退室しました。</span>
             </div>
           );
@@ -60,7 +56,7 @@ export default function MessageList(props: Props) {
         let MsgTripID = "";
 
         if (!message.hashtrip) {
-          MsgTripID = EasyHash(message.user + message.body + message.trip);
+          MsgTripID = easyHash(message.user + message.body + message.trip);
 
           MsgTripID = MsgTripID + "00000000";
 

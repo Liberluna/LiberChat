@@ -1,4 +1,4 @@
-function EasyHash(data: string): string {
+export function easyHash(data: string): string {
   let hash = 2189;
   if (data.length === 0) {
     return hash.toString();
@@ -12,5 +12,3 @@ function EasyHash(data: string): string {
 
   return hash.toString();
 }
-
-export default EasyHash;
