@@ -1,10 +1,14 @@
 import { useState, useEffect } from "preact/hooks"
 import Markdown from "~/components/Markdown.tsx"
+import {
+  IconTag,
+} from "tabler-icons"
 
 interface Release {
   name: string
   body: string
   html_url: string
+  tag_name: string
 }
 export default function () {
   const [ releases, setReleases ] = useState(["Now loding..."])
@@ -26,7 +30,7 @@ export default function () {
           // Now loding
           return <p>{ release }</p>
         }
-        let { name, body, html_url } = release
+        let { name, body, html_url, tag_name } = release
         body = body.replaceAll("\r\n", "\n")
         body = body.replace(/@[a-zA-z0-9]+/g, (user: string)=>{
           return `[${user}](https://github.com/${user.slice(1)})`
@@ -40,6 +44,10 @@ export default function () {
           <div class="text-3xl underline">
             <a href={html_url}>
               <span>{ name }</span>
+              <span>
+                <IconTag />
+                { tag_name }
+              </span>
             </a>
           </div>
           <div>
