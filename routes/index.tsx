@@ -19,7 +19,7 @@ export default function JoinPage() {
               src="https://raw.githubusercontent.com/Liberluna/LiberChat/main/assets/concept.svg"
               alt="Logo"
               height="150"
-              className="h-80 mx-auto text-center"
+              className="h-80 mx-auto text-center mt-10 mb-5"
             />
           </div>
           <div className="leading-loose">LiberChat 0.1.1 Alpha</div>
