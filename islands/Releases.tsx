@@ -44,9 +44,9 @@ export default function () {
           <div class="text-3xl underline">
             <a href={html_url}>
               <span>{ name }</span>
-              <span class="text-xl">
-                <IconTag />
-                { tag_name }
+              <span class="text-xl flex">
+                <span><IconTag /></span>
+                <span>{ tag_name }</span>
               </span>
             </a>
           </div>
