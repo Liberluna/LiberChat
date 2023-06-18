@@ -4,6 +4,7 @@ import {
   IconLogout,
   IconMenu2,
   IconX,
+  IconArrowDown,
 } from "tabler-icons"
 import ky from "ky";
 
@@ -150,17 +151,11 @@ export default class extends Component {
         <button
           title="Down"
           onClick={()=>{
-            alert(refBox.current.scrollTop)
+            window.scrollTo(999999999999999)
           }}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 pl-4 rounded inline-flex items-cente fixed bottom-5 right-5"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 pl-4 rounded-fill inline-flex items-cente fixed bottom-20 right-20"
         >
-          <svg
-            class="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path>
-          </svg>
+          <IconArrowDown />
         </button>
       </>
     );
