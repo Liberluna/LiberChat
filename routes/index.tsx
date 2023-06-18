@@ -11,6 +11,11 @@ export default function JoinPage() {
           name="description"
           content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。"
         />
+        
+        <link rel="manifest" href="manifest.json" />
+        <link rel="manifest" href="manifest.webmanifest" />
+        <script async src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
+
       </Head>
       <Layout>
         <div className="mx-auto text-center">
