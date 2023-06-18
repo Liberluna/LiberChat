@@ -114,8 +114,15 @@ export default class extends Component {
               <IconSend />
             </button>
             <div>
-              <div class="absolute bottom-5 right-0" hidden={!isOpenMenu}>
-                this is menu
+              <div class="absolute bottom-10 right-0 gap-2" hidden={!isOpenMenu}>
+                <button
+                  onClick={()=>{
+                    window.location.href = "/"
+                  }}
+                  class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg"
+                >
+                  <IconLogout />
+                </button>
               </div>
               <button 
                 onClick={()=>{
