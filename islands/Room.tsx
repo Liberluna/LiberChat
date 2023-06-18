@@ -79,7 +79,23 @@ export default class extends Component {
         inp.current.value += " >>" + msg + " ";
       }
     }
-
+    const sendMessage = (): void => {
+      if (inp.current?.value === "") {
+        alert(
+          "送信できませんでした。 送信内容が空の可能性が有ります。"
+        );
+        return;
+      }
+      this.state.socket.emit("message", {
+        body: inp.current?.value,
+        room: this.byProps.roomId,
+        uuid: crypto.randomUUID(),
+      })
+      if (inp.current) {
+        // 文字の消去
+        inp.current.value = ""
+      }
+    }
     const [isOpenMenu, setIsOpenMenu] = useState(false)
     return (
       <>
@@ -92,27 +108,16 @@ export default class extends Component {
               ref={inp}
               placeholder="message"
               onKeyDown={(e)=>{
-                alert(e.key)
+                if(e.key.toLowerCase() === "enter"){
+                  // Enter
+                  sendMessage()
+                }
               }}
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
             <button
               onClick={() => {
-                if (inp.current?.value === "") {
-                  alert(
-                    "送信できませんでした。 送信内容が空の可能性が有ります。"
-                  );
-                  return;
-                }
-                this.state.socket.emit("message", {
-                  body: inp.current?.value,
-                  room: this.byProps.roomId,
-                  uuid: crypto.randomUUID(),
-                })
-                if (inp.current) {
-                  // 文字の消去
-                  inp.current.value = ""
-                }
+                sendMessage()
               }}
               class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
             >
