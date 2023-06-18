@@ -1,6 +1,4 @@
 import { useState, useEffect } from "preact/hooks"
-import Markdown from "~/components/Markdown.tsx"
-import { parseMarkdown } from "markdown-wasm"
 
 export default function () {
   const [ releases, setReleases ] = useState(["Now loding..."])
