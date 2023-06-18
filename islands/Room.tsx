@@ -153,7 +153,7 @@ export default class extends Component {
           onClick={()=>{
             window.scrollTo(999999999999999)
           }}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 pl-4 rounded-full inline-flex items-center fixed bottom-20 right-20 justify-items-center"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 pl-4 rounded-full inline-flex items-center fixed bottom-20 right-20 justify-items-center text-center"
         >
           <IconArrowDown />
         </button>
