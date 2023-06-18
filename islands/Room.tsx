@@ -1,6 +1,4 @@
-import { YieldExpression } from "https://deno.land/x/ts_morph@17.0.1/ts_morph.js";
-
-import { useRef, useEffect } from "preact/hooks";
+import { useRef, useEffect } from "preact/hooks"
 
 import ky from "ky";
 
@@ -81,27 +79,13 @@ export default class extends Component {
     } //一番下までスクロール
 
     const reply = (msg: string): void => {
-      console.log("reply");
-
       if (inp.current == null) {
         return;
       } else {
-        console.log("res" + inp.current.value);
-
         inp.current.value += " >>" + msg + " ";
       }
-    };
-
-    function SystemMsg(msg: string): void {
-      this.state.socket.emit("message", {
-        room: this.byProps.roomId,
-
-        type: "system",
-
-        body: msg, //退室
-      });
     }
-
+    
     return (
       <>
         <div className="flex pl-4 py-2">
@@ -117,21 +101,17 @@ export default class extends Component {
                 alert(
                   "送信できませんでした。 送信内容が空の可能性が有ります。"
                 );
-
                 return;
               }
 
               this.state.socket.emit("message", {
                 body: inp.current?.value,
-
                 room: this.byProps.roomId,
-
-                trip: Math.random().toString(), //trip
+                uuid: crypto.randomUUID(),
               });
 
               if (inp.current) {
                 // 文字の消去
-
                 inp.current.value = "";
               }
             }}
@@ -140,17 +120,7 @@ export default class extends Component {
             Send
           </button>
         </div>
-
         <div className="h-5/6 overflow-y-scroll" ref={refBox}>
-          <div
-            key="join"
-            className="block w-full my-4 p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-          >
-            <p className="mb-2 font-bold tracking-tight text-gray-800 dark:text-white break-words text-center">
-              - - - - Join - - - -
-            </p>
-          </div>
-
           <MessagesList messages={this.state.messages} reply={reply} />
         </div>
 
@@ -170,14 +140,6 @@ export default class extends Component {
 
         <button
           onClick={() => {
-            this.state.socket.emit("message", {
-              room: this.byProps.roomId,
-
-              type: "exit",
-
-              body: "@Anonymous" + "が退出しました。", //退室
-            });
-
             window.location.href = "/";
           }}
           className="font-bold bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 left-0"
@@ -206,35 +168,22 @@ export default class extends Component {
         ...data, //エラー抑制
       };
 
-      safeData.user = "@" + "Anonymous";
-
+      safeData.user = "Anonymous";
       safeData.type = ["text", "enter", "exit", "system"].includes(data.type)
         ? data.type
         : "text";
-
       safeData.body = data.body ? data.body : "";
-
       safeData.room = data.room;
-
       safeData.date = new Date()
-        ? new Date()
-        : "Sat Jun 1 2023 20:40:20 GMT+0900 (日本標準時)";
-
-      safeData.trip = data.trip ? data.trip : 0.114514;
-
-      safeData.processed = data.processed ? data.processed : false;
-
-      safeData.hashtrip = data.hashtrip ? data.hashtrip : false; //hashtripが存在するか
+      safeData.uuid = data.uuid ? data.uuid : crypto.randomUUID()
 
       this.addMessage(safeData);
     });
 
     socket.emit("message", {
       room: this.byProps.roomId,
-
       type: "enter",
-
-      body: "@Anonymous" + "が入室しました。",
+      body: "",
     });
   }
 

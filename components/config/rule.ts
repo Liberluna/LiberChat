@@ -1,3 +1,2 @@
-const max = 140; //文字数制限
+export const maxMessage = 200
 
-export default max 
