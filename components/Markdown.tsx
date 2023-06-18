@@ -26,14 +26,19 @@ export default function(props: Props) {
   .md h5 {
     font-size: 0.83em !important;
   }
-  
   .md h6 {
     font-size: 0.67em !important;
   }
+
   .md a{
     color: blue !important;
     text-decoration-line: underline !important;
-  }`
+  }
+
+  .md ul {
+    list-style-type: disc;
+  }
+  `
   
   const text = typeof props.children === "string" ? props.children : renderToString(props.children)
   return (<>
