@@ -88,13 +88,15 @@ export default class extends Component {
     
     return (
       <>
+        <div className="h-full overflow-y-scroll" ref={refBox}>
+          <MessagesList messages={this.state.messages} reply={reply} />
+        </div>
         <div className="flex pl-4 py-2">
           <input
             ref={inp}
             placeholder="message"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
-
           <button
             onClick={() => {
               if (inp.current?.value === "") {
@@ -119,9 +121,6 @@ export default class extends Component {
           >
             Send
           </button>
-        </div>
-        <div className="h-5/6 overflow-y-scroll" ref={refBox}>
-          <MessagesList messages={this.state.messages} reply={reply} />
         </div>
 
         <button
