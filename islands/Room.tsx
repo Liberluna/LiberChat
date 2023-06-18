@@ -114,7 +114,7 @@ export default class extends Component {
               <IconSend />
             </button>
             <div>
-              <div hidden={isOpenMenu}>
+              <div class="absolute bottom-px left-0" hidden={!isOpenMenu}>
                 this is menu
               </div>
               <button 
