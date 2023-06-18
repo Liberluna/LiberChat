@@ -1,7 +1,8 @@
-import { useRef, useEffect } from "preact/hooks"
+import { useRef, useEffect, useState } from "preact/hooks"
 import {
   IconSend,
   IconLogout,
+  IconMenu2,
 } from "tabler-icons"
 import ky from "ky";
 
@@ -76,7 +77,8 @@ export default class extends Component {
         inp.current.value += " >>" + msg + " ";
       }
     }
-    
+
+    const [isOpenMenu, setIsOpenMenu] = useState(false)
     return (
       <>
         <div class="relative w-full h-full">
@@ -111,6 +113,18 @@ export default class extends Component {
             >
               <IconSend />
             </button>
+            <div>
+              <div hidden={isOpenMenu}>
+                this is menu
+              </div>
+              <button 
+                onClick={()=>{
+                  setIsOpenMenu(!isOpenMenu)
+                }}
+              >
+                <IconMenu2 />
+              </button>
+            </div>
           </div>
         </div>
         <button
