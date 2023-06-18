@@ -4,6 +4,7 @@ export default function () {
   const [ releases, setReleases ] = useState(["Now loding..."])
   
   useEffect(()=>{
+    alert(0)
     (async()=>{
       const releaseRes: Response = await fetch("https://api.github.com/repos/liberluna/liberchat/releases")
       const json = await releaseRes.json()
