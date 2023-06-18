@@ -88,10 +88,10 @@ export default class extends Component {
     
     return (
       <>
-        <div className="h-full overflow-y-scroll" ref={refBox}>
+        <div className="h-[calc(100%_-_20px)] overflow-y-scroll" ref={refBox}>
           <MessagesList messages={this.state.messages} reply={reply} />
         </div>
-        <div className="flex pl-4 py-2">
+        <div className="flex">
           <input
             ref={inp}
             placeholder="message"
@@ -105,16 +105,14 @@ export default class extends Component {
                 );
                 return;
               }
-
               this.state.socket.emit("message", {
                 body: inp.current?.value,
                 room: this.byProps.roomId,
                 uuid: crypto.randomUUID(),
-              });
-
+              })
               if (inp.current) {
                 // 文字の消去
-                inp.current.value = "";
+                inp.current.value = ""
               }
             }}
             class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
