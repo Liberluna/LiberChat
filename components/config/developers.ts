@@ -7,7 +7,7 @@ interface Developer {
 
 let Devs: Developer[] = [
   {
-  icon: "https://github.com/pochi.png",
+  icon: "https://github.com/Pochi-Liberluna.png",
     name: "Pochi",
     desc: "Liberlunaのリーダー。LiberChatの開発に'少しは'携わっている。ほとんどTypeScriptで書かれてて何もできない。気に食わない所を修正したりしてる。",
     link: "https://twitter.com/Pochi_Liberluna",
