@@ -84,16 +84,8 @@ export default class extends Component {
       } else {
         inp.current.value += " >>" + msg + " ";
       }
-    };
-
-    function SystemMsg(msg: string): void {
-      this.state.socket.emit("message", {
-        room: this.byProps.roomId,
-        type: "system",
-        body: msg, //退室
-      });
     }
-
+    
     return (
       <>
         <div className="flex pl-4 py-2">
