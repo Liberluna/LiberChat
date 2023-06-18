@@ -115,7 +115,7 @@ export default class extends Component {
               <IconSend />
             </button>
             <div>
-              <div hidden={isOpenMenu}>
+              <div hidden={!isOpenMenu}>
                 <div class="absolute bottom-12 right-0 gap-2 grid grid-rows-3 justify-items-center">
                   <button
                     class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg"
