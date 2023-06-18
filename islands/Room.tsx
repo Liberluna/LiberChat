@@ -1,12 +1,11 @@
-import { useRef, useEffect, useState } from "preact/hooks"
+import { useRef, useEffect, useState } from "preact/hooks";
 import {
   IconSend,
   IconLogout,
   IconMenu2,
   IconX,
   IconArrowDown,
-} from "tabler-icons"
-import ky from "ky";
+} from "tabler-icons";
 
 import {
   Attributes,
@@ -69,41 +68,48 @@ export default class extends Component {
     }, []);
 
     //Box取得
-
     const refBox = useRef<HTMLDivElement>(null);
-    
+
     const reply = (msg: string): void => {
       if (inp.current == null) {
         return;
       } else {
         inp.current.value += " >>" + msg + " ";
       }
-    }
-    const [canSubmit, setCanSubmit] = useState(false) // 送信可能か
+    };
+    const [canSubmit, setCanSubmit] = useState(false); // 送信可能か
     const sendMessage = (): void => {
-      if(!(inp.current?.value)){
-        return
+      if (!inp.current?.value) {
+        return;
       }
       this.state.socket.emit("message", {
         body: inp.current?.value,
         room: this.byProps.roomId,
         uuid: crypto.randomUUID(),
-      })
+      });
       if (inp.current) {
         // 文字の消去
-        inp.current.value = ""
+        inp.current.value = "";
       }
-      setCanSubmit(false)
-    }
-    const [isOpenMenu, setIsOpenMenu] = useState(false)  // メニューがオンか
+      setCanSubmit(false);
+    };
+    const [isOpenMenu, setIsOpenMenu] = useState(false); // メニューがオンか
 
-    const SODB = () => {
-      
+    function SDOB() {
+      const ref = refBox.current;
+
+      if (ref) {
+        STOB(ref);
+      }
     }
+
+    function STOB(element: HTMLDivElement) {
+      element.scrollTop = element.scrollHeight;
+    } //一番下までスクロール
 
     return (
       <>
-        <div class="relative w-full h-full">
+        <div class="relative w-full h-screen overflow-y-scroll" ref={refBox}>
           <div className="top-0 left-0 right-0 min-h-screen">
             <MessagesList messages={this.state.messages} reply={reply} />
           </div>
@@ -111,25 +117,26 @@ export default class extends Component {
             <input
               ref={inp}
               placeholder="message"
-              onKeyDown={(e)=>{
-                if(e.key.toLowerCase() === "enter"){
+              onKeyDown={(e) => {
+                if (e.key.toLowerCase() === "enter") {
                   // Enter
-                  sendMessage()
+                  sendMessage();
                 }
               }}
-              onInput={(e)=>{
-                setCanSubmit(e.target.value !== "")
+              onInput={(e) => {
+                setCanSubmit(e.target.value !== "");
               }}
-              class="ml-5 mb-5bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="ml-5 mb-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-400 dark:focus:border-blue-500"
             />
+
             <button
               onClick={() => {
-                sendMessage()
+                sendMessage();
               }}
               class="mx-5 mb-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
               disabled={!canSubmit}
               style={{
-                opacity: canSubmit ? 1 : 0.5
+                opacity: canSubmit ? 1 : 0.5,
               }}
             >
               <IconSend />
@@ -139,16 +146,16 @@ export default class extends Component {
                 <div class="absolute bottom-12 right-0 gap-2 grid grid-rows-3 justify-items-center">
                   <button
                     class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg"
-                    onClick={()=>{
-                      setIsOpenMenu(false)
+                    onClick={() => {
+                      setIsOpenMenu(false);
                     }}
                   >
                     <IconX />
                   </button>
                   <button
-                    onClick={()=>{
-                      if(window.confirm("退出しますか？"))
-                        window.location.href = "/"
+                    onClick={() => {
+                      if (window.confirm("退出しますか？"))
+                        window.location.href = "/";
                     }}
                     class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg w-12 h-12"
                   >
@@ -156,9 +163,9 @@ export default class extends Component {
                   </button>
                 </div>
               </div>
-              <button 
-                onClick={()=>{
-                  setIsOpenMenu(!isOpenMenu)
+              <button
+                onClick={() => {
+                  setIsOpenMenu(!isOpenMenu);
                 }}
                 class="mb-5 bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
               >
@@ -167,31 +174,10 @@ export default class extends Component {
             </div>
           </div>
         </div>
+
         <button
-          title="Down"
           onClick={SDOB}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 right-5"
-        >
-          <svg
-            class="fill-current w-4 h-4 mr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"></path>
-          </svg>
-        </button>
-
-        <button
-          onClick={() => {
-            this.state.socket.emit("message", {
-              body: "Anonymous" + "が退室しました。",
-              room: this.byProps.roomId,
-              type: "exit"
-            })
-
-            window.location.href = "/";
-          }}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 pl-4 rounded-full inline-flex items-center fixed bottom-20 right-20 justify-items-center text-center"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2 rounded-full inline-flex items-center fixed bottom-20 right-1 justify-items-center text-center"
         >
           <IconArrowDown />
         </button>
@@ -223,8 +209,8 @@ export default class extends Component {
         : "text";
       safeData.body = data.body ? data.body : "";
       safeData.room = data.room ? data.room : this.byProps.roomId;
-      safeData.date = new Date()
-      safeData.uuid = data.uuid ? data.uuid : crypto.randomUUID()
+      safeData.date = new Date();
+      safeData.uuid = data.uuid ? data.uuid : crypto.randomUUID();
 
       this.addMessage(safeData);
     });
