@@ -29,6 +29,9 @@ export default function(props: Props) {
   
   .md h6 {
     font-size: 0.67em !important;
+  }
+  .md a{
+    color: blue;
   }`
   
   const text = typeof props.children === "string" ? props.children : renderToString(props.children)
