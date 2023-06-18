@@ -17,7 +17,7 @@ import MessagesList from "~/components/MessagesList.tsx";
 import { getIO } from "~/core/socketio/io.ts";
 
 interface Props {
-  roomId: string;
+  roomId: string | null;
 }
 
 export default class extends Component {
@@ -140,6 +140,12 @@ export default class extends Component {
 
         <button
           onClick={() => {
+            this.state.socket.emit("message", {
+              body: "Anonymous" + "が退室しました。",
+              room: this.byProps.roomId,
+              type: "exit"
+            })
+
             window.location.href = "/";
           }}
           className="font-bold bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 left-0"
@@ -173,7 +179,7 @@ export default class extends Component {
         ? data.type
         : "text";
       safeData.body = data.body ? data.body : "";
-      safeData.room = data.room;
+      safeData.room = data.room ? data.room : this.byProps.roomId;
       safeData.date = new Date()
       safeData.uuid = data.uuid ? data.uuid : crypto.randomUUID()
 

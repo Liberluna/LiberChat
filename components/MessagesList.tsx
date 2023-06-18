@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 
-import { easyHash } from "hash";
+import easyHash from "hash";
 
 import { doNotUseWords } from "./config/disabled.ts";
 import { type Message } from "~/core/chat/index.ts";

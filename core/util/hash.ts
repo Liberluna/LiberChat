@@ -1,5 +1,10 @@
-export function easyHash(data: string): string {
+export default function easyHash(data: string | null): string {
   let hash = 2189;
+
+  if (!data) {
+    return hash.toString();
+  }
+
   if (data.length === 0) {
     return hash.toString();
   }
