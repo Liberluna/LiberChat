@@ -56,7 +56,7 @@ export default function MessageList(props: Props) {
         const tripId = 
           ("00000000" + 
           easyHash(message.user + message.body + message.uuid))  // Hash
-          .splice(-8,-1)
+          .slice(-8,-1)
 
         messageHtml = messageHtml.replace(/>>[0-9]{8}/g, (id, index)=>{
           return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${index}">${id}</a>`;
