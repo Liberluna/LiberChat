@@ -120,13 +120,13 @@ export default class extends Component {
               onInput={(e)=>{
                 setCanSubmit(e.target.value !== "")
               }}
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="ml-5 mb-5bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
             <button
               onClick={() => {
                 sendMessage()
               }}
-              class="mx-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+              class="mx-5 mb-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
               disabled={!canSubmit}
               style={{
                 opacity: canSubmit ? 1 : 0.5
@@ -160,7 +160,7 @@ export default class extends Component {
                 onClick={()=>{
                   setIsOpenMenu(!isOpenMenu)
                 }}
-                class="bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
+                class="mb-5 bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
               >
                 <IconMenu2 />
               </button>
