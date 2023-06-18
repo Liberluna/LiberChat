@@ -17,6 +17,7 @@
     "markdown-wasm": "https://deno.land/x/markdown_wasm@1.2.2/mod.ts",
     "libercomp/": "./components/LiberComp/",
     "hash": "./core/util/hash.ts",
-    "tabler-icons": "https://esm.sh/@tabler/icons-preact@2.22.0"
+    "tabler-icons": "https://esm.sh/@tabler/icons-preact@2.22.0",
+    "marked": "https://esm.sh/marked@5.1.0"
   }
 }

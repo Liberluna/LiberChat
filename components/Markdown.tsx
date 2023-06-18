@@ -1,4 +1,4 @@
-import { parseMarkdown } from "markdown-wasm"
+import * as marked from "marked"
 import { type ComponentChildren, } from "preact"
 import renderToString from "preact-render-to-string"
 
@@ -8,78 +8,47 @@ interface Props {
 export default function(props: Props) {
   const css = `
   .md h1 {
-    display: block;
-    font-size: 2em;
-    font-weight: bold;
-    margin-block-start: .67em;
-    margin-block-end: .67em;
+    font-size: 2em !important;
   }
   
-  .md h2,
-  :-moz-any(article, aside, nav, section)
-  .md h1 {
-    display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-block-start: .83em;
-    margin-block-end: .83em;
+  .md h2 {
+    font-size: 1.5em !important;
   }
   
-  .md h3,
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  .md h1 {
-    display: block;
-    font-size: 1.17em;
-    font-weight: bold;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
+  .md h3 {
+    font-size: 1.17em !important;
   }
   
-  .md h4,
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  .md h1 {
-    display: block;
-    font-size: 1.00em;
-    font-weight: bold;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
+  .md h4 {
+    font-size: 1.00em !important;
   }
   
-  .md h5,
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  .md h1 {
-    display: block;
-    font-size: 0.83em;
-    font-weight: bold;
-    margin-block-start: 1.67em;
-    margin-block-end: 1.67em;
+  .md h5 {
+    font-size: 0.83em !important;
   }
-  
-  .md h6,
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  :-moz-any(article, aside, nav, section)
-  .md h1 {
-    display: block;
-    font-size: 0.67em;
-    font-weight: bold;
-    margin-block-start: 2.33em;
-    margin-block-end: 2.33em;
+  .md h6 {
+    font-size: 0.67em !important;
+  }
+
+  .md a{
+    color: blue !important;
+    text-decoration-line: underline !important;
+  }
+
+  .md ul {
+    list-style-type: disc !important;
+    padding: revert;
+  }
+  .md ol {
+    list-style-type: decimal !important;
   }
   `
+  
   const text = typeof props.children === "string" ? props.children : renderToString(props.children)
   return (<>
     <style>{css}</style>
     <div dangerouslySetInnerHTML={{
-      __html: parseMarkdown(text),
+      __html: marked.parse(text),
     }} class="md"></div>
   </>)
 }
