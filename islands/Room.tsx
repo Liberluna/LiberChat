@@ -1,5 +1,8 @@
 import { useRef, useEffect } from "preact/hooks"
-import { IconSend } from "tabler-icons"
+import {
+  IconSend,
+  IconLogout,
+} from "tabler-icons"
 import ky from "ky";
 
 import {
@@ -132,7 +135,7 @@ export default class extends Component {
           }}
           className="font-bold bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-2 rounded inline-flex items-cente fixed bottom-5 left-0"
         >
-          <span>Exit</span>
+          <IconLogout />
         </button>
       </>
     );
