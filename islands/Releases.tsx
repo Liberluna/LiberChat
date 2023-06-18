@@ -22,11 +22,12 @@ export default function () {
           return <p>{ release }</p>
         }
         const { name, body } = release
-
+        body = body.replaceAll("\r\n", "\n")
         return <div>
           <h2 class="text-3xl">{ name }</h2>
           <div>
             { body }
+            <Markdown>{body}</Markdown>
           </div>
         </div>
       })
