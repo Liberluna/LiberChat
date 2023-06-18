@@ -23,7 +23,7 @@ export default function () {
 
   return (
     <div>
-      <div className="text-center text-2xl mb-5">LiberChat Join</div>
+      <div className="text-center text-2xl mb-5">Join the LiberChat!</div>
 
       <label
         htmlFor="room"
