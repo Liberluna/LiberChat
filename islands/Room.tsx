@@ -132,7 +132,7 @@ export default class ChatRoom extends Component {
           <div className="top-0 left-0 right-0 min-h-screen">
             <MessagesList messages={this.state.messages} reply={reply} />
           </div>
-          <div className="flex sticky bottom-0 left-0 right-0">
+          <div className="flex fixed bottom-0 left-0 right-0">
             <input
               ref={inp}
               placeholder="message"
