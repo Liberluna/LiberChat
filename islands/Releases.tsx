@@ -20,7 +20,7 @@ export default function () {
       if(!Array.isArray(json)){
         alert("Error. リリースの取得に失敗しました。")
       }
-      setReleases(json.reverse())
+      setReleases(json)
     })()
   }, [])
   return <>
