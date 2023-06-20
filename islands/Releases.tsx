@@ -40,7 +40,7 @@ export default function () {
           const num = url.match(/[0-9]+/)
           return `[#${num}](${url})`
         })
-        return <div class="border p-5 m-10 rounded break-all">
+        return <div class="border p-5 my-5 mx-2 rounded break-all">
           <div class="text-3xl underline">
             <a href={html_url}>
               <span>{ name }</span>
