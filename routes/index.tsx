@@ -41,7 +41,7 @@ export default function JoinPage() {
         <div className="text-center mt-5">
           <div className="text-2xl">さあ！始めよう！</div>
           <Join />
-          <div>Room IDを入力してください。同じRoom Idの人と話すことができます。何も入力しないで送信することでメインの部屋に入れます。</div>
+          <div>Room IDを入力してください。同じRoom IDの人と話すことができます。何も入力しないで送信することでメインの部屋に入れます。</div>
         </div>
       </Layout>
     </>
