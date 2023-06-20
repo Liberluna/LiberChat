@@ -11,7 +11,7 @@ interface Release {
   tag_name: string
 }
 export default function () {
-  const [ releases, setReleases ] = useState(["Now loding..."])
+  const [ releases, setReleases ] = useState(["Now loading..."])
   
   useEffect(()=>{
     (async()=>{
