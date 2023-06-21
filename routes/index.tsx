@@ -32,9 +32,7 @@ export default function JoinPage() {
             <div className="text-2xl">About</div>
             <div>LiberChatは、どこよりも自由なチャットサイトです。</div>
             <div>
-              13歳未満使用禁止、16歳未満使用禁止...<br />
-              ネット上のサイトには、さまざまな年齢制限があります。
-              しかし、LiberChatには*年齢制限*はありません。
+              Liberlunaが贈る、自由なチャットサービス"Liberchat"。どなたでもご利用になれます。
             </div>
           </div>
         </div>
