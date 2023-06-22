@@ -12,7 +12,7 @@ export default function (props: PageProps) {
       <div class="text-center text-xl hover:underline mx-5 mt-5 mb-10 cursor-pointer">
         <Logo width="300" height="any" />
       </div>
-      <div class="text-center" style={{ marginBottom: "30rem" }}>
+      <div className="text-center" style={{ marginBottom: "30rem" }}>
         URLを間違えていないか確認してみてください。
       </div>
     </Layout>
