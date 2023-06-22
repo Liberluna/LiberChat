@@ -11,7 +11,7 @@ export default function (props: PageProps) {
       </div>
       <div class="text-center text-xl hover:underline mx-5 mt-5 mb-10 cursor-pointer">
         <Logo width="300" height="any" />
-        <div id={"liberad"} data-version={"1.00"} data-token={"net7178140"} className="mx-auto"></div>
+        <div id={"liberad"} data-version={"1.00"} data-token={"net7178140"} className="mx-auto w-screen"></div>
         <script src={"https://liberad.deno.dev/api/LiberAD"}></script>
       </div>
       <div className="text-center" style={{ marginBottom: "30rem" }}>
