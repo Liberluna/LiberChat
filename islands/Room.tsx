@@ -152,7 +152,7 @@ export default class ChatRoom extends Component {
               onClick={() => {
                 sendMessage();
               }}
-              class="mx-5 mb-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+              class="mx-5 mb-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center touch-manipulation"
               disabled={!canSubmit}
               style={{
                 opacity: canSubmit ? 1 : 0.5,
@@ -164,7 +164,7 @@ export default class ChatRoom extends Component {
               <div hidden={!isOpenMenu}>
                 <div class="absolute bottom-20 right-0 gap-2 grid grid-rows-3 justify-items-center">
                   <button
-                    class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg"
+                    class="p-3 bg-red-400 text-center rounded-full drop-shadow-lg touch-manipulation"
                     onClick={() => {
                       setIsOpenMenu(false);
                     }}
@@ -176,7 +176,7 @@ export default class ChatRoom extends Component {
                       if (window.confirm("退出しますか？"))
                         window.location.href = "/";
                     }}
-                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg w-12 h-12"
+                    class="text-center bg-cyan-300 p-2 rounded-full drop-shadow-lg w-12 h-12 touch-manipulation"
                   >
                     <IconLogout />
                   </button>
@@ -188,7 +188,7 @@ export default class ChatRoom extends Component {
                     setIsOpenMenu(!isOpenMenu);
                   });
                 }}
-                class="mb-5 bg-gray-300 hover:bg-gray-400 rounded text-center p-3"
+                class="mb-5 bg-gray-300 hover:bg-gray-400 rounded text-center p-3 touch-manipulation"
               >
                 <IconMenu2 />
               </button>
@@ -198,7 +198,7 @@ export default class ChatRoom extends Component {
 
         <button
           onClick={ScrollDown}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2.5 rounded-full inline-flex items-center fixed bottom-20 right-3 justify-items-center text-center"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-2.5 rounded-full inline-flex items-center fixed bottom-20 right-3 justify-items-center text-center touch-manipulation"
         >
           <IconArrowDown />
         </button>
