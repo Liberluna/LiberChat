@@ -6,19 +6,14 @@ export default function () {
   const join = () => {
     if (inputRef.current == null) {
       alert("Error");
-
-      return 0;
+      throw new Error("input is not exist.")
     }
-
-    const id = inputRef.current.value;
-
-    if (id == "" || id == " ") {
-      window.location.href = "/room/main";
+    const id = inputRef.current.value
+    if (id.replace(/ /g,"") === "") {
+      window.location.href = "/room/main"
     } else {
-      window.location.href = "/room/" + id;
+      window.location.href = "/room/" + id
     }
-
-    window.location.href = "/room/main";
   };
 
   return (
