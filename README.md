@@ -1,3 +1,4 @@
+[![Made with Fresh](https://fresh.deno.dev/fresh-badge-dark.svg)](https://fresh.deno.dev)
 <div align="center">
   <img style="" alt="LiberChat" src="https://github.com/Liberluna/LiberChat/blob/main/assets/concept.svg" />
 </div>
