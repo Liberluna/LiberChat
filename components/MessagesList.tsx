@@ -62,11 +62,27 @@ export default function MessageList(props: Props) {
         ) // Hash
           .slice(-9, -1);
 
-        messageHtml = messageHtml.replace(/<(.+)[^>]>/g, (match, p1) => {
-          return `&lt;${p1}&gt;`;
-        })
+        function escape(html) {
+          return html.replace(/[&<>"']/g, (match) => {
+            switch (match) {
+              case '&':
+                return '&amp;';
+              case '<':
+                return '&lt;';
+              case '>':
+                return '&gt;';
+              case '"':
+                return '&quot;';
+              case "'":
+                return '&#x27;'; 
+              default:
+                return match;
+          }
+        });
+      }
 
-        messageHtml = messageHtml.replace(/>>(\d{8})/g, (match, p1) => {
+
+        messageHtml = escaple(messageHtml).replace(/>>(\d{8})/g, (match, p1) => {
           console.log(match, p1);
           return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${p1}">${match}</a>`;
         });
