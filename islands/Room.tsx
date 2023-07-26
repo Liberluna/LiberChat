@@ -78,8 +78,8 @@ export default class ChatRoom extends Component {
           inp.current.value += " ";
         }
     
-        const replyText = ` >>${msg} `;
-        const regex = new RegExp(`\\s>>${msg}\\s`);
+        const replyText = ` To:${msg} `;
+        const regex = new RegExp(`\\sTo:${msg}\\s`);
         if (!regex.test(inp.current.value)) {
           inp.current.value += replyText;
         }
