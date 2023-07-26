@@ -82,7 +82,7 @@ export default function MessageList(props: Props) {
       }
 
 
-        messageHtml = escaple(messageHtml).replace(/>>(\d{8})/g, (match, p1) => {
+        messageHtml = escape(messageHtml).replace(/>>(\d{8})/g, (match, p1) => {
           console.log(match, p1);
           return `<a class="text-blue-500 hover:underline hover:text-blue-700 pointer" href="#${p1}">${match}</a>`;
         });
