@@ -20,6 +20,7 @@ import { type Message } from "~/core/chat/index.ts";
 import MessagesList from "~/components/MessagesList.tsx";
 
 import { getIO } from "~/core/socketio/io.ts";
+import { Config } from '~/config/config.ts';
 
 interface Props {
   roomId: string | null;
@@ -209,7 +210,7 @@ export default class ChatRoom extends Component {
   async init() {
     const io = await getIO();
 
-    const socket = io("https://liberchat-api.nakasyou.repl.co/");
+    const socket = io(Config.server);
 
     this.setState({
       socket: socket,
