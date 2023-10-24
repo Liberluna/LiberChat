@@ -1,19 +1,20 @@
 import { Head } from "$fresh/runtime.ts";
 import Layout from "~/components/Layout.tsx";
 import developers from "~/components/config/developers.ts";
+import { Config } from "~/config/config.ts";
 
 export default function DevPage() {
   return (
     <>
       <Head>
-        <title>Liberchat Developers</title>
+        <title>{Config.title} Developers</title>
         <meta
           name="description"
-          content="LiberChat : 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。"
+          content={Config.title + ": 更新不要なリアルタイムチャットを最高峰のUI/UXで、Liberlunaが提供します。"}
         />
       </Head>
       <Layout>
-        <h1 className="text-4xl font-bold text-center">LiberChat Developers</h1>
+        <h1 className="text-4xl font-bold text-center">{Config.title} Developers</h1>
         <div className="mt-5 flex flex-col gap-5 md:flex-row md:gap-10">
           {developers.map((dev, index) => (
             <a className="text-center w-30" key={index} href={dev.link}>

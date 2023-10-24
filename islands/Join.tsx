@@ -1,4 +1,6 @@
 import { useRef } from "preact/hooks";
+import { Config } from "~/config/config.ts";
+
 
 export default function () {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -18,7 +20,7 @@ export default function () {
 
   return (
     <div>
-      <div className="text-center text-2xl mb-5">Join the LiberChat!</div>
+      <div className="text-center text-2xl mb-5">Join the {Config.title}!</div>
 
       <label
         htmlFor="room"

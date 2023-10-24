@@ -3,6 +3,8 @@ import Markdown from "~/components/Markdown.tsx"
 import {
   IconTag,
 } from "tabler-icons"
+import { Config } from "~/config/config.ts";
+
 
 interface Release {
   name: string
